@@ -14,7 +14,7 @@ public class Imprimir {
 	public static String imprimirComprobante (String subtitulo, Cliente cli, String actividad , boolean isOrden, 
 			String monto,  String montoAdicional, boolean isActividadImp, TipoCursoEnum tipoCurso, int disponibles, boolean imprimirAhora){
 		String ss= "";
-		
+		 
 		if(subtitulo.equalsIgnoreCase("Comprob para el Profesional")){
 			if(tipoCurso.toInt() != TipoCursoEnum.TRATAMIENTOS_KINESICOS.toInt()){
 				isActividadImp= false;
