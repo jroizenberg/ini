@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syncparticipants>
+<participant displayName="SVN (external, fm,...fm-obj, fm-web)" id="org.eclipse.team.svn.ui.synchronize.update.SynchronizeModelParticipant" secondary_id="1412610149728">
+<data consultChangeSets="false" root="false">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS org.eclipse.team.ui.MODEL_PARTICIPANT_DESCRIPTION="external, fm,...fm-obj, fm-web" startupAction="none">
+<org.eclipse.team.ui.MODEL_PARTICIPANT_REFRESH_SCHEDULE org.eclipse.team.ui.CTX_REFRESHSCHEDULE_ENABLED="false" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_INTERVAL="3600" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_RUNONCE="false"/>
+<org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS modelProviderId="org.eclipse.core.resources.modelProvider">
+<mappings>
+<resources resourcePath="/fm" resourceType="4"/>
+<resources resourcePath="/fm-obj" resourceType="4"/>
+<resources resourcePath="/fm-com" resourceType="4"/>
+<resources resourcePath="/fm-bzi" resourceType="4"/>
+<resources resourcePath="/fm-bz" resourceType="4"/>
+<resources resourcePath="/external" resourceType="4"/>
+<resources resourcePath="/fm-web" resourceType="4"/>
+</mappings>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS>
+</org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS>
+</data>
+</participant>
+<participant displayName="SVN (/external, /fm, /fm-bz, /fm-bzi, /fm-com, /fm-obj, /fm-web)" id="org.tigris.subversion.subclipse.participant" secondary_id="1496237348761">
+<data root="false">
+<org.eclipse.team.ui.TEAMSUBSRCIBERSETTINGS org.eclipse.team.ui.SCOPE_TYPE="ResourceScope">
+<org.eclipse.team.ui.TEAMSUBSRCIBER_REFRESHSCHEDULE org.eclipse.team.ui.CTX_REFRESHSCHEDULE_ENABLED="false" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_INTERVAL="3600" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_RUNONCE="false"/>
+<resource_scope_roots resource_scope_root_resource="/external"/>
+<resource_scope_roots resource_scope_root_resource="/fm"/>
+<resource_scope_roots resource_scope_root_resource="/fm-bz"/>
+<resource_scope_roots resource_scope_root_resource="/fm-bzi"/>
+<resource_scope_roots resource_scope_root_resource="/fm-com"/>
+<resource_scope_roots resource_scope_root_resource="/fm-obj"/>
+<resource_scope_roots resource_scope_root_resource="/fm-web"/>
+</org.eclipse.team.ui.TEAMSUBSRCIBERSETTINGS>
+</data>
+</participant>
+</syncparticipants>

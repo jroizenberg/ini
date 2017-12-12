@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;external&apos;&#x0D;&#x0A;- Original project: &apos;external&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     poi-2.5.1-final-20040804.jar&#x0D;&#x0A;     poi-3.1-FINAL-20080629.jar" description="Delete elements" element1="lib/poi-2.5.1-final-20040804.jar" element2="lib/poi-3.1-FINAL-20080629.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1479062145568" subPackages="false" version="1.0"/>
+</session>

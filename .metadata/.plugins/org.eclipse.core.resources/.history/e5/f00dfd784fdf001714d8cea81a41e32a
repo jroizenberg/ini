@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?page title="Instituto Swiszcz"?>
+<?link rel="shortcut icon" href="/img/faro.ico" type="image/x-icon" ?>
+<?component name="title" macroURI="/title.zul" inline="true"?>
+<?component name="menu" macroURI="/menu.zul" inline="true"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<zk>
+<script type="text/javascript">
+
+function ImprimirVar(cadena){
+	    if (window.print) {
+	    
+	    var strWindowFeatures = "toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=60000, top=60000, width=1, height=1, visible=none";
+		var printing = window.open("", "_blank", strWindowFeatures);
+			printing.document.write(cadena);
+			printing.document.close();
+			printing.print();
+			printing.close();
+        }        
+				
+}
+
+
+function ImprimirVar2(list){
+alert("vno aca" + list)
+	    if (window.print) {
+	    for (var i = 0; i < list.length; i+=1) {
+	    alert("vno aca 2")
+	    	var strWindowFeatures = "toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=60000, top=60000, width=1, height=1, visible=none";
+			var printing = window.open("", "_blank", strWindowFeatures);
+			printing.document.write(cadena);
+			printing.document.close();
+			printing.print();
+			printing.close();
+        }        
+				
+}
+
+</script>
+
+<borderlayout id="main" apply="com.institucion.fm.desktop.view.DesktopLayoutComposer">
+	<north border="none" collapsible="true">
+		<panel>
+			<panelchildren>
+				<title/>
+			</panelchildren>
+		</panel>
+	</north>
+	<west title="&#36;{c:l('menu.title')}" size="150px" border="none" flex="true" splittable="true" minsize="100" maxsize="250" collapsible="true">
+		<panel>
+			<panelchildren>
+				<menu/>
+			</panelchildren>
+		</panel>
+	</west>
+	<center autoscroll="true" flex="true" border="none" >
+		<include style="padding:3px;" id="desktoppanel" src="/institucion/ingresoInscripcion-selector.zul" use ="com.institucion.fm.desktop.view.IncludePage"/>
+		
+	</center>
+</borderlayout>
+</zk>

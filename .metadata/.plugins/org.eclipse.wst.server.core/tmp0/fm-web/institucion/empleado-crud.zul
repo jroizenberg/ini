@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Obra Social"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="obrasocialCrud" apply="com.institucion.controller.EmpleadoCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="empleadoSelector"/>
+		
+		<panel  id="crud"  use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.EmpleadoCrud" />
+		<panel id="precios" border="none" width="auto" title="&#36;{c:l('empleado.actividades.sueldos.pp')}"/>
+		<panel id="preciosList" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.ActividadesDeEmpleadosList" />
+	</window>
+</zk>

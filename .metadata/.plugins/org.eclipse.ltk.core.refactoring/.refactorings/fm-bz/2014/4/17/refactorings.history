@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ClaseEJBImpl.java&apos; to &apos;com.institucion.bz.spi.ClaseEJBImpl.java&apos;&#x0D;&#x0A;- Original project: &apos;fm-bz&apos;&#x0D;&#x0A;- Destination element: &apos;com.institucion.bz.spi.ClaseEJBImpl.java&apos;&#x0D;&#x0A;- Original element: &apos;com.institucion.bz.spi.ClaseEJBImpl.java&apos;" description="Copy compilation unit" destination="/ejbModule&lt;com.institucion.bz.spi{ClaseEJBImpl.java" element1="/ejbModule&lt;com.institucion.bz.spi{ClaseEJBImpl.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1398291654970" units="1" version="1.0"/>
+</session>

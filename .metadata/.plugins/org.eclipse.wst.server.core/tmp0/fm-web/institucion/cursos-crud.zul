@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Curso"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="cursosvarios" apply="com.institucion.controller.CursosCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="cursosCrud"/>
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.CursoCrud" />
+		<separator spacing="5px"/>	
+		<panel id="cursocrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.CursoCrud2" />
+		<separator spacing="15px"/>	
+		<panel id="crudActividades" use="com.institucion.model.ActividadesDelCursoCrud"/>
+			
+	</window>
+</zk>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?page title="Instituto Swiszcz"?>
+<?link rel="shortcut icon" href="/img/faro.ico" type="image/x-icon" ?>
+<?component name="title" macroURI="/title.zul" inline="true"?>
+<?component name="menu" macroURI="/menu.zul" inline="true"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+
+<zk>
+<script type="text/javascript">
+var autoimprimir = true;
+	var prueba='abcde';
+
+function ImprimirVar(cadena){
+		alert(cadena);  	
+	    if (window.print) {
+			var printing = window.open("","_blank");
+			printing.document.write(cadena);
+			printing.document.close();
+			printing.print();
+			printing.close();
+        }        
+				
+}
+
+function printImg(url) {
+	alert('print imagen');  
+  var win = window.open('');
+   var foto=document.getElementById("imageOKMercados");
+  win.document.write(foto);
+    alert('print imagen 2');
+  win.focus();
+  win.print();
+  alert('print imagen 2');
+}
+</script>
+
+<borderlayout id="main" apply="com.institucion.fm.desktop.view.DesktopLayoutComposer">
+	<north border="none" collapsible="true">
+		<panel>
+			<panelchildren>
+				<title/>
+			</panelchildren>
+		</panel>
+	</north>
+	<west title="&#36;{c:l('menu.title')}" size="150px" border="none" flex="true" splittable="true" minsize="100" maxsize="250" collapsible="true">
+		<panel>
+			<panelchildren>
+				<menu/>
+			</panelchildren>
+		</panel>
+	</west>
+	<center autoscroll="true" flex="true" border="none" >
+		<include style="padding:3px;" id="desktoppanel" src="/institucion/ingresoInscripcion-selector.zul" use ="com.institucion.fm.desktop.view.IncludePage"/>
+		
+	</center>
+</borderlayout>
+</zk>

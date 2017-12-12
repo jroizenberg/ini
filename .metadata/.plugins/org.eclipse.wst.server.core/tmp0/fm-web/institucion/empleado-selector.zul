@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Obras Sociales"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="pempleadoselector" apply="com.institucion.controller.EmpleadoSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.ObraSocialSelector" tokenPrefix="empleadoSelector" />
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="empleadoSelector"/>
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.EmpleadoFilter" />
+						
+		<panel id="clasepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.EmpleadoList" title="&#36;{c:l('obrasociales.list')}"/>
+	</window>
+</zk>

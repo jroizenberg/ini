@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+							http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+	
+	
+	<jee:jndi-lookup id="fm.ejb.securityAAService" jndi-name="fm/SecurityAAEJBImpl/remote" />
+	<jee:jndi-lookup id="fm.ejb.securityService" jndi-name="fm/SecurityEJBImpl/remote" />
+
+
+	<jee:jndi-lookup id="fmEjbGastos" jndi-name="fm/GastosEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbCliente" jndi-name="fm/ClienteEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbCurso" jndi-name="fm/CursoEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbClase" jndi-name="fm/ClaseEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbInscripcion" jndi-name="fm/InscripcionEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbProducto" jndi-name="fm/ProductoEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbCaja" jndi-name="fm/CajaEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbObraSocial" jndi-name="fm/ObraSocialEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbEmpleado" jndi-name="fm/EmpleadoEJBImpl/remote" />
+	<jee:jndi-lookup id="fmEjbBancoPromocion" jndi-name="fm/BancoPromocionEJBImpl/remote" />
+
+	<!-- fm.ejb.configSystem -->
+	<jee:jndi-lookup id="fm.ejb.configSystem" jndi-name="fm/ConfigSystemEJBImpl/remote" />
+
+	<bean id="fm.conf.appInfo" class="com.institucion.fm.conf.ApplicationInfo" />
+
+	<bean id="fm.view.security.menu.securityMenu" class="com.institucion.fm.security.service.SecurityMenu">
+		<property name="securityService" ref="fm.ejb.securityAAService" />
+	</bean>
+
+	<!-- Manager que maneja los permisos de Tipo TX -->
+	<bean id="fm.mgr.tx.permission"
+		class="com.institucion.fm.security.service.spi.PermissionTxManagerImpl">
+		<property name="securityService" ref="fm.ejb.securityAAService" />
+	</bean>
+
+
+
+</beans>

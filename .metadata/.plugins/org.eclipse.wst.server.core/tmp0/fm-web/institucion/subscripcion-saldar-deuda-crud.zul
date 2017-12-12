@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Saldar Deuda"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="subssaldardeudacrud" apply="com.institucion.controller.SaldarDeudaCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.desktop.view.ToolbarCrudSoloCancelarSaldarDeuda" tokenPrefix="subsSaldarDeuda"/>
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SaldarDeudaCrud" />
+		<separator spacing="10px"/>	
+		<separator spacing="5px" />
+		<panel id="perms" width="auto" height="auto" border="normal" title="&#36;{c:l('crud.group.assigned.title.deudas.seleccione')}" >
+			<panelchildren>
+				<panel use="com.institucion.fm.desktop.view.ListPanelDragAndDrop"
+				       leftpanel="com.institucion.model.SubscripcionDaDPanel|id=leftPanel|filter=true|title=$crud.group.assigned.title.deudas"
+				       rightpanel="com.institucion.model.SubscripcionDaDPanel|id=rightPanel|title=$crud.group.assigned.title"
+				/>
+			</panelchildren>
+		</panel>
+		
+		<separator spacing="15px"/>
+		<panel id="crudFormasDePago" use="com.institucion.model.FormasDePagoCrud"/>
+		<separator spacing="15px"/>		
+	<!--	<panel id="pagar" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionPagarBotonesFilter" /> -->
+<!--		<separator spacing="15px"/> -->
+						
+	</window>
+</zk>

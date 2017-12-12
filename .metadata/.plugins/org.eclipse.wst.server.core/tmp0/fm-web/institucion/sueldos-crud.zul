@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Gastos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="sueldossCrud" apply="com.institucion.controller.SueldosCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="clientesCrud"/>
+		
+		<panel id="sucCrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SucursalCrud"  style="width:75%;  align:center;  margin-left: 10%;" />
+		<separator spacing="15px"/>
+		
+		<panel id="gastosCrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SueldosCrud" />
+		
+		<separator spacing="15px"/>
+		<panel id="gastosSueldosPorActividadList" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.GastosSueldosPorActividadList"  style="width:50%;  align:center;  margin-left: 20%;"/>
+		
+		<panel id="sucMaipu"  use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SueldosMaipuCrud" />
+		
+	</window>
+</zk>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Productos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+
+	<style src="/style/institucion.css"/>
+	<window entity="productoscriud" apply="com.institucion.controller.ProductosCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="prodCrud"/>
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.ProductoCrud" />
+		<separator spacing="5px"/>	
+		
+	</window>
+</zk>

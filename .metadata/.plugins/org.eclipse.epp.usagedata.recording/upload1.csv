@@ -1,0 +1,226 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.jboss.ide.eclipse.as.ui,2.3.2.v20130112-0201-H153-Final,"org.jboss.ide.eclipse.as.ui",1383769059926
+started,bundle,org.jboss.tools.usage,1.1.0.v20130102-1715-H74-Final,"org.jboss.tools.usage",1383769059929
+os,sysinfo,,,"win32",1383769059941
+arch,sysinfo,,,"x86_64",1383769059941
+ws,sysinfo,,,"win32",1383769059941
+locale,sysinfo,,,"es_ES",1383769059941
+processors,sysinfo,,,"4",1383769059941
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1383769059941
+java.runtime.version,sysinfo,,,"1.7.0_04-b22",1383769059941
+java.specification.name,sysinfo,,,"Java Platform API Specification",1383769059941
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1383769059941
+java.specification.version,sysinfo,,,"1.7",1383769059941
+java.vendor,sysinfo,,,"Oracle Corporation",1383769059941
+java.version,sysinfo,,,"1.7.0_04",1383769059941
+java.vm.info,sysinfo,,,"mixed mode",1383769059941
+java.vm.name,sysinfo,,,"Java HotSpot(TM) 64-Bit Server VM",1383769059941
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1383769059941
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1383769059941
+java.vm.specification.version,sysinfo,,,"1.7",1383769059941
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1383769059941
+java.vm.version,sysinfo,,,"23.0-b21",1383769059941
+started,bundle,org.eclipse.jst.common.project.facet.core,1.4.200.v201103170302,"org.eclipse.jst.common.project.facet.core",1383769061855
+started,bundle,org.eclipse.jst.ws.jaxrs.core,1.0.301.v201108240656,"org.eclipse.jst.ws.jaxrs.core",1383769061948
+started,bundle,org.eclipse.core.variables,3.2.500.v20110928-1503,"org.eclipse.core.variables",1383769064022
+started,bundle,org.jboss.ide.eclipse.archives.core,3.3.1.v20130102-1730-H94-Final,"org.jboss.ide.eclipse.archives.core",1383769064066
+started,bundle,org.jboss.ide.eclipse.archives.ui,3.3.1.v20130102-1730-H94-Final,"org.jboss.ide.eclipse.archives.ui",1383769064072
+started,bundle,org.eclipse.epp.usagedata.ui,1.3.1.R201106061540,"org.eclipse.epp.usagedata.ui",1383769064202
+started,bundle,org.jboss.tools.jmx.core,1.3.1.v20130102-1732-H80-Final,"org.jboss.tools.jmx.core",1383769064235
+started,bundle,org.jboss.ide.eclipse.archives.webtools,2.3.2.v20130112-0201-H153-Final,"org.jboss.ide.eclipse.archives.webtools",1383769064484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769065944
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769068515
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769075266
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769094528
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.import",1383769094550
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.import",1383769094551
+started,bundle,org.eclipse.jst.server.core,1.2.202.v20110419,"org.eclipse.jst.server.core",1383769095145
+started,bundle,org.eclipse.wst.common.core,1.2.0.v200908252030,"org.eclipse.wst.common.core",1383769095329
+started,bundle,org.eclipse.wst.common.modulecore,1.2.103.v201201190400,"org.eclipse.wst.common.modulecore",1383769095347
+started,bundle,org.eclipse.jst.j2ee.core,1.2.102.v201202090300,"org.eclipse.jst.j2ee.core",1383769095393
+started,bundle,org.eclipse.jem,2.0.501.v201111030500,"org.eclipse.jem",1383769095457
+started,bundle,org.eclipse.wst.common.frameworks.ui,1.2.100.v201105122000,"org.eclipse.wst.common.frameworks.ui",1383769095599
+started,bundle,org.eclipse.wst.xml.core,1.1.602.v201201091944,"org.eclipse.wst.xml.core",1383769095684
+started,bundle,org.eclipse.wst.validation,1.2.303.v201202090300,"org.eclipse.wst.validation",1383769095810
+started,bundle,org.eclipse.jst.j2ee,1.1.503.v201202090300,"org.eclipse.jst.j2ee",1383769095884
+started,bundle,org.eclipse.jst.common.frameworks,1.1.501.v201201190400,"org.eclipse.jst.common.frameworks",1383769095910
+started,bundle,org.eclipse.debug.core,3.7.1.v20111129-2031,"org.eclipse.debug.core",1383769096164
+started,bundle,org.eclipse.jdt.launching,3.6.1.v20111006_r372,"org.eclipse.jdt.launching",1383769096218
+activated,view,org.eclipse.ui.views,3.6.0.v20110928-1505,"org.eclipse.ui.views.ContentOutline",1383769099805
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1383769100033
+started,bundle,org.eclipse.jst.j2ee.web,1.1.502.v201202090300,"org.eclipse.jst.j2ee.web",1383769100186
+started,bundle,org.eclipse.mylyn.tasks.index.core,3.7.0.v20120319-0200,"org.eclipse.mylyn.tasks.index.core",1383769100310
+started,bundle,org.tigris.subversion.clientadapter.javahl,1.7.4,"org.tigris.subversion.clientadapter.javahl",1383769101345
+started,bundle,org.tigris.subversion.clientadapter.svnkit,1.7.0,"org.tigris.subversion.clientadapter.svnkit",1383769101473
+started,bundle,org.eclipse.jst.jee.ui,1.0.401.v201202011107,"org.eclipse.jst.jee.ui",1383769102679
+started,bundle,org.eclipse.jst.j2ee.ui,1.1.503.v201201190400,"org.eclipse.jst.j2ee.ui",1383769103267
+started,bundle,org.eclipse.jst.j2ee.navigator.ui,1.1.501.v201107261503,"org.eclipse.jst.j2ee.navigator.ui",1383769103318
+started,bundle,org.eclipse.wst.jsdt.core,1.1.102.v201111090634,"org.eclipse.wst.jsdt.core",1383769110365
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.300.v201104272153,"org.eclipse.wst.jsdt.manipulation",1383769112424
+started,bundle,org.eclipse.wst.jsdt.ui,1.1.102.v201201131900,"org.eclipse.wst.jsdt.ui",1383769112651
+started,bundle,org.eclipse.wst.common.ui,1.1.500.v200911190730,"org.eclipse.wst.common.ui",1383769114021
+started,bundle,org.eclipse.mylyn.commons.notifications.ui,0.9.0.v20120319-0200,"org.eclipse.mylyn.commons.notifications.ui",1383769114345
+started,bundle,org.eclipse.jem.workbench,2.0.400.v201104251400,"org.eclipse.jem.workbench",1383769114370
+opened,view,org.eclipse.mylyn.tasks.ui,3.7.0.v20120319-0200,"org.eclipse.mylyn.tasks.ui.views.tasks",1383769114997
+closed,view,org.eclipse.ui.views,3.6.0.v20110928-1505,"org.eclipse.ui.views.ContentOutline",1383769115379
+started,bundle,org.eclipse.jst.servlet.ui,1.1.502.v201202011054,"org.eclipse.jst.servlet.ui",1383769115657
+started,bundle,org.eclipse.jpt.common.core,1.0.2.v201111103010,"org.eclipse.jpt.common.core",1383769116177
+started,bundle,org.eclipse.jpt.jpa.core,3.0.2.v201201243020,"org.eclipse.jpt.jpa.core",1383769116238
+activated,view,org.eclipse.mylyn.tasks.ui,3.7.0.v20120319-0200,"org.eclipse.mylyn.tasks.ui.views.tasks",1383769116850
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1383769116879
+closed,view,org.eclipse.mylyn.tasks.ui,3.7.0.v20120319-0200,"org.eclipse.mylyn.tasks.ui.views.tasks",1383769116905
+started,bundle,org.eclipse.pde.core,3.7.1.v20120103_r372,"org.eclipse.pde.core",1383769117561
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769121136
+started,bundle,org.eclipse.equinox.p2.garbagecollector,1.0.200.v20110815-1419,"org.eclipse.equinox.p2.garbagecollector",1383769125038
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769133307
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.import",1383769133334
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.import",1383769133334
+error,log,,,"Invalid preference page path: Usage Reporting",1383769138095
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769138733
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769153015
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.window.preferences",1383769153164
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769153453
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769158391
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1383769167172
+started,bundle,org.eclipse.jst.j2ee.ejb,1.1.505.v201202020200,"org.eclipse.jst.j2ee.ejb",1383769200742
+started,bundle,org.eclipse.jst.j2ee.jca,1.1.501.v201111030500,"org.eclipse.jst.j2ee.jca",1383769200814
+started,bundle,org.eclipse.jst.jee,1.0.402.v201202021530,"org.eclipse.jst.jee",1383769201022
+started,bundle,org.eclipse.jst.jee.ejb,1.0.301.v201007070821,"org.eclipse.jst.jee.ejb",1383769201638
+started,bundle,org.eclipse.jst.jee.web,1.0.301.v201007070907,"org.eclipse.jst.jee.web",1383769201758
+started,bundle,org.jboss.ide.eclipse.as.wtp.core,2.3.2.v20130112-0201-H153-Final,"org.jboss.ide.eclipse.as.wtp.core",1383769202903
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images' does not exist.",1383769203809
+error,log,,,"Resource '/fm-import/src/com/asofarma/fm/util' does not exist.",1383769203813
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zul/tab2' does not exist.",1383769203817
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins/org.eclipse.birt.report.data.oda.sampledb_2.6.2.r262_v20110127' does not exist.",1383769203821
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/category/model' does not exist.",1383769203824
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/fe/model' does not exist.",1383769203830
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/gray/tabs' does not exist.",1383769203835
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/client/date/month' does not exist.",1383769203840
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/panel' does not exist.",1383769203845
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/security/dao/spi' does not exist.",1383769203850
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/sizer' does not exist.",1383769203856
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769203860
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769203865
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769203872
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/calendar/wrapper' does not exist.",1383769203877
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/grid' does not exist.",1383769203883
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/contact/model' does not exist.",1383769203887
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/gray/qtip' does not exist.",1383769203893
+error,log,,,"Resource '/external/birt-runtime-2_6_2/ReportEngine/plugins/org.eclipse.birt.report.data.oda.jdbc_2.6.2.r262_v20110127/META-INF' does not exist.",1383769203899
+error,log,,,"Resource '/fm-com/src/com/asofarma/fm/conf/exception' does not exist.",1383769203904
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/category/model' does not exist.",1383769203908
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/menu' does not exist.",1383769203913
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/client/date/week/whole' does not exist.",1383769203918
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/default' does not exist.",1383769203924
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769203928
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769203933
+error,log,,,"Resource '/fm-import/src/com/asofarma/fm/util' does not exist.",1383769203936
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/security/model' does not exist.",1383769203940
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zul/tree' does not exist.",1383769203944
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/ReportEngine/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505' does not exist.",1383769203949
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769203954
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/category/model' does not exist.",1383769203958
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/category/dao/spi' does not exist.",1383769203961
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769203988
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zul/splt' does not exist.",1383769203992
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769203997
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/wf/dao/spi' does not exist.",1383769204001
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/grid' does not exist.",1383769204008
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769204012
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/themes/silverCherry/images/silverCherry/toolbar' does not exist.",1383769204018
+error,log,,,"Resource '/fm-com/src/com/asofarma/fm/lang' does not exist.",1383769204022
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/vista/tabs' does not exist.",1383769204027
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/gray/panel' does not exist.",1383769204033
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/ajax/taglib' does not exist.",1383769204038
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/contact/model' does not exist.",1383769204044
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/window' does not exist.",1383769204049
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/gray/toolbar' does not exist.",1383769204054
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/window' does not exist.",1383769204059
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/action/dao/spi' does not exist.",1383769204063
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/legacy' does not exist.",1383769204071
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt' does not exist.",1383769204077
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/contact/model' does not exist.",1383769204081
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/conf/model' does not exist.",1383769204086
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/default/sizer' does not exist.",1383769204090
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/ReportEngine/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/META-INF' does not exist.",1383769204095
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769204101
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/themes/silverCherry/images/silverCherry/menu' does not exist.",1383769204107
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/category/dao/spi' does not exist.",1383769204111
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/vista' does not exist.",1383769204116
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img' does not exist.",1383769204119
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769204123
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204128
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext' does not exist.",1383769204133
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/dd' does not exist.",1383769204137
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769204142
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/category/model' does not exist.",1383769204146
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/gray/button' does not exist.",1383769204151
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/wf/dao/spi' does not exist.",1383769204155
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/action/dao/spi' does not exist.",1383769204160
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry/shared' does not exist.",1383769204164
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/wf/dao' does not exist.",1383769204168
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/ajax' does not exist.",1383769204173
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769204179
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zweb' does not exist.",1383769204187
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/client/date/week/staend' does not exist.",1383769204190
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/fe/dao' does not exist.",1383769204194
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zul/tree' does not exist.",1383769204199
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/vista' does not exist.",1383769204204
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/layout' does not exist.",1383769204208
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/tabs' does not exist.",1383769204212
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/ReportEngine/plugins/org.eclipse.birt.report.data.oda.jdbc_3.7.2.v20120213' does not exist.",1383769204217
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/webcontent/birt/ajax/utility' does not exist.",1383769204222
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204227
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769204230
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/contact/bz' does not exist.",1383769204233
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/category/model' does not exist.",1383769204235
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/themes/silverCherry/images/silverCherry/grid' does not exist.",1383769204239
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins/org.eclipse.birt.report.data.oda.jdbc_2.6.2.r262_v20110127' does not exist.",1383769204243
+error,log,,,"Resource '/fm-bz-test/appClientModule/com/asofarma/fm/calendar/bz' does not exist.",1383769204246
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769204251
+error,log,,,"Resource '/external/birt-runtime-2_6_2/ReportEngine/plugins/org.eclipse.birt.report.data.oda.jdbc_2.6.2.r262_v20110127/META-INF' does not exist.",1383769204254
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/fe/model' does not exist.",1383769204258
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/lib' does not exist.",1383769204262
+error,log,,,"Resource '/fm-bz-test/appClientModule/com/asofarma/fm/fe/bz' does not exist.",1383769204265
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/bb' does not exist.",1383769204268
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/fe/model' does not exist.",1383769204273
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769204278
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/promotion/model' does not exist.",1383769204282
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/action/model' does not exist.",1383769204286
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/panel' does not exist.",1383769204290
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769204294
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/wf/aspect' does not exist.",1383769204298
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins/org.eclipse.birt.report.data.oda.sampledb_2.6.2.r262_v20110127' does not exist.",1383769204302
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins' does not exist.",1383769204305
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/adapter/prototype' does not exist.",1383769204309
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204314
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/ReportEngine/plugins/org.eclipse.birt.report.data.oda.jdbc_3.7.2.v20120213/schema' does not exist.",1383769204318
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204321
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/vista/layout' does not exist.",1383769204325
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default' does not exist.",1383769204329
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769204334
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/js/ext/resources/images/default/tree' does not exist.",1383769204339
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/WEB-INF/platform/plugins/org.eclipse.birt.report.data.oda.sampledb_2.6.2.r262_v20110127/META-INF' does not exist.",1383769204343
+error,log,,,"Resource '/external/birt-runtime-2_6_2/WebViewerExample/webcontent/birt/pages' does not exist.",1383769204348
+error,log,,,"Resource '/FmCal/www/com.folder.calendario.FmCal/js/ext/resources/images/default/tree' does not exist.",1383769204352
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/promotion/dao/spi' does not exist.",1383769204357
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/calendar/model' does not exist.",1383769204361
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204366
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/conf' does not exist.",1383769204370
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/fe/bz/spi' does not exist.",1383769204374
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/pages/layout' does not exist.",1383769204378
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/calendar/model' does not exist.",1383769204383
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/fe/validator/dao' does not exist.",1383769204387
+error,log,,,"Resource '/fm-bz/ejbModule/com/asofarma/fm/conf' does not exist.",1383769204391
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/cycle/model' does not exist.",1383769204395
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769204399
+error,log,,,"Resource '/external/zk-theme/fm/web/fm/img/zul/vd' does not exist.",1383769204403
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/public/themes/silverCherry/images/silverCherry' does not exist.",1383769204407
+error,log,,,"Resource '/external/birt-runtime-2_6_2/ReportEngine/plugins/org.eclipse.birt.report.engine.fonts_2.6.2.r262_v20110127/META-INF' does not exist.",1383769204410
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/default' does not exist.",1383769204414
+error,log,,,"Resource '/fm-obj/src/com/asofarma/fm/calendar/model' does not exist.",1383769204419
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/ajax/ui/app' does not exist.",1383769204424
+error,log,,,"Resource '/FmCal/bin/com/folder/calendario/client/date/week/staend' does not exist.",1383769204429
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/js/ext/resources/images/default/window' does not exist.",1383769204435
+error,log,,,"Resource '/external/birt-runtime-osgi-3_7_2/birt-runtime-osgi-3_7_2/WebViewerExample/webcontent/birt/images' does not exist.",1383769204440
+error,log,,,"Resource '/FmCal/src/com/folder/calendario/public/themes/silverCherry/images/silverCherry/masters' does not exist.",1383769204445

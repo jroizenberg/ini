@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Productos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="productosSelector" apply="com.institucion.controller.ProductosSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.ProductoSelector" tokenPrefix="prodSelector" />
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="prodSelector"/>
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.ProductosFilter" />		
+
+	    <panel id="curso2" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.ProductoListPrueba" title="Listado de Productos" />
+	
+	</window>
+</zk>

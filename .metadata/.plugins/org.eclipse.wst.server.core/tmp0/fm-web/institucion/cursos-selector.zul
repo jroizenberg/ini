@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Cursos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="cursosselector" apply="com.institucion.controller.CursosSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.CursoSelector" tokenPrefix="cursosSelector" />
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="cursosSelector"/>
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.CursosFilter" />		
+
+		<panel id="cursopanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CursoList" title="&#36;{c:l('cursos.list')}"/>
+	</window>
+</zk>

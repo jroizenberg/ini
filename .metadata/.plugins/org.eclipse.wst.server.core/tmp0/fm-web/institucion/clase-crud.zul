@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Clase"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="claseCrud" apply="com.institucion.controller.ClaseCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="claseCrud"/>
+		<panel  id="crud"  use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.ClaseCrud" />
+	</window>
+</zk>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Ingreso/Inscripcion"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="ingresosInscripcionselector" apply="com.institucion.controller.DeudaClienteSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.DeudaClienteSelector" tokenPrefix="ingresoInsSelector" />
+		<panel id="toolbar1" use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="ingresoInsSelector"/>
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.DeudaClientFilter" />	
+
+		<separator id="sep444" spacing="5px"/>
+		<panel id="totales2Crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.DeudaTotalCrud" />
+		<separator id="sep555" spacing="5px"/>
+			
+		<panel id="clientepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.DeudaClienteList" title="&#36;{c:l('client.list')}"/>
+		<separator spacing="5px"/>
+		
+		<panel id="toolbar2" use="com.institucion.desktop.view.ToolbarFiltersDeudas2" tokenPrefix="toolbar2"/>
+		<panel id="filter2" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.DeudaClienteSubscripcionFilter" />
+
+		<panel id="subscripcionList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.DeudaClienteSubscripcionList" title="&#36;{c:l('subscripciones.list')}"/>
+		<separator id="sep2" spacing="5px"/>
+	</window>
+</zk>

@@ -1,0 +1,360 @@
+package server;
+
+import java.rmi.ServerException;
+import java.rmi.server.RemoteServer;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import model.FMSimpleCalendarEvent;
+import serviceInterface.CalendarService;
+
+import com.asofarma.fm.action.model.Action;
+import com.asofarma.fm.calendar.model.AbsenceCauseModel;
+import com.asofarma.fm.calendar.model.AbsenceModel;
+import com.asofarma.fm.calendar.model.ActionAppointmentModel;
+import com.asofarma.fm.calendar.model.AppointmentModel;
+import com.asofarma.fm.calendar.model.AppointmentType;
+import com.asofarma.fm.calendar.model.ComplementaryActionModel;
+import com.asofarma.fm.calendar.model.ComplementaryActionTypeModel;
+import com.asofarma.fm.calendar.model.ContactModel;
+import com.asofarma.fm.calendar.model.CycleModel;
+import com.asofarma.fm.calendar.model.EventModel;
+import com.asofarma.fm.calendar.model.EventTypeModel;
+import com.asofarma.fm.calendar.model.HolidayModel;
+import com.asofarma.fm.calendar.model.InstitutionalCalendar;
+import com.asofarma.fm.calendar.model.SaveModifyResponse;
+import com.asofarma.fm.calendar.model.UserCalendarResponse;
+import com.asofarma.fm.conf.exception.LocalizeValidationException;
+import com.asofarma.fm.conf.exception.dao.ForeignKeyException;
+import com.asofarma.fm.security.bz.SecurityCallType;
+import com.asofarma.fm.security.bz.spi.SimpleCallContext;
+import com.asofarma.fm.wf.model.AlarmFrequency;
+
+public class CalendarRemoteImpl extends RemoteServer implements CalendarService {
+
+	private static final long serialVersionUID = -8791625654141357518L;
+
+	public boolean hasActionAssociated(Long idAppointment) {
+		List<Action> listAction = ServiceLocator.getInstancia().getCalendarConfigurarion().getActionByIdAppointment(idAppointment);
+		if (listAction != null && !listAction.isEmpty())
+			return true;
+		
+		return false;
+	}
+	
+	@Override
+	public List<EventModel> retrieveEvents(String userName, Date startDate,Date endDate) throws ServerException {
+		List<EventModel> eventos = null;
+		try {
+			eventos = ServiceLocator.getInstancia().getServicioCalendarConfigurarion().retrieveEvents(userName, startDate, endDate);
+
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return eventos;
+	}
+
+	@Override
+	public List<HolidayModel> retrieveHolidays(String userName, Date startDate, Date endDate) throws ServerException {
+		List<HolidayModel> holidays = null;
+		try {
+			holidays = ServiceLocator.getInstancia().getServicioCalendarConfigurarion().retrieveHolidays(userName, startDate, endDate);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return holidays;
+	}
+
+	@Override
+	public List<AppointmentModel> retrieveAppointments(String userName,Date startDate, Date endDate) throws ServerException {
+		List<AppointmentModel> appointments = new ArrayList<AppointmentModel>();
+		try {
+			appointments = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveAppointmentsForCalendar(userName,startDate, endDate, null);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return appointments;
+	}
+	
+
+	@Override
+	public List<AppointmentModel> retrieveAppointments(List<String> users, Date startDate, Date endDate) throws ServerException {
+		List<AppointmentModel> appointments = new ArrayList<AppointmentModel>();
+		if(users != null){
+			for (String user : users) {
+				appointments.addAll(this.retrieveAppointments(user, startDate, endDate));
+			}
+		}
+		return appointments;
+	}
+
+	@Override
+	public List<InstitutionalCalendar> retrieveCalendarConfiguration(String userName){
+		List<InstitutionalCalendar> institutionalCalendars = null;
+		try {
+			institutionalCalendars = ServiceLocator.getInstancia().getServicioCalendarConfigurarion().retrieveCalendarConfiguration(userName);
+		} catch (Exception e) {
+			try {
+				throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+			} catch (ServerException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+//		List<InstitutionalCalendarDTO> dtos = new ArrayList<InstitutionalCalendarDTO>();
+//
+//		for (InstitutionalCalendar institutionalCalendar : institutionalCalendars) {
+//			InstitutionalCalendarDTO dto = DTOFactory.toInstitutionalCalendarDTO(institutionalCalendar);
+//			dtos.add(dto);
+//		}
+		return institutionalCalendars;		
+	}
+
+	public List<AbsenceCauseModel> retrieveAbsenceCauses(String userName) throws ServerException {
+		List<AbsenceCauseModel> absences = null;
+		try {
+			absences = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveAbsenceCauses(userName);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return absences;
+	}
+
+	public List<EventTypeModel> retrieveEventTypeCauses() throws ServerException {
+		List<EventTypeModel> absences = null;
+		try {
+			absences = ServiceLocator.getInstancia().getCalendarConfigurarion().getEventTypes();
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return absences;
+	}
+	
+	@Override
+	public List<ComplementaryActionTypeModel> retrieveComplementaryActionTypes(String userName) throws ServerException {
+		List<ComplementaryActionTypeModel> typeModel = null;
+		try {
+			typeModel = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveComplementaryActionTypes(userName);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return typeModel;
+	}
+
+	@Override
+	public List<CycleModel> retrieveCycles(String userName) throws ServerException {
+		List<CycleModel> appoiment = null;
+		try {
+			appoiment = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveCycles(userName,	new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		List<CycleModel> cycles = new ArrayList<CycleModel>();
+		if(appoiment != null){
+			for (CycleModel cycleModel : appoiment) {
+				cycles.add(cycleModel);
+			}
+		}
+		return cycles;
+	}
+
+	@Override
+	public SaveModifyResponse saveAbsence(String userName, FMSimpleCalendarEvent absenceEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		AbsenceModel objeto = ModelFactory.toAbsenceModel(absenceEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().saveAbsence(userName, objeto, null);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return saveModify;
+	}
+
+	@Override
+	public SaveModifyResponse saveActionAppointment(String userName, FMSimpleCalendarEvent actionAppointmentEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		ActionAppointmentModel objeto = ModelFactory.toActionAppointmentModel(actionAppointmentEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().saveActionAppointment(userName, objeto, new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+
+		return saveModify;
+	}
+
+	@Override
+	public List<ContactModel> retrieveContactbyUser(String userName,
+			String locale) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SaveModifyResponse saveComplementaryAction(String userName, FMSimpleCalendarEvent complementaryActionEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		ComplementaryActionModel objeto = ModelFactory.toComplementaryActionModel(complementaryActionEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().saveComplementaryAction(userName, objeto, new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+
+		return saveModify;
+	}
+
+	@Override
+	public List<ContactModel> retrieveContactbyCicle(String userName, Long idCycle, String locale) throws ServerException {
+		Locale loc = new Locale(locale);
+		List<ContactModel> contacts = null;
+		try {
+			contacts = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveContactsByCycleID(userName, idCycle,loc);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return contacts;
+	}
+
+	@Override
+	public void deleteAppointment(String userName, Long idAppointment, AppointmentType type) throws ServerException {
+		try {
+			ServiceLocator.getInstancia().getCalendarConfigurarion().deleteAppointment(userName, idAppointment, type, null);
+		
+		} catch (Exception e) {
+			if(e instanceof LocalizeValidationException)
+				throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+			else if(e instanceof ForeignKeyException)
+				throw new ForeignKeyException();
+			else if(e != null && e.getCause() != null && e.getCause() instanceof ForeignKeyException )
+				throw new ForeignKeyException();
+			else
+				throw new ServerException((e.getCause()).getMessage());
+		}
+	}
+
+	@Override
+	public SaveModifyResponse modifyAbsence(String userName, FMSimpleCalendarEvent absenceEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		AbsenceModel objeto = ModelFactory.toAbsenceModel(absenceEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().modifyAbsence(userName, objeto, new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return saveModify;
+	}
+
+	@Override
+	public SaveModifyResponse modifyActionAppointment(String userName, FMSimpleCalendarEvent actionAppointmentEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		ActionAppointmentModel objeto = ModelFactory.toActionAppointmentModel(actionAppointmentEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().modifyActionAppointment(userName, objeto, new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return saveModify;
+	}
+	
+	@Override
+	public SaveModifyResponse modifyComplementaryAction(String userName, FMSimpleCalendarEvent complementaryActionEvent) throws ServerException {
+		SaveModifyResponse saveModify = null;
+		ComplementaryActionModel objeto = ModelFactory.toComplementaryActionModel(complementaryActionEvent);
+		try {
+			saveModify = ServiceLocator.getInstancia().getCalendarConfigurarion().modifyComplementaryAction(userName, objeto, new SimpleCallContext (SecurityCallType.WEB_CONTAINER, ""));
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return saveModify;
+	}
+
+	@Override
+	public List<ContactModel> retrieveContacts(String userName, String locale) throws ServerException {
+		Locale loc = new Locale(locale);
+		List<ContactModel> list = null;
+		try{
+			list = ServiceLocator.getInstancia().getCalendarConfigurarion().retrieveContacts(userName,loc);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+			}
+		return list;
+	}
+
+	@Override
+	public String getContactNameById(Long id)  {
+		return ServiceLocator.getInstancia().getUserCalendar().getContactNameById(id);
+	}
+	
+	@Override
+	public String getContactAddress(Long contactId) {
+		return ServiceLocator.getInstancia().getUserCalendar().getContactAddress(contactId);
+	}
+	
+	@Override
+	public AbsenceModel getAbscenceById(String userName, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ActionAppointmentModel getActionAppointmentById(String userName,
+			Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ComplementaryActionModel getComplementaryActionById(String userName,
+			Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+//	public List<IGeneralEvent> retrieveAllEvent(String loggedUser,
+//			String userName, Date startDate, Date endDate) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<IGeneralEvent> retrieveAllEvent(String loggedUser,
+//			List<String> userName, Date startDate, Date endDate) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public SaveModifyResponse modifyGenericAppointment(String userName,
+//			IGeneralEvent cita) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+	@Override
+	public UserCalendarResponse getUserInfo(String userName) throws ServerException {
+		UserCalendarResponse aux = null;
+		try {
+			aux = ServiceLocator.getInstancia().getUserCalendar().getUserInfo(userName);
+		} catch (Exception e) {
+			throw new ServerException(((LocalizeValidationException) e.getCause()).getErrorMessage());
+		}
+		return aux;
+	}
+
+	@Override
+	public Map<AlarmFrequency, String> retrieveAlarmFrequencies() throws ServerException {
+		Map<AlarmFrequency, String> frequencies = null;
+		try {
+			frequencies = ServiceLocator.getInstancia().getServicioCalendarConfigurarion().retrieveFrequencies();
+		} catch (Exception ex) {
+			throw new ServerException(((LocalizeValidationException) ex.getCause()).getErrorMessage());
+		}
+		return frequencies;
+	}
+
+	
+}

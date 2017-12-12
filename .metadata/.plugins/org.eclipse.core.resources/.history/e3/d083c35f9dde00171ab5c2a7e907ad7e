@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Cursos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+<script type="text/javascript">
+
+function printImg(url) {
+	alert('print imagen');  
+  var win = window.open('');
+   var foto=document.getElementById("imageOKMercados");
+  win.document.write(foto);
+    alert('print imagen 2');
+  win.focus();
+  win.print();
+  alert('print imagen 2');
+}
+</script>
+	<style src="/style/institucion.css"/>
+	<window entity="cclaseSelector" apply="com.institucion.controller.ImpresoraSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.ClaseSelector" tokenPrefix="claseSelector" />
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.ImpresoraFilter" />
+		<image id="imageOKMercados"  src="/img/ok.png" visible="false" align="right" width="2%" style=" padding-right:680px; padding-top:-20px;"  />
+			
+		   <button id="export" label="Click" onClick='Clients.evalJavaScript("imprimeTicket()")'/>
+		   <button id="export2" label="Click2" onClick='Clients.evalJavaScript("imprimeTicket()")'/>
+	</window>
+</zk>

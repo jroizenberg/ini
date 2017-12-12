@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Pulso Clinica"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="pulsoclinicaSelector" apply="com.institucion.controller.PulsoClinicaSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="filter"  use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.PulsoClinicaFilter" />		
+		<separator spacing="5px"/>
+
+		<panel border="none" width="auto" id="titlistPeriods" title="&#36;{c:l('reporte.resumen')}" style="width:50%;  align:center;  margin-left: 18%;" />
+		<panel id="cursopanelList" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.PulsoClinicaResumenList" style="width:50%;  align:center;  margin-left: 18%;"  />
+		<separator spacing="10px"/>
+
+		<tabbox id="tabpanelPrimero" width="auto" height="auto">
+			<tabs>
+				<tab id="centro" label="&#36;{c:l('resumen.tab.centro')}"/>
+				<tab id="maipu" label="&#36;{c:l('resumen.tab.maipu')}"/>
+			</tabs>
+			<tabpanels>			
+					<tabpanel width="auto" height="auto" >
+						<separator spacing="10px"/>		
+						<tabbox id="tabpanel" width="auto" height="auto">
+							<tabs>
+								<tab id="subscripcionCrudtab" label="&#36;{c:l('resumen.tab.de.Enero')}"/>
+								<tab id="clasesCrudtab" label="&#36;{c:l('resumen.tab.de.Jul')}"/>
+							</tabs>
+							<tabpanels>
+								<tabpanel width="auto" height="auto" >
+									<panel id="report" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.PulsoClinicaResumenDetalladoList" />
+									<separator spacing="15px"/>		
+								</tabpanel>			
+								<tabpanel width="auto" height="auto">
+									<panel id="report2" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.PulsoClinicaResumenDetalladoTAB2List" />
+									<separator spacing="15px"/>
+								</tabpanel>
+							</tabpanels>
+						</tabbox>
+					</tabpanel>			
+					<tabpanel width="auto" height="auto">
+						<panel border="none" width="auto" id="titMaipu" title="&#36;{c:l('reporte.maipu')}" style="width:100%;  align:center;" />		
+						<separator spacing="10px"/>		
+						<panel id="report9" use="com.institucion.fm.desktop.view.PanelReport" usegrid="com.institucion.model.PulsoMaipuResumenDetalladoList" />
+						<separator spacing="15px"/>		
+					</tabpanel>
+			
+			</tabpanels>
+		</tabbox>
+				
+		
+		
+		
+	</window>
+</zk>

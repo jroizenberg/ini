@@ -1,0 +1,77 @@
+package server;
+
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import com.asofarma.fm.calendar.bz.CalendarAppointmentEJB;
+import com.asofarma.fm.calendar.bz.CalendarConfigurationEJB;
+import com.asofarma.fm.calendar.bz.UserCalendarEJB;
+import com.asofarma.fm.conf.InstanceConf;
+
+public class ServiceLocator {
+
+	private static ServiceLocator instancia;
+	private static Context ctx = null;
+	
+	private static CalendarConfigurationEJB calendarConfiguration = null;
+	
+	private static CalendarAppointmentEJB calendarAppointment = null;
+	
+	private static UserCalendarEJB userCalendarEJB = null;
+	
+	public static ServiceLocator getInstancia() {
+		if(instancia == null ){
+			instancia =  new ServiceLocator();
+		}
+		return instancia;
+	}
+	
+	private ServiceLocator() {
+		Properties properties = new Properties();
+		properties.put("java.naming.factory.initial", "org.jboss.as.naming.InitialContextFactory");
+		properties.put("java.naming.factory.url.pkgs", "org.jboss.ejb.client.naming");
+		properties.put("java.naming.provider.url", InstanceConf.getInstanceConfigurationProperty(InstanceConf.INSTANCE_PROVIDER_URL));
+		try {
+			ctx = new InitialContext(properties);
+		} catch (NamingException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	public CalendarConfigurationEJB getServicioCalendarConfigurarion() {
+		if(calendarConfiguration == null) {
+			try {
+				calendarConfiguration = (CalendarConfigurationEJB) 	ctx.lookup("java:global/fm/fm-bz/CalendarConfigurationEJBImpl!com.asofarma.fm.calendar.bz.CalendarConfigurationEJBRemote");
+			} catch (NamingException e) {
+				e.printStackTrace();
+			}
+		}
+		return calendarConfiguration;
+	}
+
+	public CalendarAppointmentEJB getCalendarConfigurarion() {
+		if(calendarAppointment == null){
+			try {
+				calendarAppointment = (CalendarAppointmentEJB) ctx.lookup("java:global/fm/fm-bz/CalendarAppointmentEJBImpl!com.asofarma.fm.calendar.bz.CalendarAppointmentEJBRemote");
+			} catch (NamingException e) {
+				e.printStackTrace();
+			}
+		}
+		return calendarAppointment;
+	}
+
+	public UserCalendarEJB getUserCalendar() {
+		if(userCalendarEJB == null) {
+			try {
+				userCalendarEJB = (UserCalendarEJB) ctx.lookup("java:global/fm/fm-bz/UserCalendarEJBImpl!com.asofarma.fm.calendar.bz.UserCalendarEJBRemote");
+			} catch (NamingException e) {
+				e.printStackTrace();
+			}
+		}
+		return userCalendarEJB;
+	}
+	
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="247" key="DIALOG_Y_ORIGIN"/>
+		<item value="452" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="cajaEJB.find" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="true" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="cajaEJB.find"/>
+			<item value="subsDeClasecrud"/>
+			<item value="SubscripcionDeClasesCrud"/>
+			<item value="guardar se"/>
+			<item value="getSubsClaseCrud4"/>
+			<item value="tabpanel"/>
+			<item value="mapaSubsPorClase"/>
+			<item value="validateCrud"/>
+		</list>
+		<list key="replacehistory">
+			<item value="isSubsFromDeudasClientes"/>
+			<item value="validation"/>
+			<item value="MessageBox.validation"/>
+			<item value="idusuariogeneromovimiento"/>
+			<item value="CupoActividadEstadoEnum"/>
+			<item value="Total clases de TODO el curso"/>
+			<item value="super.saveHistory(&quot;filter&quot;)"/>
+			<item value="instituto"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="417" key="DIALOG_HEIGHT"/>
+		<item value="142" key="DIALOG_Y_ORIGIN"/>
+		<item value="904" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,170 @@
+package server;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import helper.MessageExceptionHelper;
+import model.FMSimpleCalendarEvent;
+
+import com.asofarma.fm.calendar.model.AppointmentModel;
+import com.asofarma.fm.calendar.model.AppointmentType;
+
+public class SimpleCalendarEventFactory {
+
+	public static FMSimpleCalendarEvent toFMSimpleCalendarEvent(Object objeto, String userName){
+		FMSimpleCalendarEvent fmSce = new FMSimpleCalendarEvent();
+		AppointmentType  apointmentType=null; 
+		
+		if(objeto instanceof AppointmentModel){
+			
+			fmSce.setIsTodoElDia(((AppointmentModel)objeto).isAllDay());
+			if(fmSce.getIsTodoElDia()){
+				
+				DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			    String s = df.format(((AppointmentModel)objeto).getStartDate());
+			    String result = s;
+			    Date dateIni=null;
+		    	Calendar endC = Calendar.getInstance();
+
+			    try {
+			    	dateIni=df.parse(result);
+			    	endC = Calendar.getInstance();
+					endC.setTime(dateIni);
+					endC.set(Calendar.MILLISECOND, 00);
+					endC.set(Calendar.MINUTE, 00);
+					endC.set(Calendar.SECOND, 00);
+					endC.set(Calendar.HOUR_OF_DAY, 00);
+					
+					fmSce.setBeginDate(endC.getTime());	
+
+			    } catch (ParseException e) {
+			        e.printStackTrace();
+			    }
+			    
+			    String sEnd = df.format(((AppointmentModel)objeto).getEndDate());
+			    String resultEnd = sEnd;
+			    Date dateFin=null;
+			    try {
+			    	dateFin=df.parse(resultEnd);
+			    	Calendar endC2 = Calendar.getInstance();
+			    	endC2.setTime(dateFin);
+			    	endC2.set(Calendar.MILLISECOND, 00);
+			    	endC2.set(Calendar.MINUTE, 00);
+			    	endC2.set(Calendar.SECOND, 00);
+			    	endC2.set(Calendar.HOUR_OF_DAY, 00);
+					
+					if(endC.get(Calendar.DAY_OF_YEAR) ==  endC2.get(Calendar.DAY_OF_YEAR))
+						endC2.set(Calendar.DAY_OF_YEAR, endC.get(Calendar.DAY_OF_YEAR) +1);
+					
+					fmSce.setEndDate(endC2.getTime());	
+			    } catch (ParseException e) {
+			        e.printStackTrace();
+			    }
+				
+			}else{
+				fmSce.setEndDate(((AppointmentModel)objeto).getEndDate());
+				fmSce.setBeginDate(((AppointmentModel)objeto).getStartDate());	
+			}
+			fmSce.setId(((AppointmentModel)objeto).getId());
+			fmSce.setUserName(userName);
+			
+
+			if (((AppointmentModel)objeto).getAlarm() != null) {
+				fmSce.setIdAlarm(Long.valueOf(((AppointmentModel)objeto).getAlarm().getId().intValue()));
+				
+				fmSce.setIdMailFrequency(Long.valueOf(((AppointmentModel)objeto).getAlarm().getEmailFrequency().toInt()));
+				fmSce.setIsMail(((AppointmentModel)objeto).getAlarm().isEmail());
+				
+				fmSce.setIdPopupFrequency(Long.valueOf(((AppointmentModel)objeto).getAlarm().getPopupFrequency().toInt()));
+				fmSce.setIsPopup(((AppointmentModel)objeto).getAlarm().isPopup());
+			}
+			apointmentType=((AppointmentModel)objeto).getType();
+			
+			if(apointmentType != null){
+				switch (apointmentType) {
+					case ABSENCE:
+						if(fmSce.getIsTodoElDia() != null && fmSce.getIsTodoElDia().booleanValue()){
+							if(((AppointmentModel)objeto).getDescription() == null){
+								fmSce.setContent( ((AppointmentModel)objeto).getCauseAbsence().getDescription());
+							}else{
+								fmSce.setContent( ((AppointmentModel)objeto).getDescription());	
+							}
+						}else{
+							fmSce.setContent(MessageExceptionHelper.getMensajeError("crearInasistencia.simple") + ". ");
+							if(((AppointmentModel)objeto).getDescription() != null){
+								fmSce.setContent( fmSce.getContent()+MessageExceptionHelper.getMensajeError("descripcion")+":"+  ((AppointmentModel)objeto).getDescription());	
+							}
+										
+						}
+						if(((AppointmentModel)objeto).getDescription() != null)
+							fmSce.setDescripcion(((AppointmentModel)objeto).getDescription());
+						else
+							fmSce.setDescripcion("");
+						
+						fmSce.setType(AppointmentType.ABSENCE);
+						fmSce.setIdCause(((AppointmentModel)objeto).getCauseAbsence().getId());
+						fmSce.setStrCausa(((AppointmentModel)objeto).getCauseAbsence().getDescription());
+						break;
+					case ACTIONAPPOINTMENT:
+						fmSce.setIdContact(((AppointmentModel)objeto).getIdContact());
+
+						if(fmSce.getIdContact() != null){
+						    CalendarRemoteImpl calendarImpl = new CalendarRemoteImpl();
+						    String nombreContact=calendarImpl.getContactNameById(fmSce.getIdContact() );
+						    String contactAddress=calendarImpl.getContactAddress(fmSce.getIdContact());
+							fmSce.setContent( MessageExceptionHelper.getMensajeError("crearVisita") + ". " + nombreContact + ";" + contactAddress);
+						}else
+							fmSce.setContent( MessageExceptionHelper.getMensajeError("crearVisita"));
+	
+						if(((AppointmentModel)objeto).getDescription() != null)
+							fmSce.setDescripcion(((AppointmentModel)objeto).getDescription());
+						else
+							fmSce.setDescripcion("");
+
+						fmSce.setType(AppointmentType.ACTIONAPPOINTMENT);
+						fmSce.setIdCycle(((AppointmentModel)objeto).getIdCycle());
+						break;
+					case COMPLEMENTARYACTION:
+						fmSce.setIdContact(((AppointmentModel)objeto).getIdContact());
+
+						if(fmSce.getIsTodoElDia() != null && fmSce.getIsTodoElDia().booleanValue()){
+							
+							if(((AppointmentModel)objeto).getDescription() == null){
+								if(((AppointmentModel)objeto).getCauseAbsence() != null)
+									fmSce.setContent( ((AppointmentModel)objeto).getCauseAbsence().getDescription());
+							}else{
+								fmSce.setContent( ((AppointmentModel)objeto).getShortDescription());
+							}
+						}else{
+							fmSce.setContent(MessageExceptionHelper.getMensajeError("crearCitaComplementaria") + ". ");
+							if(((AppointmentModel)objeto).getShortDescription() != null){
+								
+								if(fmSce.getIdContact() != null){
+									  CalendarRemoteImpl calendarImpl = new CalendarRemoteImpl();
+									  String nombreContact=calendarImpl.getContactNameById(fmSce.getIdContact() );
+									  String contactAddress=calendarImpl.getContactAddress(fmSce.getIdContact());
+									  fmSce.setContent( fmSce.getContent()+MessageExceptionHelper.getMensajeError("descripcion")+":"+  ((AppointmentModel)objeto).getShortDescription() + "." + nombreContact + ";" + contactAddress);	
+								}else{
+									  fmSce.setContent( fmSce.getContent()+MessageExceptionHelper.getMensajeError("descripcion")+":"+  ((AppointmentModel)objeto).getShortDescription());	
+								}
+							}
+						}
+						if(((AppointmentModel)objeto).getShortDescription() != null)
+							fmSce.setDescripcion(((AppointmentModel)objeto).getShortDescription());
+						else
+							fmSce.setDescripcion("");
+						
+						fmSce.setType(AppointmentType.COMPLEMENTARYACTION);
+						fmSce.setIdCycle(((AppointmentModel)objeto).getIdCycle());
+						fmSce.setIdEventType(((AppointmentModel)objeto).getTypeComplementaryAction().getId());
+						break;
+					}
+			}
+		}
+		return fmSce;	
+	}
+
+}

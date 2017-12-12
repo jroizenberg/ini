@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: fm-bzi.jar fm-com.jar fm-obj.jar spring.jar asm-2.2.3.jar 
+ asm-commons-2.2.3.jar aspectjrt.jar aspectjweaver.jar common-annotati
+ ons.jar commons-logging.jar slf4j-api-1.4.2.jar antlr-2.7.6.jar acegi
+ -security.jar commons-digester-1.8.jar commons-beanutils.jar
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page title="Mantenimiento de Grupo de Usuarios"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css" />
+	<window apply="com.institucion.fm.security.controller.UserCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.fm.security.view.UserCrudToolbar" tokenPrefix="user"  />
+		
+		
+		<tabbox id="tabpanel" orient="horizontal" height="auto" width="auto">
+			<tabs>
+				<tab label="&#36;{c:l('selector.user.generic.title')}" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.fm.security.model.UserCrud" />
+					<separator spacing="5px" />
+					<panel id="groups" width="auto" height="auto" border="normal">
+						<panelchildren>
+							<columnlayout>
+								<columnchildren width="50%">
+									<panel title="&#36;{c:l('crud.user.unassigned.groups')}">
+										<panelchildren>
+											<listbox id="to" use="com.institucion.fm.security.model.DraggableGroupList" />
+										</panelchildren>
+									</panel>
+								</columnchildren>
+								<columnchildren width="70px">
+									<panel>
+										<panelchildren style="margin: 10px 10px;">
+											<vbox>
+												<button label=">" width="50px" forward="onClick=onMoveFrom()" />
+												<button label=">>" width="50px" forward="onClick=onMoveAllFrom()"/>
+												<separator spacing="5px" />
+												<button label="&lt;" width="50px"  forward="onClick=onMoveTo()"/>
+												<button label="&lt;&lt;" width="50px" forward="onClick=onMoveAllTo()"/>
+											</vbox>
+										</panelchildren>
+									</panel>
+								</columnchildren>
+								<columnchildren width="50%">
+									<panel title="&#36;{c:l('crud.user.assigned.groups')}">
+										<panelchildren>
+											<listbox id="from" use="com.institucion.fm.security.model.DraggableGroupList" />
+										</panelchildren>
+									</panel>
+								</columnchildren>
+							</columnlayout>
+						</panelchildren>
+					</panel>
+				</tabpanel>
+				
+			</tabpanels>
+		</tabbox>
+		
+	</window>
+</zk>

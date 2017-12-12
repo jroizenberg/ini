@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Cursos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+
+<script type="text/javascript">
+var autoimprimir = true;
+	var prueba='abcde';
+
+function ImprimirVar(){
+		alert("Entro");
+		var printing = window.open("","ImprimirVar");
+		printing.document.open();
+		printing.document.write("sasas");
+		printing.document.close();
+		printing.print();
+}
+
+</script>
+	<style src="/style/institucion.css"/>
+	<window entity="cclaseSelector" apply="com.institucion.controller.ImpresoraSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.ClaseSelector" tokenPrefix="claseSelector" />
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.ImpresoraFilter" />
+		
+		
+		   <button id="export" label="Click" onClick='Clients.evalJavaScript("ImprimirVar()")'>
+		
+	</window>
+</zk>

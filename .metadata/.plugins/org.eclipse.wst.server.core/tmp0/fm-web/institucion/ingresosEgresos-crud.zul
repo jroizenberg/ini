@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Ingresos/Egresos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="ingegrecrud" apply="com.institucion.controller.IngresosEgresosCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="clientesCrud"/>
+		
+		<panel id="sucCrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SucursalCrud"  style="width:75%;  align:center;  margin-left: 10%;" />
+		<separator spacing="15px"/>
+		
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.IngresosEgresosCrud" />
+		<separator spacing="20px"/>	
+		<panel id="crudFormasDePago" use="com.institucion.model.FormasDePagoVentaProdCrud"/>
+<!--		<separator spacing="10px"/> -->		
+<!--		<panel id="pagar" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.IngresosEgresosPagarBotonesFilter" />  -->
+						
+	</window>
+</zk>

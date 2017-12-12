@@ -1,0 +1,973 @@
+# es
+porcentaje.que.se.cobra.por.clase.por.separado.quincenal=35
+productos.list= Lista de Productos
+
+producto.codigo=Código
+producto.nombre=Nombre
+producto.descripcion=Descripción
+producto.imagen=Imagen
+producto.precio= Precio
+producto.stock= Stock
+producto.cantidad.a.comprar= Cantidad a Vender
+
+reporte.maipu= Resumen Maipu- Cursos verano- 
+reporte.resumen= Resumen anual
+
+reporte.mes= Mes
+reporte.ingreso= Ingresos
+reporte.egreso.rrhh= Egresos Sueldos
+reporte.gastos= Gastos y Egresos Caja
+reporte.total= Total
+reporte.error.anio= Debe ingresar el año. 
+
+resumen.tab.de.maipudetalle= Detalle Maipu- Cursos Verano- 
+resumen.tab.de.Enero= Enero-Jun
+resumen.tab.de.Jul= Jul-Dic
+
+resumen.tab.centro= CENTRO
+resumen.tab.maipu= MAIPU- Verano - 
+
+ingresos.egresos.tipo.movimiento=Tipo Movimiento
+ingresos.egresos.saldo=Importe
+ingresos.egresos.comentario=Comentario
+
+
+curso.cant.alum.en.clase.listaclientes= Lista Total Alumnos en Clase
+
+gastos.anio= Año
+gastos.mes= Mes
+gastos.tipogasto=Tipo Gasto
+gastos.del.mes= Lista Gastos Mensuales
+gastos.del.mes.sueldos= Sueldos
+gastos.actividad= Actividad
+gastos.del.quincena= Lista Gastos por Quincena
+
+gastos.list.mes= Fecha de Pago
+gastos.list.gasto= Gasto
+gastos.list.dinero= Dinero
+gastos.list.comentario= Comentario
+
+obra.sociales.pp=Precios
+client.apellido=Apellido
+client.nombre=Nombre
+client.nombre.1=Nombre Cliente
+client.nombre.profesor=Nombre y Apellido Profesor
+
+empleado.actividades.sueldos.pp=Actividades que ejerce
+
+caja.ultimo.estado=Se abre la caja con : 
+caja.fechaD=Fecha Desde
+caja.fechaH=Fecha Hasta
+caja.actividad=Actividad
+caja.tipo.movimiento=Tipo Movimiento
+caja.responsable= Responsable
+caja.concepto= Concepto
+caja.cliente= Cliente
+caja.precio.abonado= Importe Abonado
+caja.error.no.ingreso.fechas= Debe ingresar las fechas Desde y Hasta para continuar.
+
+venta.productos.fechayHora= Fecha
+venta.productos.detalle= Vta Detalle
+venta.productos.usuario.creo= Usuario Resp
+
+venta.productos.anular= ¿ Seguro que desea Anular la Venta de los Productos ? Recuerde que se le debera devolver el dinero al cliente.
+venta.productos.anular.concretar= Devolver al cliente un total de $ {0}  . {1}  . ¿ Confirma devolución del dinero para finalizar anulación?
+venta.productos.anular.concretar.title= Confirmando Devolución del dinero
+venta.productos.anular.concretar.title.confir= La anulación se realizo con Exito. Se devolvera el Stock del Producto.
+
+venta.productos.anular.title= Validación 
+
+ventas.del.dia=Ventas del Día
+client.comment.1=Comentario Anulación
+client.comment.deuda.saldada=Comentario Deuda Saldada
+client.comment.1.posponer= Comentario Posponer Vencimiento
+client.nombre.estadoSubs=Estado Subscripción
+client.nombre.estadoSubs.nombre.clase=Nombre Clase/Sesion
+client.nombre.totalAbonado=Importe Abonado
+client.nombre.totalAbonado.vencimiento=Fecha Vencimiento Original
+client.nombre.deuda=Deuda
+client.dni=Dni
+client.fechaNac=Fecha Nacimiento
+client.edad=Edad
+client.estado=Estado
+
+client.nombre.deuda.cliee=Deuda Total Cliente
+client.nombre.deuda.cliee.a.saldar=Deuda a Saldar
+client.nombre.deuda.cliee.a.saldar.tot=Total venta $
+clase.obtenerDeTodas=Buscar todas las clases/sesiones del día
+clase.obtenerDeTodas.toda.semana=Buscar clases/sesiones de toda la Semana 
+client.deudaPesos=Deuda
+client.curso=Curso/Tratamiento
+client.inscriptoEnAlgo=Clases/Sesiones Disp
+client.enClase=En Clase/Sesion
+curso.guardar.clases= Guardar Selección de Clases/Sesiones
+curso.cancelar= Cancelar
+clase.diaSemana= Día
+clase.diaSemanaHora= Hora Inicio
+
+client.curso.clases.del.dia.de.la.semana= Clases/Sesiones del día de la Semana
+
+client.curso.actividad= Actividad
+subscripcion.crud.tab= Inscripción
+clases.crud.tab= Clases/Sesiones
+clases.crud.tab2= Armar Carnet
+clases.crud.tab222=Clases
+clases.crud.alumnos.tab= Alumnos en Clase
+
+client.tipo.curso=Categoria Curso/Tratamiento
+client.tipo.curso.fechass=Fecha
+client.domicilio= Domicilio
+client.telefono=Telefono
+client.celular= Celular
+client.facebook= Facebook
+client.mail= Mail
+client.tieneCertificado= Presento Certificado
+
+caja.a.controlar= Anulaciones de Ventas- Inscripciones y Egresos Caja
+
+a.controlar.fecha= Fecha
+a.controlar.tipo= Tipo Operacion
+a.controlar.resposable= Responsable
+a.controlar.cantDinero= CantidadDinero
+a.controlar.comentario= Comentario
+
+
+caja.dinero.cierre.list= Dinero que quedo en cada cierre de caja
+
+matriculas.list= Matriculas Abonadas
+client.list= Clientes
+client.deudas.list= Deudas Clientes
+cumples.list= Cumpleaños
+caja.list= Movimientos de Caja
+cursos.list= Cursos/Tratamientos
+subscripciones.list= Inscripciones
+clases.list= Clases/Sesiones
+presentes.list= Lista de Presentes
+
+obrasociales.list= Obras Sociales
+empleados.list= Empleados
+
+matricula.fechaI=Fecha Pago
+matricula.fechaV=Fecha Vencimiento
+matricula.valor=Importe
+
+curso.nombre=Nombre Curso/Tratamiento
+curso.descripcion=Descripción
+curso.cantClases=Cant. Clases/Sesiones
+curso.precio=Importe
+curso.cant.alum.en.clase=Cant. alumnos en clase/Sesion
+curso.cantClasesDisponibles=Clases/Sesiones Disp.
+curso.cantAlumnos=Cant. Alum (Ing. por Secretaria)
+cursos.elegidos.list= Cursos/Tratamientos y conceptos a Inscribir/Abonar
+cursos.contratados.list= Cursos/Tratamientos y conceptos Inscriptos/Abonados
+cursos.contratados.list.posponer= Curso/Tratamiento a Posponer
+
+curso.pagaSubscripcion= Paga Matrícula
+curso.inscriptosVigentes= Curso/Tratamiento con Inscriptos
+curso.sinClasesConf=Clases/Sesiones pendientes de Conf.
+
+curso.tipoCurso=Categoría Curso/Tratamiento
+curso.vencimiento= Vencimiento
+
+curso.inicio=Comienza
+curso.fin=Vence
+curso.fecha.de.Pago=Fecha creación Subs
+
+curso.clasesysessiones=Clases/sesiones por Actividad
+curso.alumnosNoEnco=Alumnos No encontrados en Lista de Presente
+formasDePago.subscripcion= Pagos y Formas De Pago
+
+curso.error.descuentos.con.obra.social=Se permiten aplicar descuentos de Obra social UNICAMENTE a cursos/tratamientos de tipo Kinesicos.
+curso.error.descuentos.con.obra.social.2=No se permiten aplicar descuentos de obra Social a cursos Quincenales
+
+curso.tipoActividad= Tipo Actividad
+curso.actividad= Actividad
+curso.cliente.no.encontrados.nomyape= Nombre y Apellido
+curso.cliente.no.encontrados.nomyape.telefono= Telefono
+curso.cliente.no.encontrados.nomyape.celular= Celular
+curso.cliente.no.encontrados.nomyape.comentario= Comentario
+clase.inicia=Hora Inicio
+clase.fin= Hora Fin
+clase.dias.de.semana= Dias de semana
+clase.iniciaFin=Hora Ini-Fin
+
+curso.error=Se deben ingregar todos los campos obligatorios.
+
+curso.error.seleccion=Se debe seleccionar el curso/tratamiento al que se aplica el descuento. 
+curso.error.seleccion.delete=Se debe seleccionar el concepto/curso/tratamiento que se desea quitar. 
+curso.error.seleccion.add=Se debe seleccionar el curso/tratamiento que se desea agregar. 
+curso.error.seleccion.delete.no.curso=No se puede eliminar el pago de la matricula.
+curso.error.seleccion.select= La asignación de clases/sesiones se realiza solamente para las actividades que utilizan Carnet con cursos de tipo 'Cant Clases Semanales'.
+curso.error.seleccion.select.seleccionar.una.clase.conclientes= Debe seleccionar una clase/sesion con clientes.
+curso.error.seleccion.select.suma.del.pago= Error, se permite Saldar únicamente la totalidad de la deuda y NO parte.
+
+
+curso.error.seleccion.select.suma.del.pago.del.producto= Error, se debe abonar el TOTAL para realizar la venta de Productos.
+curso.error.seleccion.select.suma.del.pago.del.venta= Error, se debe abonar el TOTAL para realizar el Ingreso/Egreso en Caja.
+
+curso.error.seleccion.select.volverAtras= Se volverá atras sin haber anulado la Inscripción.
+curso.error.seleccion.select.volversinPosponerAtras= Se volverá atras sin haber Pospuesto el Vencimiento del curso/tratamiento.
+
+curso.error.seleccion.select.error.select= Se debe agregar por lo menos 1 concepto/curso/tratamiento a facturar.
+curso.error.seleccion.other.curse=El curso/tratamiento que intenta agregar ya ha sido agredado 
+curso.error.seleccion.select.error.select.asignar.clases= Se deben asignar las clases/sesiones para las actividad que utilizan Carnet.
+curso.error.seleccion.select.posponer.solo.2.veces= Error, Se puede Posponer un curso/tratamiento de una Inscripción únicamente hasta 2 veces.
+curso.error.seleccion.select.posponer.sin.cupos= Error, No se puede posponer un curso/tratamiento SIN CUPOS.
+
+curso.anular.exitoso= Se anulo de forma exitosa. Se le debe devolver al cliente {0} una suma de $ {1} . 
+
+curso.agregar= Agregar curso/tratamiento
+curso.asignar= Asignar Clase/Sesion a curso
+
+curso.eliminar= Eliminar curso/tratamiento
+
+curso.abonar= Abonar y Guardar
+curso.quincenal.continuar= Continuar
+clase.nombre=Clase/Sesion
+clase.descripcion=Descripcion
+clase.creada.por= Clase/Sesion creada
+clase.responsable= Resp. de Clase/Sesion
+clase.comentario.profe= Comentario Profe
+client.asistencia= Asistencia
+client.comentario= Comentario
+
+obra.social.nro=Nro Obra Social
+comentario.descuento=Comentario Descuento
+
+descuento.xos=Descuenta x O.S.
+descuento.general=Aplica Descuento General
+descuento.tiene=Aplica Descuento
+
+descuento.desc= Descuento %
+descuento.os=Descuento Obra Social
+
+descuento.combo.obra.social= Obra social
+sesiones.cantidad.obrasocial= Cantidad de Sesiones
+descuento.gener=Descuentos
+actividad.cant=Cant. clases/sesiones
+
+combo.pospone.subscripcion= Meses que Pospone el Venc.
+combo.pospone.subscripcion.adicional= Paga Importe adicional
+combo.pospone.subscripcion.adicional.importe= Importe Adicional
+combo.pospone.subscripcion..curso.importe.tot= Importe Total Curso(Sin Descuento)
+combo.pospone.subscripcion.aprobadoPor= Aprobado Por
+
+combo.anula.subscripcion.participa=Participará en todas las clases del curso?
+combo.anula.subscripcion.cant.dias=Cant. de días que Participará
+combo.anula.subscripcion=Anula Subscripción
+combo.anula.subscripcion.comentario=Comentario
+combo.anula.subscripcion.comentario.del.profe=Comentario del Profe
+combo.anula.subscripcion.devuelve.dinero=¿ Se devuelve el dinero ?
+combo.anula.subscripcion.devuelve.que.devuelve=Dinero que se devuelve
+
+matricula.debe= Debe abonar la matricula anual del instituto. VALIDE CON EL CLIENTE SI ANTERIORMENTE LA TENIA PAGA PARA CREAR UNA GRATUITA ANTES DE CONTINUAR.
+matricula.debe.vencida= Debe abonar la matricula anual del instituto vencida el .../.../....
+
+matriculagratis= Desde esta pantalla se registran Matriculas de forma gratuita a los Clientes que pagaron su matricula antes de comenzar a utilizar el Sistema del Instituto y AÚN no se han registrado en el sistema. 
+ 
+valorOrig.subscripcion= Importe Original:
+valorFinal.subscripcion= TOTAL:
+valor.descuentoGeneral=  - 100  
+valor.ioscor.session= .. Sessiones de $50
+
+error.fechaincorrecta= La hora de Inicio de clase/Sesion debe ser anterior a la hora de FIN de clase/Sesion.
+error.clasesnoseleccionada= Debe seleccionar al mes 1 día en el cual se dictará la clase/Sesion.
+
+
+posponer.tener.en.cuenta= Tener en cuenta que se permite posponer un mismo curso/tratamiento de una inscripción solo 2 veces.
+
+importe.final= Importe FINAL
+
+clase.horaDesde=Hora desde
+clase.horaHasta=Hora hasta
+
+cuota=Cuota
+formaDePago=Forma De Pago
+PagoRapido=Tipo de Pago
+valor= Valor $
+comentario= Comentario
+comentario.aprobadopor=Aprobado por
+
+curso.concepto= Concepto
+
+precioOriginal= Importe original
+precioConDescuento= Importe con Descuentos(si aplica)
+precioConDescuento.1= Importe con Descuentos
+adicionalTarjeta= Importe Adic. Tarjeta
+importe.precio= Importe cursos/tratamientos y Matrícula
+valorMatricula= Importe Matricula
+precioTOTALadicionalTarjeta= Importe FINAL	
+
+liquidacion.final= Liquidación Final:
+
+cumple.comentario.final=Detalle cumpleaños:
+
+valorSumadoPesos= Importe sumado $
+valorFaltantePesos= Importe faltante $
+
+toolbarselector.abonar=Abonar y guardar
+toolbarselector.vender=Vender
+
+subscripcion.seleccionar.cliente= Se debe seleccionar el cliente que desea crear la inscripción.
+subscripcion.ingreso.a.clase.cliente= El cliente {0}  ingreso correctamente a su clase/Sesion !!
+subscripcion.ingreso.a.clase.cliente.ya.asignado= Error, el cliente se encuentra actualmente en una clase/Sesion.
+subscripcion.ingreso.a.clase.cliente.con.subs.estado.inco= Error, la subscripción se encuentra VENCIDA o ANULADA. No se podrá ingresar a Clase/Sesion al cliente. 
+subscripcion.ingreso.a.clase.cliente.error.sin.cupo= Error, La Inscripción seleccionada no tiene Clases/Sesiones Disponibles para Descontar. El cliente debe contratar nuevamente el curso/tratamiento.
+subscripcion.ingreso.a.clase.cliente.error= ¡¡¡ Error al descontar el Cupo !!. Comunicarse por favor con Jonathan R.
+
+
+curso.productos.sin.stock= No se pueden vender productos sin Stock.
+curso.productos.sin.cantidad= Debe realizar la venta de al menos 1 Producto(Tener 1 en el Campo Cantidad)
+
+crud.group.assigned.title.deudas=Deudas del Cliente
+crud.group.assigned.title.deudas.seleccione=Seleccione las Deudas a Saldar
+crud.group.assigned.title=Deudas a Saldar
+
+# pantalla de login y título
+login.title=Login Instituto Swiszcz
+login.username=Usuario
+login.password=Contraseña
+login.accept=Aceptar
+login.errorlogin=Usuario y/o contraseña incorrecto
+login.erroruser=Usuario y/o contraseña incorrecto
+login.errorpassword=Usuario y/o contraseña incorrecto
+login.errorinactiveuser=Usuario inactivo
+login.errorblockeduser=Usuario bloqueado
+login.errordisableduser=Usuario bloqueado o inactivo
+title.user=usuario
+title.version=versión
+
+timeout.title=Sesión expirada
+timeout.message=La sesión del aplicativo Instituto Swiszcz expiró
+timeout.login=Login de Instituto Swiszcz
+
+
+# días de semana
+dayofweek.sunday=Domingo
+dayofweek.monday=Lunes
+dayofweek.tuesday=Martes
+dayofweek.wednesday=Miércoles
+dayofweek.thursday=Jueves
+dayofweek.friday=Viernes
+dayofweek.saturday=Sábado
+
+
+# opciones de menu
+menu.title=Menú
+menu.bb.orderUsers=Otros usuarios
+menu.system=Configuración del Sistema
+menu.config.user=Usuarios
+menu.config.role=Perfiles
+menu.config.password=Cambiar contraseña
+menu.config.permission=Permisos
+menu.config.logout=Salir
+menu.security=Seguridad
+menu.search=Búsquedas
+menu.action=Acciones
+menu.impresora=Impresora
+
+# texto de operadores (Ver operator.xml)
+operator.equal=IGUAL A
+operator.notequal=DISTINTO A
+operator.like=PARECIDO A
+operator.begin.with=COMIENZA CON
+operator.between=ENTRE
+operator.greaterthan=MAYOR A
+operator.greaterequalthan=MAYOR O IGUAL A
+operator.lessthan=MENOR A
+operator.lessequalthan=MENOR O IGUAL A
+
+selector.actionwithoutitem.title=Acción cancelada
+selector.actionwithoutitem.title.realizada=Acción realizada
+curso.error.seleccion.select.error.debe.seleccionar.una.inscricion= Seleccione la Inscripción que desea Anular.
+curso.error.seleccion.select.error.debe.seleccionar.una.inscricion.posponer=Seleccione el curso/tratamiento que desea Posponer.
+curso.error.seleccion.select.error.debe.seleccionar.una.inscricion.visualizar=Seleccione la Inscripción que desea Ver.
+curso.error.problema.al.guardar= Error al intentar guardar la Inscripción. Comuniquese con el Administrador del sistema
+curso.lista.presentes.guardada= Se guardo correctamente la Lista de Presentes. 
+curso.guardado= El pago de la inscripción se guardo Correctamente.
+
+selector.actionwithoutitem.information=Debe seleccionar un ítem
+selector.actionwithoutitem.information.unique=Debe seleccionar un único ítem
+selector.actionwithoutproduct.information=Debe seleccionar un producto
+
+selector.contactwithoutitem.information=Debe seleccionar un contacto
+selector.addContact.error.information=Debe seleccionar una cartera
+selector.inactivewithoutitem.information=La acción seleccionada está inactiva
+selector.action.title=Crear {0}
+selector.delete.title=Eliminar {0}
+selector.update.title=Actualizar {0}
+selector.view.action.title=Acciones {0}
+selector.view.summary.title=Resumen {0}
+selector.delete.question=¿Desea eliminar los ítems seleccionados?
+
+selector.seguro.de.abonar.saldar=El cliente {0} debe abonar {1} ¿Confirma pago y cancelación de deuda?
+
+
+selector.seguro.de.abonar=El cliente {0} debe abonar {1} ¿Confirma pago e inscripción?
+selector.seguro.de.abonar.seguro= ¿ Desea contratar los cursos/tratamientos seleccionados ?
+
+selector.seguro.de.abonar.ingreso.egreso=Debe abonar {0} ¿Confirma pago del Dinero?
+
+selector.seguro.de.abonar.producto=Debe abonar {0} ¿Confirma pago del Producto?
+selector.seguro.de.abonar.con.deuda=El cliente {0} debe abonar {1} y se le registrara una deuda de {2} ¿Confirma pago e inscripción?
+
+selector.seguro.de.abonar.menor=El pago es menor al valor de los conceptos, Se le registrará al cliente una deuda por {0} .¿Desea continuar?   
+curso.error.seleccion.select.error.select.asignar.clases.curso= Se debe asignar correctamente las clases/Sesiones del curso {0} . 
+curso.error.seleccion.select.error.select.asignar.clases.cursos= Se debe asignar correctamente las clases/Sesiones de los cursos .
+curso.error.seleccion.select.error.select.asignar.errors= NO se puede anular una inscripción ya ANULADA anteriormente.
+curso.error.seleccion.select.error.select.asignar.errors.pospuesta= NO se puede anular una inscripción que se fue Pospuesta con anterioridad.
+curso.error.seleccion.select.error.select.saldar.solo.deuda= Error, El cliente debe tener alguna Deuda para realizar esta operación.
+curso.error.seleccion.select.error.select.asignar.errors.solo.nuevasoconcupos= No se permiten anular subscripciones Vencidas
+curso.error.seleccion.select.error.select.asignar.errors.solo.posponersub.vencidas= Se pueden posponer únicamente Inscripciones Vencidas.
+
+curso.error.seleccion.select.error.select.saldar.solo.deuda.inscri.niguna= Error, El cliente no se encuentra en este momento inscripto a ninguna clase/Sesion.
+
+curso.pregunta.de.la.subscripcion= Al ANULAR la subscripcion seleccionada se anularan tambien los cursos/tratamientos contratados en la misma subscripcion: {0} . Desea continuar ?
+
+selector.delete.question.whithPlans=El contacto posee segmentación y/o planes asociados, ¿Desea eliminarlo?
+selector.delete.info=Los ítems: {0} no pueden ser borrados, por pertenecer al historial.
+selector.update.info=El ítem: {0} no puede ser actualizado por pertener al historial.
+selector.update.pending.process.info=El ítem: {0} no puede ser actualizado por estar el usuario en pendiente de proceso.
+selector.view.action.info=No se puede visualizar acciones del ítem: {0} por pertenecer al historial.
+selector.view.summary.info=No se puede visualizar el resumen del ítem: {0} por pertenecer al historial.
+selector.promotional.action.create=Al ítem: {0} no se le puede crear una visita promocional, por pertenecer al historial.  
+selector.occasional.action.create=Al ítem: {0} no se le puede crear una visita ocasional, por pertenecer al historial.
+selector.event.action.create=Al ítem: {0} no se le puede crear un evento, por pertenecer al historial.
+
+selector.delete.error.title=Error al eliminar {0}
+selector.deleteDeactivate.error.question=El ítem no se puede eliminar ya que posee datos asociados, desea desactivarlo?
+
+selector.delete.itemsHasDeleted=Los ítems seleccionados han sido eliminados
+selector.activate.title=Activar {0}
+selector.activate.question=¿Desea activar los ítems seleccionados?
+selector.activate.info=Los ítems: {0} no pueden ser activados, por pertenecer al historial.
+selector.deactivate.title=Desactivar {0}
+selector.deactivate.contacts=Los contactos del los items seleccionados también se desactivarán.
+selector.deactivate.question=¿Desea desactivar los ítems seleccionados?
+selector.deactivate.info=Los ítems: {0} no pueden ser desactivados, por pertenecer al historial.
+selector.aprovpend.title=Acción cancelada
+selector.aprovpend.information=Una o más entidades se encuentran en estado 'pendiente de aprobación'
+selector.frequencies.title=Acción cancelada
+selector.frequencies.information=No puede haber frecuencias vacías. Y no puede haber frecuencias distintas para un mismo paquete de datos.
+selector.brand.frequencies.information= Debe asignar marcas, actualizarlas y luego asignar frecuencias a la/s nueva/s segmentación/es.
+selector.products.title=Acción cancelada
+selector.products.information=No puede estar el mismo producto segmentado 2 veces.
+selector.unnecessary.active.title=Activar
+selector.unnecessary.active.text=El/los ítems ya se encuentran Activos.
+selector.unnecessary.inactive.title=Inactivar
+selector.unnecessary.inactive.text=El/los ítems ya se encuentran Inactivos.
+selector.inactive.information=Una o más entidades se encuentran en estado 'inactivo'
+selector.hasactive.title=Acción cancelada
+selector.hasactive.information=La entidad seleccionada debe tener estado 'activo'
+
+selector.User.Inactive.title=Acción Cancelada
+selector.User.Inactive=El usuario tiene estado inactivo
+
+selector.hp.question= La consulta puede demorar debido a que se estan consultando {0} registros. ¿Desea continuar?
+selector.title.hp.question= Consulta de Profesionales de la Salud
+
+# filtros
+filter.popup.criteria=Debe ingresar al menos un campo del filtro
+filter.popup.strlength.error=Debe ingresar al menos 3 caracteres
+filter.popup.strempty=Por favor, ingrese algún dato para realizar la búsqueda
+
+# filtros FE
+filter.title=Filtros
+
+client.delete.motives=Motivos de eliminación
+client.delete.motive=Motivo
+client.deactive.motives=Motivos de desactivación
+
+
+# horarios
+schedule.header.type=Tipo de horario
+schedule.header.hour=Horas
+header.structure.daysofweek=Días de visita
+crud.schedule.type=Tipo de horario
+crud.schedule.hourfrom=Hora desde
+crud.schedule.hourto=Hora hasta
+
+activitytype.base=Base
+activitytype.travel=Viaje
+
+scheduletype.main=Principal
+scheduletype.alternative=Alternativo
+schedule.days=Días
+
+# Bulletin Board
+selector.bulletinboard.title=Mensajes del pizarrón de notificaciones
+header.bulletinboard.source=Origen
+header.bulletinboard.description=Mensaje
+header.bulletinboard.reason=Causa
+header.bulletinboard.timespent=Atraso
+bulletinboard.timespent={0} días y {1} horas
+bulletinboard.timespenthour={0} horas
+
+source.aproved=Aprobado
+source.rejected=Rechazado 
+source.delayed=Retrasado
+
+# cambio de contraseña
+crud.password.badpassword=Contraseña incorrecta
+crud.password.newpasswordnotequal=La nueva contraseña no coincide con la confirmación de contraseña
+crud.password.passwordchanged=Contraseña cambiada con éxito, deberá reingresar al sistema con su nueva contraseña.
+
+# Headers Events
+header.event.list.starthour=Hora Inicio
+header.event.list.endhour=Hora Fin
+header.event.list.eventtype=Tipo de Evento
+header.event.list.description=Descripción
+header.event.list.date=Fecha
+header.event.list.delegate=Delegado
+
+# Messages Error Institutional Calendar
+error.institutional.title=Error en fechas
+error.institutional.sameDay=Existe horario para esa fecha
+error.institutional.start.morning.end.morning=Fecha Inicio Turno Mañana posterior Fecha Fin Turno Mañana
+error.institutional.start.afternoon.end.afternoon=Fecha Inicio Turno Tarde posterior Fecha Fin Turno Tarde
+error.institutional.end.morning.start.afternoon=Fecha Fin Turno Mañana posterior Fecha Inicio Turno Tarde
+error.institutional.same.dates=Las Fechas no pueden ser iguales en Horario. Deben tener aunque sea minutos de diferencia
+
+# Headers Institutional Calendar
+header.hour.starthourmorning=Inicio Turno Mañana
+header.hour.endhourmorning=Fin Turno Mañana
+header.hour.starthourafternoon=Inicio Turno Tarde
+header.hour.endhourafternoon=Fin Turno Tarde
+header.hour.dayofweek=Día de la Semana
+header.hour.workable=Laborable
+
+# ABM Labels Institutional Calendar
+label.hour.starthourmorning=Horario Inicio Turno Mañana
+label.hour.endhourmorning=Horario Fin Turno Mañana
+label.hour.starthourafternoon=Horario Inicio Turno Tarde
+label.hour.endhourafternoon=Horario Fin Turno Tarde
+label.hour.dayofweek=Día de la Semana
+
+
+crud.event.newevent.title=Nuevo Evento
+crud.event.dad.title=Usuarios Afectados
+crud.event.freqmail=Aviso del Email
+crud.event.freqpopup=Aviso del Popup
+crud.event.label.freqmail=Email
+crud.event.label.freqpopup=Popup
+crud.event.workable=Laborable
+
+selector.event.wantdelete=Desea eliminar los ítems seleccionados?
+selector.event.delete.title=Eliminar Eventos
+
+
+# toolbar_selector
+toolbarselector.insert=Crear
+toolbarselector.ingresosEgresos=Nuevo Ingreso/Egreso
+toolbarselector.cerrarCaja=Cerrar Caja
+
+toolbarselector.insert.class=Crear clase/Sesion
+toolbarselector.insert.curso=Crear curso/tratamiento
+
+toolbarselector.assingClass=Ingresar Cliente a clase/Sesion
+toolbarselector.openClass=Abrir clase/Sesion
+toolbarselector.viewListaPresentes=Ver Presentes
+toolbarselector.tomarLista=Tomar Lista
+
+toolbarselector.closeClass=Cerrar clase/Sesion
+toolbarselector.insert.subs=Vender Cursos/Tratamientos
+toolbarselector.insert.subs.ver= Ver Inscripción
+toolbarselector.insert.subs.anular= Anular Inscripción
+toolbarselector.insert.subs.saldar= Saldar Deudas
+toolbarselector.insert.subs.posponer= Posponer Inscripción
+toolbarselector.assingSubs=Asignar Inscripción
+toolbarselector.update=Modificar
+toolbarselector.delete=Eliminar
+toolbarselector.activate=Activar
+toolbarselector.deactivate=Desactivar
+toolbarselector.back=Volver
+toolbarselector.save=Guardar registro
+toolbarselector.save.short=Guardar
+toolbarselector.find=Buscar registros
+toolbarselector.find.short=Buscar
+toolbarselector.undo=Deshacer último mov.
+
+toolbarselector.find.eject=Lanzar Proceso
+
+toolbarselector.selectall.short=Sel/Des todos
+toolbarselector.selectall=Seleccionar/Deseleccionar todos los registros
+toolbarselector.openfindadv= Abrir Filtros Av.
+toolbarselector.openfindadv.tooltip=Abrir Filtros Avanzados
+toolbarselector.closefindadv=Cerrar Filtros Av.
+toolbarselector.closefindadv.tooltip=Cerrar Filtros Avanzados
+toolbarselector.clear=Limpiar filtro
+toolbarselector.clear.short=Limpiar
+
+toolbarselector.crear.cliente=Crear Cliente
+toolbarselector.modificar.cliente= Modificar Cliente
+toolbarselector.eliminar.cliente=Eliminar Cliente
+
+toolbarselector.clone=Clonar
+toolbarselector.open=Abrir
+toolbarselector.close=Cerrar
+toolbarselector.copy=Copiar
+toolbarselector.transfer=Transferir
+toolbarselector.exportexcel=Excel
+toolbarselector.exportpdf=Pdf
+toolbarselector.unifyclient=Abrir Buscar Dup.
+toolbarselector.unifyclient.tooltip=Abrir Buscar Duplicados.
+toolbarselector.unifyclient.close=Cerrar Buscar Dup.
+toolbarselector.unifyclient.close.tooltip=Cerrar Buscar Duplicados
+
+oolbarselector.moveBack=Anterior
+toolbarselector.moveNext=Siguiente
+
+toolbarselector.approve=Aprobar
+toolbarselector.reject=Rechazar
+
+toolbar.updateschedule=Modificar horario
+toolbar.updateschedule.tooltip=Modificar el horario seleccionado
+toolbar.deleteschedule=Eliminar horario
+toolbar.deleteschedule.tooltip=Eliminar el horario seleccionado
+toolbar.insertschedule=Insertar horario
+toolbar.insertschedule.tooltip=Insertar un nuevo horario
+toolbar.cleanschedule=Limpiar
+toolbar.cleanschedule.tooltip=Limpia los campos del horario
+
+toolbar.update=Modificar
+toolbar.insert=Agregar
+toolbar.delete=Eliminar
+toolbar.clean=Limpiar
+
+# Decorador booleano
+boolean.true=SI
+boolean.false=NO
+
+# Decorador de Lang
+lang.0=Español
+lang.1=Portugués
+lang.2=Inglés
+
+# Decorador de DateFormat
+dateformat.0=dd/MM/yyyy
+dateformat.1=dd-MM-yyyy
+dateformat.2=dd.MM.yyyy
+dateformat.3=yyyy/MM/dd
+dateformat.4=yyyy-MM-dd
+dateformat.5=yyyy.MM.dd
+
+# Decorador de HourFormat
+hourformat.0=HH:mm
+
+# Group Selector
+header.group.description=Descripción
+header.group.role=Rol
+header.group.name=Nombre
+
+#Decorardor Role Type (Group)
+role.type.user=Usuario común
+role.type.fmadmin=Administrador
+role.type.wfmanager=Administrador
+role.type.sysadmin=Administrador
+
+#Decorador de Role Type (Role)
+role.type.normal=Normal
+role.type.hpa=Profesor
+role.type.supervisor=Secretaria
+role.type.plmanager=Gerente de Línea
+
+# Group CRUD/SELECTOR
+selector.group.wantdelete=Desea eliminar los ítems seleccionados?
+selector.group.delete.title=Eliminar Perfiles
+selector.group.deleted=Perfil/es eliminado/s
+crud.group.name=Nombre
+crud.group.description=Descripción
+crud.group.role=Rol
+crud.group.permission=Permiso
+crud.group.mustselect.permission=Debe asignar un permiso
+crud.group.assigned.perms=Permisos Asignados
+crud.clients.assigned.perms=Clientes Asignados
+crud.group.unassigned.perms=Permisos no Asignados
+selector.group.mustselectonegroup=Debe seleccionar un Perfil
+selector.group.generic.title=Perfil
+crud.group.newgroup.title=Nuevo Perfil
+crud.group.oldgroup.title=Perfil: {0}
+selector.group.generic.title2=Perfiles
+
+# User Selector
+header.user.username=Usuario
+header.user.name=Usuario
+header.user.firstname=Nombre
+header.user.lastname=Apellido
+header.user.state=Estado
+header.user.fullname=Apellido y Nombre
+
+header.client.name=Cliente
+crud.clients.assigned.perms=Clientes no Asignados
+header.contact.clientname=Cliente
+header.contact.address=Domicilio
+header.contact.schedule=Horario
+
+# User CRUD/SELECTOR
+selector.user.generic.title2=Usuarios
+selector.user.deleted=Usuario/s eliminado/s.
+#selector.user.deleted=Usuario/s eliminado/s. El historico de los mismos se generara en horario nocturno.
+selector.user.mustselectoneuser=Debe seleccionar un Usuario
+selector.user.generic.title=Usuario
+crud.user.name=Usuario
+crud.user.firstname=Nombre
+crud.user.lastname=Apellido
+crud.user.password=Contraseña
+crud.user.telephone=Teléfono
+crud.user.address=Dirección
+crud.user.email=Email
+crud.user.state=Estado
+crud.user.subdivision=Sucursal
+crud.user.cellphone=Celular
+crud.user.newuser.title=Nuevo Usuario
+crud.user.olduser.title=Usuario: {0}
+crud.user.unassigned.groups=Perfiles no Asignados
+crud.user.assigned.groups=Perfiles Asignados
+crud.user.group=Perfil
+crud.user.promotionzone=Zonas de Promoción
+crud.user.speciality=Especialidades
+crud.user.mustselect.group=Debe seleccionar un Perfil
+crud.user.mustselect.promotionzone=Debe seleccionar una Zona de Promoción
+crud.user.mustselect.speciality=Debe seleccionar una Especialidad
+crud.user.userWF=Usuario del sistema
+crud.user.validatePass=Caducar contraseña
+crud.user.code=Código
+crud.user.unassigned.promotionzone=Zonas de Promoción no Asignadas
+crud.user.assigned.promotionzone=Zonas de Promoción Asignadas
+crud.user.unassigned.speciality=Especialidades no Asignadas
+crud.user.assigned.speciality=Especialidades Asignadas
+crud.user.error.length=El largo del codigo seteado es menor al debido
+crud.user.error.code=No esta seteado el largo del codigo 
+crud.user.error= {0}, por favor contacte al administrador del sistema.
+
+# Reenter Password
+crud.currentpassword=Contraseña actual
+crud.enterpassword=Nueva contraseña
+crud.reenterpassword=Confirmación de contraseña
+
+#Decorator State Type (State)
+state.type.active=Activo
+state.type.inactive=Inactivo
+state.type.blocked=Bloqueado
+
+# Subdivision Selector List
+
+#Decorator State type
+state.type.created=Creado
+state.type.opened=Abierto
+state.type.closed=Cerrado
+
+# Mensaje para MoveUp y Dwon
+cant.move.top.item=El ítem está al tope de la lista
+ 
+# mensajes de excepción
+foreignkey.problem.error=Error de Eliminación
+foreignkey.problem.message= El í­tem seleccionado no puede eliminarse,tiene datos asociados
+duplicate.error=Error de duplicado
+duplicate.message=El registro ya existe
+validation.error=Error de validación
+validation.null=El campo no puede estar vacío
+validation.null.address=El domicilio no puede estar vacío
+validation.institution.error=Error de validación
+validation.birthday=El rango de fecha es invalido
+
+check.constraint.problem.message=El campo tiene un valor que viola sus restricciones
+check.constraint.problem.error=Error interno de datos
+error.invalid.email.format=Dirección de correo inválida
+error.invalid.type.on.validation=Tipo inválido ( {0} ) en la validación de un campo
+error.empty.field=El campo es obligatorio
+error.empty.field.cantidad.alumnos=La cantidad de Alumnos debe ser igual a la Suma de "Alumnos Encontrados y Alumnos NO encontrados en Lista de Presentes" . 
+error.empty.field.pago.igual=El cliente debe abonar la totalidad de las deudas seleccionadas.
+error.empty.field.pago.igual.venta=El cliente debe abonar la totalidad de la venta.
+error.empty.field.pago.igual.ingresoEgreso=El cliente debe abonar la totalidad del Ingreso/Egreso.
+
+error.empty.field.deuda.a.pagar=La deuda a pagar debe ser mayor a $0
+error.empty.field.mayores.y.menores.a.10=Se debe ingresar una cantidad de clases/Sesiones mayor a 0 y menor a 10.
+error.empty.field.mayores.y.menores.a.3.clases=Se debe ingresar una cantidad de clases/Sesiones mayor a 0 y menor a 10.
+error.empty.field.dinero.abonado=La cantidad de Dinero a devolver debe ser menor o igual al Dinero Abonado. 
+error.empty.field.campo.aa=El campo debe estar en SI
+error.format.field=El formato del campo es incorrecto
+error.size.files.closeup=Se deben importar los 4 archivos.
+error.number.field=El campo debe tener valores numericos
+error.invalid.chars=El campo contiene caracteres inválidos
+error.invalid.date=Rango de Fecha inválido
+wf.title=Error de WorkFlow
+wf.notwfuser=El usuario no pertence al circuito de WorkFlow y no puede realizar la acción
+wf.notwfmanageruser=El usuario no tiene perfil de Administrador de WorkFlow para realizar la acción
+error.wf.conf.invalidModify=No se puede cambiar la configuracion del circuito de WorkFlow para esta entidad. Hay tareas que se encuentran en estado 'pendiente de aprobación'
+error.invalid.password=El password ingresado no es válido
+error.invalid.password.length=El password ingresado no es válido, el password debe tener como mínimo {0} caracteres
+error.invalid.password.empty=El password ingresado no es válido, el password no debe estar vacío
+error.invalid.password.repeat=El password ingresado no es válido,el password tiene que ser diferente a los ultimos 3 ingresados
+error.user.not.have.superior=El usuario no posee superior asignado
+error.nedd.to.be.wf.user=Debe ser un usuario de la fuerza de venta
+error.no.cycle.for.this.wf.user=El usuario no posee Ciclos asociados
+error.required.not.complete=Debe seleccioner los campos requeridos.
+error.item.is.used=El í­tem esta siendo utilizado, no puede ser eliminado
+error.deactivate.item.is.used=El í­tem esta siendo utilizado, no puede ser desactivado
+error.invalid.combobox.value=El valor ingresado debe pertenecer a la lista desplegable.
+error.empty.clienttype.field=Debe seleccionar un tipo de cliente
+error.execute.hitoryTemp= Error al ejecutar DAOImpl de HistoryTemp 
+
+
+#Error Permiso inexistente
+error.insufficient.permission=No tiene los permisos suficientes para realizar dicha accion sobre el campo {0} 
+error.insufficient.permission.title=Acción cancelada
+
+error.report.in.process=El reporte se esta ejecutando, por favor aguarde y re-intente solicitar el reporte en unos minutos.
+
+# Permisos (descipción) para TX
+tx.user.create=TX - Creación de Usuarios
+
+tx.toolbar2.create.occasionalaction=TX - Pasar cursos a Vencidos
+tx.user.modify=TX - Modificación de Usuarios
+tx.user.delete=TX - Eliminación de Usuarios
+tx.user.activate=TX - Activación de Usuarios
+tx.user.deactivate=TX - Desactivación Usuarios
+tx.user.save=TX - Grabación de Usuarios
+
+tx.group.create=TX - Creación de Perfiles
+tx.group.modify=TX - Modificación de Perfiles
+tx.group.delete=TX - Eliminación de Perfiles
+tx.group.save=TX - Grabación de Perfiles
+
+tx.alumnosEnClase.save=TX - Grabación de Alumnos en Clase/Sesiones
+tx.claseCrud.save=TX - Grabación de Clases/Sesiones
+tx.claseSelector.create=TX - Creación de Clase/Sesiones
+tx.claseSelector.modify=TX - Modificación de Clase/Sesiones
+tx.claseSelector.delete=TX - Eliminación de Clase/Sesiones
+tx.claseSelector.export.excel=TX - Exportación a Excel de clases/Sesiones 
+tx.claseSelector.save=TX - Grabación de Clases/Sesiones
+tx.clientesSelector.save=TX - Grabación de Clientes
+tx.clientesSelector.create=TX - Creación de Clientes 
+tx.clientesSelector.modify=TX - Modificación de Clientes 
+tx.clientesSelector.delete=TX - Eliminación de Clientes 
+tx.clientesSelector.export.excel=TX - Exportación a Excel Clientes 
+tx.cursosCrud.save=TX - Grabación de Cursos/Tratamientos
+tx.cursosSelector.create=TX - Creación de Cursos/Tratamientos 
+tx.cursosSelector.modify=TX - Modificación de  Cursos/Tratamientos
+tx.cursosSelector.delete=TX - Eliminación de  Cursos/Tratamientos
+tx.cursosSelector.export.excel=TX - Exportación a Excel Cursos/Tratamientos 
+tx.ingresoInsSelector.create=TX - Creación de Ingreso Inscripción
+tx.ingresoInsSelector.modify=TX - Modificación de Ingreso Inscripción 
+tx.ingresoInsSelector.delete=TX - Eliminación de  Ingreso Inscripción
+tx.ingresoInsSelector.export.excel=TX - Exportación a Excel  Ingreso Inscripción
+tx.prodCrud.save=TX - Grabación de Productos
+tx.prodSelector.create=TX - Creación de Productos 
+tx.prodSelector.delete=TX - Eliminación de  Productos
+tx.prodSelector.modify=TX - Modificación de  Productos
+tx.prodSelector.export.excel=TX - Exportación a Excel de Productos
+tx.salidasClienteCrud.save=TX - Grabación de Salidas Clientes
+tx.subsAnularCrud.save=TX - Grabación de Anular Subs
+tx.subsPosponer.save=TX - Grabación de Posponer Subs
+tx.subsSaldarDeuda.save=TX - Grabación de Saldar Deudas
+tx.clientesCrud.save=TX - Grabación de Clientes
+tx.clientesCrud.modify=TX - Modificación de Clientes
+
+view.chart=SALDAR x ERROR
+tx.password.save=TX - Grabación de Password
+
+tx.configregional.save=TX - Grabación de Configuración Regional
+
+access.denied=El usuario no tiene permisos para acceder a la página solicitada.
+
+actionplan.crud.name=Nombre
+actionplan.crud.startdate=Fecha de Inicio
+actionplan.crud.enddate=Fecha de Fin
+actionplan.crud.state=Estado
+
+actionplan.crud.error.date=La fecha de fin no puede ser menor a la de inicio
+actionplan.cycle.error.close=No se puede reabrir un Plan de Acción que se encuentra en estado Cerrado
+
+subscripcion.list.title.wantcontratar=El cliente tiene contratado el mismo curso/tratamiento con clases/sesiones disponibles con una fecha anterior al seleccionado. ¿ Desea que el ingreso se descuente de la inscripción mas vieja ?
+subscripcion.list.title=Contradtar Inscripción
+subscripcion.list.title.anular=¿ Esta seguro que desea anular la Inscripción del cliente {0}  , fecha: {1} ?
+subscripcion.list.title.posponer=¿ Esta seguro que desea Posponer el Vencimiento del curso/tratamiento: {0} del cliente: {1}  , fecha: {2} ?
+subscripcion.list.title.anular.title=Anular Inscripción
+subscripcion.list.title.anular.title.listaPre=Lista de Presentes
+subscripcion.list.title.anular.title.listaPre.desea=¿ Desea Guardar la Lista de Presentes? 
+subscripcion.list.title.posponer.title=Posponer Vencimiento de Inscripción
+subscripcion.list.title.posponer.nuevo.vencimiento= El nuevo vencimiento del curso/tratamiento: {0} será el día: {1} . ¿ Desea continuar y guardar el Cambio? 
+subscripcion.list.title.posponer.abonar.adicional= El cliente {0} debe abonar un copago de {1} . Luego de recibir el dinero ACEPTE esta pantalla.En caso contrario CANCELE. 
+subscripcion.list.title.devolver.cupo.title=Devolver clase/Sesion
+
+subscripcion.list.title.devolver.cupos=¿ Esta seguro que desea quitar de clase/sesion {1} al cliente {0} ? Si confirma se le devolverá al cliente el cupo.
+
+cliente.abonar.adicional= El cliente {0} debe abonar el copago en Efectivo. Importe $ {1} . ¿ Confirma pago de la misma?  
+cliente.abonar.adicional.title= Confirmando Copago Sesion
+
+subscripcion.list.title.anular.conmatricula=Atención, Se anulará el pago de la Matrícula y la Inscripción. ¿ Desea Continuar y Guardar el cambio?
+subscripcion.list.title.anular.sinmatricula=Atención, Se anulará la Inscripción y sus pagos. ¿ Desea Continuar y Guardar el cambio?
+
+up= Subir
+down = Bajar
+select = Seleccionar
+first= Primero
+last= Último
+segments=Segmentos
+
+admin.selectuser.invalid.option=Opcion Invalida
+admin.selectuser=Debe seleccionar un APM
+
+register.limit=Cantidad maxima de registros mostrados:
+
+# DATEBOXREMINDER
+
+dateboxremember.january=Enero
+dateboxremember.february=Febrero
+dateboxremember.march=Marzo
+dateboxremember.april=Abril
+dateboxremember.may=Mayo
+dateboxremember.june=Junio
+dateboxremember.july=Julio
+dateboxremember.august=Agosto
+dateboxremember.september=Septiembre
+dateboxremember.october=Octubre
+dateboxremember.november=Noviembre
+dateboxremember.december=Diciembre
+
+
+dateboxremember.0=Enero
+dateboxremember.1=Febrero
+dateboxremember.2=Marzo
+dateboxremember.3=Abril
+dateboxremember.4=Mayo
+dateboxremember.5=Junio
+dateboxremember.6=Julio
+dateboxremember.7=Agosto
+dateboxremember.8=Septiembre
+dateboxremember.9=Octubre
+dateboxremember.10=Noviembre
+dateboxremember.11=Diciembre
+
+# Menues Principales
+menu.instituto=Instituto Swiszcz
+menu.configuraciones= Configuraciones y otros
+menu.reportes=Reportes
+menu.security= Seguridad
+menu.rrhh=Recursos Humanos
+
+## Sub-Menues
+submenu.ingreso=Ingreso/Inscripción
+submenu.alumnosEnClase=Alumnos en clases
+submenu.ventaProductos=Venta Productos
+submenu.caja= Caja
+submenu.verCumpleanios=Ver Cumpleaños
+
+submenu.clientes=Reporte de Clientes
+submenu.clientes.deudas=Reporte de Deudas
+submenu.cursos=Cursos/Tratamientos
+submenu.productos=Productos
+submenu.clases=Clases/Sesiones
+submenu.obrasSociales=Obras Sociales
+submenu.empleados=Empleados
+submenu.confVarias=Otras Configuraciones
+menu.generar.codigos.barras=Generar códigos barras
+
+submenu.metricula.gratis=Matricula Gratis
+submenu.gastos=Gastos
+submenu.sueldos=Sueldos
+submenu.gastos.maipu=Gastos Maipu- Cursos verano-
+submenu.acontrolar=A controlar
+submenu.pulsoClinica=Pulso Clinica
+submenu.pulsoMaipu=Pulso Maipu- Cursos Verano

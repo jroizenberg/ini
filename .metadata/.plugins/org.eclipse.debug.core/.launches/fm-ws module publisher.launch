@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ant.AntLaunchConfigurationType">
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_OUTPUT_ON" value="true"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<booleanAttribute key="org.eclipse.debug.ui.private" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.ui.antsupport.InternalAntRunner"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+<mapAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_PROPERTIES">
+<mapEntry key="contextRoot" value="fm-ws"/>
+<mapEntry key="jndiPort" value="1099"/>
+<mapEntry key="key" value="generic_server_instance_properties"/>
+<mapEntry key="module.archive.name" value="fm-ws.ear"/>
+<mapEntry key="module.dir" value="D:/Java/Workpaces/InstitutoSwiszcz/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/fm-ws"/>
+<mapEntry key="module.name" value="fm-ws"/>
+<mapEntry key="port" value="8080"/>
+<mapEntry key="project.location" value="D:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-ws"/>
+<mapEntry key="project.name" value="fm-ws"/>
+<mapEntry key="project.working.dir" value="D:/Java/Workpaces/InstitutoSwiszcz/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0"/>
+<mapEntry key="server.publish.dir" value="D:/Java/jboss-4.2.3.GA Nueva version 2012 opt/server/default/deploy"/>
+<mapEntry key="serverAddress" value="127.0.0.1"/>
+<mapEntry key="serverConfig" value="default"/>
+<mapEntry key="serverRootDirectory" value="D:/Java/jboss-4.2.3.GA Nueva version 2012 opt"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_TARGETS" value="undeploy.j2ee.ear"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="D:\Java\eclipse\plugins\org.eclipse.jst.server.generic.jboss_1.6.1.v200904151730\buildfiles\jboss323.xml"/>
+<stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
+</launchConfiguration>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Clase"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="subscrud" apply="com.institucion.controller.SubscripcionCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="filters" use="com.institucion.desktop.view.ToolbarFiltersSubscripcion" tokenPrefix="subsCrud"/>
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionCrud" />
+		<panel id="responsableCrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionResponsableVentaCrud" />
+		
+		
+			<separator spacing="5px"/>	
+		
+		<tabbox id="tabpanel" width="auto" height="auto">
+			<tabs>
+				<tab id="subscripcionCrudtab" label="&#36;{c:l('subscripcion.crud.tab')}"/>
+				<tab id="clasesCrudtab" label="&#36;{c:l('clases.crud.tab2')}"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel width="auto" height="auto" >
+						<separator spacing="10px"/>
+						<panel id="filters2" use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="subsCrud" style="width:83%;  align:center;  margin-left: 10%;" />
+						
+						<panel  id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.CursosFilter2"  style="width:83%;  align:center;  margin-left: 10%;"  />	
+						<panel border="none" width="auto"  id="tituloListaCursos" title="&#36;{c:l('cursos.list')}"  style="width:83%;  align:center;  margin-left: 10%;" />
+						<panel id="cursopanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CursoSubscripcionList"  style="width:83%;  align:center;  margin-left: 10%;"  />
+																				
+						<separator spacing="10px"/>
+						<panel id="subscripcionporClasecrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionPorClaseCrud" style="width:60%;  align:center;  margin-left: 10%;"/>
+						<panel id="continuarPorClase" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionContinuarCursoPorClaseBotonesFilter" style="width:83%;  align:center;  margin-left: 10%;"/>
+						
+						<separator id="separadormatricula" spacing="10px"/>
+								
+						<!-- dejar los 2 labels estos, habilitarlos dependiendo de la ocasion -->		
+							<label id="matriculavencida" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+							<label id="matriculadebe" value="&#36;{c:l('matricula.debe')}"  style="text-align: center; align: center; color:red;font-size:8pt"/>
+						
+						<separator spacing="5px"/>
+									
+						<panel id="cursoseleccionadoList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CursoListSeleccionados" style="width:83%;  align:center;  margin-left: 10%;"  title="&#36;{c:l('cursos.elegidos.list')}"/>
+						
+						<panel id="agregarCursos" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionAgregarEliminarBotonesFilter"  style="width:83%;  align:center;  margin-left: 10%;" />
+										
+						<panel id="subscumplecrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionCumpleCrud" /> 
+												
+						<separator spacing="10px"/>
+							
+						<label id="Liquidacion" value="&#36;{c:l('liquidacion.final')}"  style="text-align: center;  color:black;font-size:8pt"/>		
+						<panel id="subs4crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionCrud4" />
+						
+						<separator spacing="6px"/>
+
+						<label id="debeadeudaTotal" value="Debe en total:"    style="text-align: center;  color:red;font-size:9pt; width:60%;  align:center;  margin-left: 10%;"   />
+						<separator spacing="6px"/>
+										
+						<panel id="crudFormasDePago" use="com.institucion.model.FormasDePagoCrud"/>
+				
+				
+						<separator spacing="10px"/>	
+							
+						
+			</tabpanel>			
+			<tabpanel width="auto" height="auto">
+					<separator id="subsDeClases" spacing="10px"/>
+					
+					<label id="subsDeClasecrudLabel" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+					<separator id="subsDeClasecrudSeparador" spacing="20px"/>
+					<panel id="subsDeClasecrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionDeClasesCrud" />		
+					
+					<label id="subsDeClasecrud2Label" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+										<separator id="subsDeClasecrud2Separador" spacing="20px"/>
+					<panel id="subsDeClasecrud2" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionDeClasesCrud" />		
+					
+					<label id="subsDeClasecrud3Label" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+										<separator id="subsDeClasecrud3Separador" spacing="20px"/>
+					<panel id="subsDeClasecrud3" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionDeClasesCrud" />		
+					
+					<label id="subsDeClasecrud4Label" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+										<separator id="subsDeClasecrud4Separador" spacing="20px"/>
+					<panel id="subsDeClasecrud4" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionDeClasesCrud" />
+					
+					<label id="subsDeClasecrud5Label" value="&#36;{c:l('matricula.debe.vencida')}"  style="text-align: center;  color:red;font-size:8pt"/>
+										<separator id="subsDeClasecrud5Separador" spacing="20px"/>
+					<panel id="subsDeClasecrud5" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionDeClasesCrud" />
+
+					<panel id="botonAsignar" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.SubscripcionAsignarBotonesFilter" />
+
+			</tabpanel>
+			</tabpanels>
+		</tabbox>
+				
+	</window>
+</zk>

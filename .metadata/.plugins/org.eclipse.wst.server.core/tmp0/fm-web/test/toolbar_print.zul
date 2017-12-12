@@ -1,0 +1,18 @@
+<?component name="toolbarbutton" extends="button" sclass="toolbar_zkbutton" action="onmouseover:buttonOnMouseOver(this); onmouseout:buttonOnMouseOut(this)"?>
+
+<zk>
+	<panel width="auto"><panelchildren>
+
+	<hbox spacing="2px">
+		<script type="text/javascript" src="/script/institucion.js"/>
+		<style src="/style/institucion.css"/>
+
+		<toolbarbutton image="/img/icon/pdf_24.png" onClick='pdf()'/><!--
+		<toolbarbutton image="/img/icon/excell_24.png" tooltiptext="No disponible"/>            
+	-->
+		<toolbarbutton image="/img/icon/excell_24.png" onClick='excel()'/>	
+		</hbox>
+
+	<separator spacing="3px"/>
+	</panelchildren></panel>
+</zk>
