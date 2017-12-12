@@ -1,0 +1,347 @@
+- buenas, revisando los gastos que venian haciendo las chicas, encontre un tema con el pago de sueldos, 
+ya que se lo registraba como un gasto, y despues no se le podia dar seguimiento a por ejemplo los sueldos pagados de tal empleado, 
+y tal empleado, y podia desaparecer plata asi por que no hay control.
+como para terminar con el desarrollo y les quede bien el sistema para que puedan seguir bien la guita, 
+hice un modulo de recursos humanos, donde se dan de alta los empleados y se abonan sueldos asociados a esos empleados, 
+para que luego se pueda ingresar a la pantalla, y buscar por ejemplo todos los sueldos abonados de  tal persona.
+esto incluye sueldos de secretarias, mantenimiento, etc, etc, todos los que hagan trabajos en maipu y en el centro. 
+Esto lo implemente de tal forma que en el verano se pueda dar de alta tambien los sueldos de por ejemplo las secres asociando 
+ese pago de sueldos a maipu.
+
+
+DAR DE ALTA LOS EMPLEADO
+
+  . Se separaron los sueldos de la apntalla de gastos, a una nueva pantalla que esta en el menu Recursos humanos.Entonces 
+  	en la pantalla de gastos se seguira registrando gastos comunes y los sueldos en la nueva pantalla.
+  . En el nuevo menu de recursos humanos hay 2 items:
+  		.empleados: aqui se van a dar de alta los empleados, y a habilitar/dsahabilitar las actividadees que ejerce cada empleado
+  		. Sueldos: aqui se van a registrar el pago de sueldos y el pago va a estar asociado a un empleado.
+  			si al momento del pago el empleado no existe: hay que crearlo. 
+  			si al momento del pago, el empleado existe pero no se le muestra la actividad: hay que ir a a pantalla de empleados, 
+  			   buscarlo y agregarle la actividad que ejerce, poninendo en Ejerce: SI.
+   . El movio del lugar del menu al item Reporte de clientes, quedando dentro del menu Reportes. 		
+  		
+   . Se movio de lugar el item del menu Generar codigos de barra y se lo puso en Configuraciones y otros.
+   
+ ------------------------------------
+ 
+insert into permission values('$submenu.empleados', nextval('permission_id_seq') , 'Empleados', '/institucion/empleado-selector.zul', 1)
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));	
+
+insert into permission values('$tx.empleadoSelector.save', nextval('permission_id_seq') , '$tx.empleadoSelector.save', 'tx.empleadoSelector.save', 0);
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));	
+
+insert into permission values('$tx.empleadoSelector.create', nextval('permission_id_seq') , '$tx.empleadoSelector.create', 'tx.empleadoSelector.create', 0);
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));	
+
+insert into permission values('$tx.empleadoSelector.modify', nextval('permission_id_seq') , '$tx.empleadoSelector.modify', 'tx.empleadoSelector.modify', 0);
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));	
+
+SELECT u.name as login,decode(u.password, 'base64') as 	password FROM fmtest.users  u 	WHERE u.name = 'Profes'
+
+insert into permission values('$submenu.sueldos', nextval('permission_id_seq') , 'Sueldos', '/institucion/sueldos-selector.zul', 1);
+
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));	
+
+
+
+alter table actividad add esparasueldos boolean default false;
+
+
+alter table gastos add idempleado integer;
+alter table gastosMaipu add idempleado integer;
+insert into actividad values( nextval('actividad_id_seq'), 'Secretaria', 'Secretaria',5 , false, false, false, true) ;
+insert into actividad values( nextval('actividad_id_seq'), 'Mantenimiento', 'Mantenimiento',5 , false, false, false, true) ;
+insert into actividad values( nextval('actividad_id_seq'), 'Otras', 'Otras',5 , false, false, false, true) ;
+
+
+
+CREATE SEQUENCE empleado_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 21
+  CACHE 1;
+ALTER TABLE empleado_id_seq  OWNER TO fmtest;
+
+
+
+CREATE SEQUENCE empleado_actividades_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 21
+  CACHE 1;
+ALTER TABLE empleado_actividades_id_seq  OWNER TO fmtest;
+
+CREATE TABLE empleado(
+  id integer NOT NULL DEFAULT nextval(('"empleado_id_seq"'::text)::regclass),
+  nombre character varying(100),
+  CONSTRAINT pk_empleado PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE empleado  OWNER TO fmtest;
+
+CREATE INDEX ix_empleado_nombre  ON empleado  USING btree  (nombre COLLATE pg_catalog."default");
+
+CREATE TABLE EmpleadoActividades(
+  idactividad bigint,
+  idempleado integer,
+  id integer NOT NULL DEFAULT nextval(('"empleado_actividades_id_seq"'::text)::regclass),
+  disponible boolean DEFAULT false,
+  CONSTRAINT pk_empleadoActividades PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE EmpleadoActividades OWNER TO fmtest;
+CREATE INDEX ix_EmpleadoActividades_idempleado  ON EmpleadoActividades  USING btree  (idempleado);
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------
+
+update cliente set apellido='KOLLY' where id= 2984;
+update cliente set nombre='MARIA SANDRA' where id= 2653;
+update cliente set nombre='BALBINA' where id= 2802;
+update cliente set nombre='ELIANA ABRIL' where id= 2830;
+update cliente set nombre='FACUNDO GASTON' where id= 3090;
+update cliente set nombre='KONTRATZKY' where id= 2323;
+
+
+
+------------------------------------------
+
+
+update permission set  description='$submenu.verCumpleanios'  where token='/institucion/cumples-selector.zul';
+
+update users set password='bmFudWd1aTc2' where name='aswiszcz';  -- nanugui76
+
+
+CREATE INDEX ix_ingresoaclasessinfechasalumnos_fechacliente
+  ON ingresoaclasessinfechasalumnos
+  USING btree
+  (idcliente);
+
+
+insert into permission values('$tx.toolbar2.create.occasionalaction', nextval('permission_id_seq') , 'tx.toolbar2.create.occasionalaction', 'tx.toolbar2.create.occasionalaction', 0);
+
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (16,currval('permission_id_seq'));
+
+
+
+
+
+
+#############################################################
+update gastos set tipogasto=12 where tipogasto=8;
+update gastos set tipogasto=5 where tipogasto=11;
+update bancopromocion set disponible =false;
+insert into groups values ('Secretaria ++',16, 'Secretaria ++', 1);
+insert into group_permission  (select 16, permission_id from group_permission  where group_id=18);
+insert into group_permission values (16,1706 );
+update user_group set group_id=16  where user_id=70;
+
+insert into permission values('$submenu.confVarias', nextval('permission_id_seq') , 'Ver Cumpleaños', '/institucion/cumples-selector.zul', 1)
+INSERT INTO group_permission (group_id, permission_id) VALUES (19,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (1,currval('permission_id_seq'));	
+INSERT INTO group_permission (group_id, permission_id) VALUES (18,currval('permission_id_seq'));	
+
+alter table users add sucursal bigint;
+insert into group_permission  values (18, 1704);
+
+update users set sucursal=3;
+
+alter table cajamovimiento add sucursal bigint;
+
+update cajamovimiento set sucursal=0 ;
+
+update cajamovimiento set sucursal=1 where idsubscripcion in (
+
+select distinct(s.id) from cajamovimiento cm
+	inner join subscripcion s on (cm.idsubscripcion=s.id)
+	inner join concepto c on (c.idsubscripcion= s.id)
+	where c.idcurso in (81,82,83));
+	
+alter table pagosporsubscripcion add idGastoMaipu integer;
+
+CREATE SEQUENCE gastosMaipu_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE gastosMaipu_id_seq  OWNER TO fmtest;
+
+
+CREATE TABLE gastosMaipu
+(
+  id bigint NOT NULL,
+  quincena bigint,
+  anio bigint,
+  dinero integer,
+  tipogasto integer,
+  comentario character varying(255),
+  fecha timestamp without time zone,
+  CONSTRAINT gastosMaipu_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE gastosMaipu   OWNER TO fmtest;
+
+-- Index: ix_gastos_anio
+
+-- DROP INDEX ix_gastos_anio;
+
+CREATE INDEX ix_gastosMaipu_anio
+  ON gastosMaipu
+  USING btree
+  (anio);
+
+-- Index: ix_gastos_idclase
+
+-- DROP INDEX ix_gastos_idclase;
+
+CREATE INDEX ix_gastosMaipu_idclase
+  ON gastosMaipu
+  USING btree
+  (quincena, anio);
+
+-- Index: ix_gastos_mes
+
+-- DROP INDEX ix_gastos_mes;
+
+CREATE INDEX ix_gastosMaipu_quincena
+  ON gastosMaipu
+  USING btree
+  (quincena);
+
+
+
+
+ALTER TABLE gastosmaipu
+   ALTER COLUMN fecha SET DEFAULT now();
+
+
+
+
+
+
+
+
+
+
+
+
+alter table pagosporsubscripcion add   sucursal bigint
+alter table pagosporsubscripcion add   quincena bigint;
+
+update pagosporsubscripcion set sucursal=0;
+
+
+
+
+
+
+
+
+ALTER TABLE cliente
+  DROP COLUMN estado;
+
+
+
+
+
+CREATE SEQUENCE quincena_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 21
+  CACHE 1;
+ALTER TABLE quincena_id_seq  OWNER TO fmtest;
+
+
+CREATE TABLE quincena(
+  id bigint NOT NULL,
+  nombre character varying(255),
+  CONSTRAINT quincena_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE quincena  OWNER TO fmtest;
+
+
+
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '1 Quinc DICIEMBRE');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '2 Quinc DICIEMBRE');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '1 Quinc ENERO');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '2 Quinc ENERO');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '1 Quinc FEBRERO');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '2 Quinc FEBRERO');
+insert into quincena values ( NEXTVAL('quincena_id_seq'), '1 Quinc MARZO');
+
+
+alter table concepto add  idQuincena bigint;
+
+
+
+
+
+
+
+
+
+
+
+--------------------
+
+
+
+ALTER TABLE cupoactividad
+  ADD COLUMN pagoElCopago boolean;
+
+ALTER TABLE obrasocialesprecio   ADD COLUMN sePagaUnaUnicaVez boolean;
+  update obrasocialesprecio set sePagaUnaUnicaVez=false 
+  
+delete from inscripcion  ;
+delete from ventaproductos  ;
+delete from ventaproductoporproducto;
+delete from pagosporsubscripcion ;
+delete from cupoactividad;
+delete from gastossueldos  ;
+delete from concepto;
+update cliente set estado=4 ;
+delete from subscripciondeclasesporactividad    ;
+delete from subscripciondeclases  ;
+delete from subscripcion  	;
+delete from cajamovimiento ;
+delete from gastos;
+delete from ingresoaclasessinfechasalumnos;

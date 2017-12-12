@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Cerrar Caja"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="CerrarCaja" apply="com.institucion.controller.CerrarCajaCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		
+		<panel use="com.institucion.desktop.view.ToolbarSinPermisosCrud" tokenPrefix="cerrarCajas"/>
+		
+		
+		<panel id="filter" use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.CerrarCajaFilter" />
+
+		
+		<separator spacing="15px"/>
+		<panel border="none" width="auto"  id="PMercados" title="Nuevo cierre de caja" />
+		<label id="matriculavencida2" value=" Esta informacion se utilizara para la proxima apertura de caja"  style="text-align: center;  color:red;font-size:8pt"/>
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.CerrarCajaCrud" />
+		
+		<separator spacing="40px"/>
+
+		<panel id="clientepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CierreCajaList" 
+			title="&#36;{c:l('caja.dinero.cierre.list')}"/>
+			
+	</window>
+</zk>

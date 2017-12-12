@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Cliente" table="Cliente">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Cliente_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="nombre" />
+		<property name="apellido" />
+		<property name="dni" />
+		<property name="fechaNacimiento" />
+		<property name="domicilio" />
+		<property name="telefonoFijo" />
+		<property name="celular" />
+		<property name="facebook" />
+		<property name="mail" />
+		<property name="entregoCertificado" />
+
+		<set name="subscripcionesList" table="subscripcion" inverse="true" cascade="all-delete-orphan" lazy="true" >
+			<key column="idCliente"/>
+			<one-to-many class="com.institucion.model.Subscripcion"/>
+		</set>
+		
+		<set name="inscripcionesList" table="incripcion" inverse="true" cascade="all-delete-orphan" lazy="true" >
+			<key column="idCliente"/>
+			<one-to-many class="com.institucion.model.Inscripcion"/>
+		</set>
+	
+		<property name="isEnClase">
+			<formula>
+				(select count(*) from cliente_clase clase where clase.idcliente=ID limit 1)
+			</formula>
+		</property>
+		
+<!-- 		<property name="estadoAdeudaAlgo"> -->
+<!-- 			<formula> -->
+<!-- 			 (select count(*) from cliente c  inner join subscripcion s on (c.id= s.idcliente) 	inner join cupoactividad ca on (ca.idsubscripcion= s.id)	where ca.estado in (0, 1, 10) and c.id=ID ) -->
+<!-- 			</formula> -->
+<!-- 		</property> -->
+
+<!-- 		<property name="estadoConClasesDisponibles"> -->
+<!-- 			<formula> -->
+<!-- 			((select count(*) from cliente c inner join subscripcion s on (c.id= s.idcliente)  inner join cupoactividad ca on (ca.idsubscripcion= s.id) where ca.estado in (3, 10)  and c.id=ID ) > 0) -->
+<!-- 			</formula> -->
+<!-- 		</property> -->
+		
+		
+<!-- 		<property name="estado" > -->
+<!-- 				<type name="com.institucion.fm.conf.model.GenericEnumUserType"> -->
+<!-- 					<param name="enumClass">com.institucion.model.ClienteEstadoEnum</param> -->
+<!-- 					<param name="identifierMethod">toInt</param> -->
+<!-- 					<param name="valueOfMethod">fromInt</param> -->
+<!-- 				</type> -->
+<!-- 		</property> -->
+		
+	</class>
+</hibernate-mapping>

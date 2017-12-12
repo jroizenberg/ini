@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="CierreCaja" table="CierreCaja">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">CierreCaja_id_seq</param>
+			</generator>
+		</id>
+		<property name="fecha" />		
+		<property name="valor" />	
+		<property name="comentario" />	
+		<property name="idUsuarioGeneroMovimiento" />	
+
+		<property name="nombreUsuarioGeneroMovimiento" >
+	            <formula>
+	                 (select us.firstname from users us where us.id =IDUSUARIOGENEROMOVIMIENTO )
+	            </formula>
+		</property>
+
+		<property name="sucursal" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.SucursalEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+
+	</class>
+</hibernate-mapping>

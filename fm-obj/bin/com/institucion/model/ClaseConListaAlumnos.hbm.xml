@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="ClaseConListaAlumnos" table="ClaseConListaAlumnos">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ClaseConListaAlumnos_id_seq</param>
+			</generator>
+		</id>
+		<property name="fecha" />
+		<property name="profeNombre" />
+		<property name="comentarioGeneralDelProfe" />
+ 		<property name="cantPresentes" />
+ 		<property name="cantPresentesNoEncontrados" />
+
+		<many-to-one name="clase" class="com.institucion.model.Clase" column="idClase" lazy="false"/>
+
+		<set name="clienesNoEncontradosEnPiletaList" table="ClienteNoEncontradoEnPileta"   inverse="true" cascade="all-delete-orphan" lazy="true" >
+			<key column="idListaClase"/>
+			<one-to-many class="com.institucion.model.ClienteNoEncontradoEnPileta"/>
+		</set>
+		
+		<set name="clienesListaEncontradosEnPiletaList" table="ClienteListaEncontradoEnPileta"  inverse="true" cascade="all-delete-orphan" lazy="true" >
+			<key column="idListaClase"/>
+			<one-to-many class="com.institucion.model.ClienteListaEncontradoEnPileta"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="VentaProductoPorProducto" table="VentaProductoPorProducto">
+		
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">VentaProductoPorProducto_id_seq</param>
+			</generator>
+		</id>	
+		<many-to-one name="ventaProducto" class="com.institucion.model.VentaProducto" column="idVentaProducto" lazy="false"/>
+		
+		<many-to-one name="producto" class="com.institucion.model.Producto" column="idProducto" lazy="false"/>
+	
+		<property name="cantidadProd" />
+		<property name="preciocostoProd" />	
+	
+	</class>
+</hibernate-mapping>

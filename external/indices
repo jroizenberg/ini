@@ -1,0 +1,219 @@
+ALTER TABLE gastos ADD COLUMN  fechaDesde timestamp without time zone;
+ALTER TABLE gastos ADD COLUMN  fechaHasta timestamp without time zone;
+ALTER TABLE gastos ADD COLUMN pagaSueldosPorMes boolean;
+
+
+ALTER TABLE pagosporsubscripcion   ADD COLUMN porcInteres integer;
+ALTER TABLE pagosporsubscripcion   ADD COLUMN idBancoPromocion integer;
+
+
+insert into banco (id, nombre) values (1, 'Santander Rio');
+insert into banco (id, nombre) values (2, 'Patagonia');
+
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (1, 0, 1, 6, true, 'Santander Rio VISA - 6 cuotas s/interes');
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (2, 0, 1, 3, true, 'Santander Rio VISA - 3 cuotas s/interes');
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (3, 0, 1, 9, false, 'Santander Rio VISA - 9 cuotas s/interes');
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (4, 10, 1, 12, true, 'Santander Rio AMERICAN EXPR - 12 cuotas %10 interes');
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (5, 0, 2, 6, true, 'Patagonia VISA - 6 cuotas s/interes');
+insert into bancopromocion(id,porcentajepromocion, idbanco, cantcuotas, disponible, nombrePromo ) values  (6, 0, 2, 3, true, 'Patagonia VISA - 3 cuotas %5 interes');
+
+
+CREATE SEQUENCE banco_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 65
+  CACHE 1;
+ALTER TABLE banco_id_seq
+  OWNER TO fmtest;
+
+CREATE SEQUENCE bancopromocion_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 65
+  CACHE 1;
+ALTER TABLE bancopromocion_id_seq
+  OWNER TO fmtest;
+  
+CREATE INDEX ix_obrasocialesprecio_idobraSocial  ON obrasocialesprecio USING btree (idobraSocial);
+
+CREATE TABLE banco (
+  id integer NOT NULL,
+  nombre character varying(100),
+  CONSTRAINT pk_banco PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE banco OWNER TO fmtest;
+CREATE INDEX ix_banco_nombre  ON banco USING btree (nombre COLLATE pg_catalog."default");
+
+CREATE TABLE bancopromocion(
+  id bigint,
+  porcentajepromocion integer,
+  idbanco integer,
+  cantcuotas integer,
+  disponible boolean DEFAULT false,
+  nombrePromo character varying(255),
+  CONSTRAINT pk_bancopromocion PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE bancopromocion OWNER TO fmtest;
+CREATE INDEX ix_bancopromocion_nombrePromo  ON bancopromocion USING btree (nombrePromo COLLATE pg_catalog."default");
+CREATE INDEX ix_bancopromocion_idbanco  ON bancopromocion USING btree (idbanco);
+
+----------------------------------------
+
+delete from group_permission where group_id  =18 and permission_id in (1705,1707 );
+
+insert into group_permission(group_id, permission_id) values (18 , 1709);
+insert into group_permission(group_id, permission_id) values (18 , 1708);
+
+
+delete from IngresoAClasesSinFechasAlumnos  ;
+delete from Cliente_Clase  ;
+delete from ClaseConListaAlumnosHistorico;
+delete from cliente_clasehistorico;
+delete from IngresoAClasesSinFechasAlumnos;
+delete from ClaseConListaAlumnos;
+
+insert into group_permission(group_id, permission_id)
+values ((select id from groups where name='Profesor'), (select id from permission where token like 'tx.alumnosEnClase.save'));
+
+
+
+CREATE INDEX ix__cajamovimiento_id_usuario
+  ON cajamovimiento USING btree
+  (idusuariogeneromovimiento);
+CREATE INDEX ix__clasecantidad_idcliente
+  ON cajamovimiento USING btree
+  (idcliente);
+CREATE INDEX ix__clasecantidad_idclientesas
+  ON cajamovimiento USING btree
+  (idventaproducto);
+  
+CREATE INDEX ix__clase_horadesde  ON clase USING btree
+  (horadesde);
+CREATE INDEX ix__clase_horahasta  ON clase USING btree
+  (horahasta);
+CREATE INDEX ix__clase_idactividad  ON clase USING btree
+  (idactividad);
+
+CREATE INDEX ix__claseconlistaalumnos_idclase  ON claseconlistaalumnos USING btree
+  (idclase);
+CREATE INDEX ix__claseconlistaalumnos_idcliente  ON claseconlistaalumnos USING btree
+  (idcliente);
+CREATE INDEX ix__claseconlistaalumnos_fecha  ON claseconlistaalumnos USING btree
+  (fecha);
+
+CREATE INDEX ix__claseconlistaalumnoshistorico_idclase  ON claseconlistaalumnoshistorico USING btree
+  (idclase);
+CREATE INDEX ix__claseconlistaalumnoshistorico_idcliente  ON claseconlistaalumnoshistorico USING btree
+  (idcliente);
+CREATE INDEX ix__claseconlistaalumnoshistorico_fecha  ON claseconlistaalumnoshistorico USING btree
+  (fecha);
+
+
+CREATE INDEX ix__clasehistorico_horadesde  ON clasehistorico USING btree
+  (horadesde);
+CREATE INDEX ix__clasehistorico_horahasta  ON clasehistorico USING btree
+  (horahasta);
+CREATE INDEX ix__clasehistorico_idcurso  ON clasehistorico USING btree
+  (idcurso);
+
+
+CREATE INDEX ix__cliente_apellido  ON cliente USING btree
+  (apellido);
+CREATE INDEX ix__cliente_nombre  ON cliente USING btree
+  (nombre);
+CREATE INDEX ix__cliente_nombreApellido  ON cliente USING btree
+  (apellido, nombre);
+
+
+CREATE INDEX ix__cliente_clasehistorico_idclase  ON cliente_clasehistorico USING btree
+  (idclase);
+CREATE INDEX ix__cliente_clasehistorico_idcliente  ON cliente_clasehistorico USING btree
+  (idcliente);
+
+
+CREATE INDEX ix__cliente_clientehistorico_apellido  ON clientehistorico USING btree
+  (apellido);
+CREATE INDEX ix__cliente_clientehistorico_nombre  ON clientehistorico USING btree
+  (nombre);
+
+CREATE INDEX ix__curso_nombre  ON curso USING btree
+  (nombre);
+
+CREATE INDEX ix_diasdesemanadelaclase_idclase  ON diasdesemanadelaclase USING btree
+  (idclase);
+
+CREATE INDEX ix_gastos_idclase  ON gastos USING btree
+  (mes, anio);
+CREATE INDEX ix_gastos_mes  ON gastos USING btree
+  (mes);
+CREATE INDEX ix_gastos_anio  ON gastos USING btree
+  (anio);
+
+
+CREATE INDEX ix_gastossueldos_idgasto  ON gastossueldos USING btree
+  (idgasto);
+
+CREATE INDEX ix_ingresoaclasessinfechasalumnos_fecha  ON ingresoaclasessinfechasalumnos USING btree
+  (fecha);
+CREATE INDEX ix_ingresoaclasessinfechasalumnos_idcurso  ON ingresoaclasessinfechasalumnos USING btree
+  (idcurso);
+CREATE INDEX ix_ingresoaclasessinfechasalumnos_idsubscripcion  ON ingresoaclasessinfechasalumnos USING btree
+  (idsubscripcion);
+CREATE INDEX ix_ingresoaclasessinfechasalumnos_idclase  ON ingresoaclasessinfechasalumnos USING btree
+  (idclase);
+
+
+CREATE INDEX ix_inscripcion_idcliente  ON inscripcion USING btree
+  (idcliente);
+
+CREATE INDEX ix_obrasocial_nombre  ON obrasocial USING btree
+  (nombre);
+
+
+CREATE INDEX ix_producto_nombre  ON producto USING btree
+  (nombre);
+CREATE INDEX ix_producto_codigo  ON producto USING btree
+  (codigo);
+
+CREATE INDEX ix_subscripcion_fechaingresosubscripcion  ON subscripcion USING btree
+  (fechaingresosubscripcion);
+CREATE INDEX ix_subscripcion_idusuariosaldasubscripcion  ON subscripcion USING btree
+  (idusuariosaldasubscripcion);
+CREATE INDEX ix_subscripcion_idusuarioanulosubscripcion  ON subscripcion USING btree
+  (idusuarioanulosubscripcion);
+CREATE INDEX ix_subscripcion_idusuariocreosubscripcion  ON subscripcion USING btree
+  (idusuariocreosubscripcion);
+
+
+CREATE INDEX ix_ondeclasesporactividad_idsubscripcion  ON subscripciondeclasesporactividad USING btree
+  (idsubscripcion);
+CREATE INDEX ix_iondeclasesporactividad_idsubscripcion2  ON subscripciondeclasesporactividad USING btree
+  (idsubscripcion2);
+
+CREATE INDEX ix_ventaproductoporproducto_idventaproducto  ON ventaproductoporproducto USING btree
+  (idventaproducto);
+CREATE INDEX ix_ventaproductoporproducto_idproducto  ON ventaproductoporproducto USING btree
+  (idproducto);
+
+
+CREATE INDEX ix_ventapoducto_idusuariocreoventa  ON ventaproductos USING btree
+  (idusuariocreoventa);
+CREATE INDEX ix_ventapoducto_idusuarioanuloventa  ON ventaproductos USING btree
+  (idusuarioanuloventa);
+CREATE INDEX ix_ventapoducto_fechayhoraanulacion  ON ventaproductos USING btree
+  (fechayhoraanulacion);
+  
+  
+  se agrega campo en tabla inscripcion matriculagratis
+  se le agrega a la tabla product  : preciocosto
+  ALTER TABLE ventaproductoporproducto   ADD COLUMN preciocostoProd integer;
+  
+  

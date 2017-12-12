@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- $Id: postgres-ds.xml,v 1.1 2011/06/13 14:21:01 jroizenberg Exp $ -->
+<!-- ==================================================================== -->
+<!--  Datasource config for Postgres                                      -->
+<!-- ==================================================================== -->
+
+
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>fm.conf.ds</jndi-name>
+    <connection-url>jdbc:postgresql://localhost:5432/InstitutoProduccion</connection-url>
+    <driver-class>org.postgresql.Driver</driver-class>
+    <user-name>fmtest</user-name>
+    <password>fm56tr</password>
+    <hibernate-c3p0-min_size>2</hibernate-c3p0-min_size>
+    <hibernate-c3p0-max_size>200</hibernate-c3p0-max_size>
+    <hibernate-c3p0-timeout>600</hibernate-c3p0-timeout>
+    <hibernate-c3p0-max_statements>80</hibernate-c3p0-max_statements>
+    <new-connection-sql>select 1</new-connection-sql>
+    <check-valid-connection-sql>select 1</check-valid-connection-sql>
+    <min-pool-size>2</min-pool-size>
+	<max-pool-size>200</max-pool-size>
+	<track-statements>true</track-statements>
+	<track-connection-by-tx>true</track-connection-by-tx>
+	<track-transaction-by-tx>true</track-transaction-by-tx>
+	<idle-timeout-minutes>3</idle-timeout-minutes>
+    
+    <!-- corresponding type-mapping in the standardjbosscmp-jdbc.xml (optional) -->
+     <metadata>
+        <type-mapping>PostgreSQL 7.2</type-mapping>
+     </metadata>
+  </local-tx-datasource>
+
+</datasources>

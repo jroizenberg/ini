@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="PagosPorSubscripcion" table="PagosPorSubscripcion">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">PagosPorSubscripcion_id_seq</param>
+			</generator>
+		</id>
+
+		<many-to-one name="subscripcion" class="com.institucion.model.Subscripcion" column="idSubscripcion" lazy="false"/>
+		<many-to-one name="ventaProducto" class="com.institucion.model.VentaProducto" column="idVentaProducto" lazy="false"/>
+		<many-to-one name="gasto" class="com.institucion.model.Gastos" column="idGasto" lazy="false"/>
+		<many-to-one name="gastoMaipu" class="com.institucion.model.GastosMaipu" column="idGastoMaipu" lazy="false"/>
+		<property name="cantidadDinero" />
+		<property name="adicional" />
+		<property name="cantCuotas" />
+		<property name="idTipoDePago" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.FormasDePagoSubscripcionEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+		<property name="saldadaDeuda" />
+		<property name="porcInteres" />
+		
+		<property name="tipoMovimiento" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.TipoMovimientoCajaEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+		<property name="idUsuarioGeneroMovimientoCaja" />	
+		
+		<many-to-one name="bancoPromocion" class="com.institucion.model.BancoPromocion" column="idBancoPromocion" lazy="false"/>
+		
+				<property name="sucursal" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.SucursalEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+
+		<many-to-one name="quincena" class="com.institucion.model.Quincena" column="quincena" lazy="false"/>
+		
+	</class>
+</hibernate-mapping>

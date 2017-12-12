@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Producto" table="Producto">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Producto_id_seq</param>
+			</generator>
+		</id>
+
+<!-- 		<property name="nombre" /> -->
+		<property name="descripcion" />
+		<property name="precio" />		
+		<property name="stock" />
+		<property name="precioCosto" />
+		<property name="imagen" />
+		<property name="codigo" />
+		
+	</class>
+</hibernate-mapping>

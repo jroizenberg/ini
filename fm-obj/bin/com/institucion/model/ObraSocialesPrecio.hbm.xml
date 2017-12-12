@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="ObraSocialesPrecio" table="ObraSocialesPrecio">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ObraSocialesPrecio_id_seq</param>
+			</generator>
+		</id>
+
+		<many-to-one name="actividad" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>		
+ 		<many-to-one name="obraSocial" class="com.institucion.model.ObraSocial" column="idObraSocial" lazy="false"/>
+		<property name="disponible" />
+		<property name="sePagaUnaUnicaVez" />
+		
+		<property name="precioQuePagaElCliente" />
+		<property name="precioQuePagaLaObraSocial" />
+		
+	</class>
+</hibernate-mapping>

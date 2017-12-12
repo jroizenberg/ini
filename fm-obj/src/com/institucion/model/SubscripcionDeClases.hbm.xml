@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="SubscripcionDeClases" table="SubscripcionDeClases">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SubscripcionClases_id_seq</param>
+			</generator>
+		</id>
+	
+		<many-to-one name="curso" class="com.institucion.model.Curso" column="idCurso" lazy="false"/>
+		<many-to-one name="subscripcion" class="com.institucion.model.Subscripcion" column="idSubscripcion" lazy="false"/>
+						
+<!-- 		<set name="claseSeleccionadasList" table="SubscripcionDeClasesPorActividad" inverse="true" cascade="all-delete-orphan"  > -->
+<!-- 			<key column="idSubscripcion"/> -->
+<!-- 			<one-to-many class="com.institucion.model.SubscripcionDeClasesPorActividad"/> -->
+<!-- 		</set> -->
+	
+	
+		<set name="claseSeleccionadasList" table="subscripcionDeClasesPorActividad" cascade="all" lazy="true" >
+			<key column="idSubscripcion"/>
+			<one-to-many class="com.institucion.model.SubscripcionDeClasesPorActividad" not-found="ignore"/>
+		</set>
+		
+		
+	</class>
+</hibernate-mapping>

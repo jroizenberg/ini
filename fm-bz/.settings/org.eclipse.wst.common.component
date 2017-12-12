@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="fm-bz">
+        <wb-resource deploy-path="/" source-path="/ejbModule"/>
+        <dependent-module deploy-path="/" handle="module:/resource/fm-bzi/fm-bzi">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="curvesapi-1.04.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/curvesapi-1.04.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-excelant-3.15.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/poi-excelant-3.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-schemas-3.15.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/poi-ooxml-schemas-3.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmlbeans-2.6.0.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/xmlbeans-2.6.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jbarcodebean-1.2.0.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/jbarcodebean-1.2.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.15.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/poi-3.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-scratchpad-3.15.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/poi-scratchpad-3.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports-3.7.6.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/jasperreports-3.7.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-3.15.jar" deploy-path="/" handle="module:/classpath/lib/fm-bz/libs/poi-ooxml-3.15.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path"/>
+        <property name="ClientProject" value="fm-bzi"/>
+        <property name="ClientJARURI" value="fm-bzi.jar"/>
+    </wb-module>
+</project-modules>

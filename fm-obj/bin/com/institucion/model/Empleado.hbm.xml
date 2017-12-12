@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Empleado" table="Empleado">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Empleado_id_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" />			
+		
+		<set name="actividades" table="EmpleadoActividades" cascade="all" lazy="true" >
+			<key column="idEmpleado"/>
+			<one-to-many class="com.institucion.model.EmpleadoActividades" not-found="ignore"/>
+		</set>
+		
+		
+<!-- 		<property name="idObraSocial" /> -->
+	</class>
+</hibernate-mapping>

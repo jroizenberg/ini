@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="A Controlar"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="paracontrolselector" apply="com.institucion.controller.AControlarSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="cajaSelector"/>
+		<panel id="filter"  use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.AControlarFilter" />
+		<label sclass="hightlight">Todos deben validar todos los movimientos que se muestran en esta pantalla con el fin de asegurar un correcto manejo del dinero.</label>		
+		<separator spacing="10px"/>		
+		<panel id="clientepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.AControlarList" 
+			title="&#36;{c:l('caja.a.controlar')}"/>
+	</window>
+</zk>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Subscripcion" table="Subscripcion">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Subscripcion_id_seq</param>
+			</generator>
+		</id>
+
+		<set name="conceptoList" table="Concepto"  cascade="all-delete-orphan" lazy="true" >
+			<key column="idSubscripcion"/>
+			<one-to-many class="com.institucion.model.Concepto"/>
+		</set>
+		
+		<many-to-one name="cliente" class="com.institucion.model.Cliente" column="idCliente" lazy="false"/>
+		<property name="precioCursosMatricula" />
+		
+		<property name="detalleCumple" />
+		
+		<property name="fechaIngresoSubscripcion" />
+		<property name="valorAdicionaltarjeta" />
+		<property name="precioTOTALadicionalTarjeta" />
+		<set name="pagosPorSubscripcionList" table="PagosPorSubscripcion" cascade="all" lazy="true" >
+			<key column="idSubscripcion"/>
+			<one-to-many class="com.institucion.model.PagosPorSubscripcion"/>
+		</set>
+
+	<set name="subscripcionDeClases" table="subscripcionDeClases" cascade="all" lazy="true" >
+			<key column="idSubscripcion"/>
+			<one-to-many class="com.institucion.model.SubscripcionDeClases" not-found="ignore"/>
+		</set>
+
+	<set name="cupoActividadList" table="CupoActividad" cascade="all" lazy="true" >
+			<key column="idSubscripcion"/>
+			<one-to-many class="com.institucion.model.CupoActividad" not-found="ignore"/>
+		</set>
+
+		<property name="anulaSubscripcion" />
+		<property name="anulaComentario" />
+		<property name="anulaDevuelveDinero" />
+		<property name="anulaValorDevuelvo" />
+		<property name="fechaYHoraCreacion" />
+		<property name="fechaYHoraAnulacion" />	
+		
+		<property name="idUsuarioAnuloSubscripcion" />
+		<property name="idUsuarioCreoSubscripcion" />
+		<property name="fechaYHoraSaldaSubscripcion" />
+		<property name="idUsuarioSaldaSubscripcion" />
+	
+	</class>
+</hibernate-mapping>

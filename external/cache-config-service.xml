@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- =====================================================================-->
+<!--                                                                       -->
+<!--  Sample TreeCache Service Configuration                               -->
+<!--                                                                       -->
+<!-- =====================================================================-->
+
+<server>
+
+   <!-- ====================================================================-->
+   <!-- Defines TreeCache configuration                                      -->
+   <!-- ====================================================================-->
+
+   <mbean code="org.jboss.cache.jmx.CacheJmxWrapper"
+          name="jboss.cache:service=TreeCache">
+
+      <depends>jboss:service=Naming</depends>
+      <depends>jboss:service=TransactionManager</depends>
+
+
+      <!-- Configure the TransactionManager -->
+      <attribute name="TransactionManagerLookupClass">org.jboss.cache.transaction.JBossTransactionManagerLookup</attribute>
+
+	<!--
+		Node locking scheme:
+		OPTIMISTIC
+		PESSIMISTIC (default)
+	-->
+	<attribute name="NodeLockingScheme">PESSIMISTIC</attribute>
+
+      <!--
+          Node locking level : SERIALIZABLE
+                               REPEATABLE_READ (default)
+                               READ_COMMITTED
+                               READ_UNCOMMITTED
+                               NONE
+      -->
+      <attribute name="IsolationLevel">READ_COMMITTED</attribute>
+
+      <!--
+           Valid modes are LOCAL
+                           REPL_ASYNC
+                           REPL_SYNC
+                           INVALIDATION_ASYNC
+                           INVALIDATION_SYNC
+      -->
+      <attribute name="CacheMode">LOCAL</attribute>
+
+      <!-- Name of cluster. Needs to be the same for all clusters, in order
+           to find each other
+      -->
+      <attribute name="ClusterName">JBossCache-Cluster</attribute>
+
+      <!-- JGroups protocol stack properties. Can also be a URL,
+           e.g. file:/home/bela/default.xml
+         <attribute name="ClusterProperties"></attribute>
+      -->
+
+      <!-- JGroups protocol stack properties NOT NEEDED since CacheMode is LOCAL-->
+
+
+      <!--
+          The max amount of time (in milliseconds) we wait until the
+          state (ie. the contents of the cache) are retrieved from
+          existing members in a clustered environment
+      -->
+      <attribute name="StateRetrievalTimeout">20000</attribute>
+
+      <!--
+          Number of milliseconds to wait until all responses for a
+          synchronous call have been received.
+      -->
+      <attribute name="SyncReplTimeout">20000</attribute>
+
+      <!-- Max number of milliseconds to wait for a lock acquisition -->
+      <attribute name="LockAcquisitionTimeout">15000</attribute>
+
+
+      <!-- Specific eviction policy configurations. This is LRU -->
+      <attribute name="EvictionPolicyConfig">
+         <config>
+            <attribute name="wakeUpIntervalSeconds">5</attribute>
+            <!-- This defaults to 200000 if not specified -->
+            <attribute name="eventQueueSize">200000</attribute>
+            <attribute name="policyClass">org.jboss.cache.eviction.LRUPolicy</attribute>
+
+            <!-- Cache wide default -->
+           <region name="/_default_">
+               <attribute name="maxNodes">5000</attribute>
+               <attribute name="timeToLiveSeconds">1000</attribute>
+            </region>
+            <region name="/org/jboss/data">
+               <attribute name="maxNodes">5000</attribute>
+               <attribute name="timeToLiveSeconds">1000</attribute>
+            </region>
+            <region name="/org/jboss/test/data">
+               <attribute name="maxNodes">5</attribute>
+               <attribute name="timeToLiveSeconds">4</attribute>
+            </region><!--
+            <region name="/fm/entities/DT">
+               <attribute name="maxNodes">5</attribute>
+               <attribute name="timeToLiveSeconds">1</attribute>
+            </region>
+         --></config>
+      </attribute>
+
+      <!--
+         Indicate whether to use region based marshalling or not. Set this to true if you are running under a scoped
+         class loader, e.g., inside an application server. Default is "false".
+      -->
+      <attribute name="UseRegionBasedMarshalling">false</attribute>
+   </mbean>
+
+
+</server>

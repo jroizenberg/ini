@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd" >
+	
+	<!--  Datasource contra un recurso en un JNDI container -->
+	<jee:jndi-lookup id="fm.conf.dataSource" jndi-name="java:fm.conf.ds" />
+	
+	<!--
+		Spring/JTA Transaction Manager. Une el manejo de transacciones con el
+		contexto JEE
+	-->
+	<bean id="fm.conf.txManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="userTransactionName" value="UserTransaction"/>
+        <property name="transactionManagerName" value="java:/TransactionManager"/>
+	</bean>
+	
+	<!--
+		Factory de la session Spring/Hibernate que une el Datasource con la
+		configuracion de Spring
+	-->
+	<bean id="fm.conf.sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="fm.conf.dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/institucion/model/Matricula.hbm.xml</value>
+				<value>com/institucion/model/Actividad.hbm.xml</value>
+				<value>com/institucion/model/ActividadYClase.hbm.xml</value>
+				<value>com/institucion/model/Clase.hbm.xml</value>
+				<value>com/institucion/model/ClaseCantidad.hbm.xml</value>
+				<value>com/institucion/model/Cliente.hbm.xml</value>
+				<value>com/institucion/model/ClienteNoEncontradoEnPileta.hbm.xml</value>
+				<value>com/institucion/model/ClienteNoEncontradoEnPiletaHistorico.hbm.xml</value>
+<!-- 				<value>com/institucion/model/ClienteHistorico.hbm.xml</value> -->
+				
+				<value>com/institucion/model/Curso.hbm.xml</value>
+				<value>com/institucion/model/Inscripcion.hbm.xml</value>
+				<value>com/institucion/model/Empleado.hbm.xml</value>
+				<value>com/institucion/model/EmpleadoActividades.hbm.xml</value>				
+				<value>com/institucion/model/ObraSocialesPrecio.hbm.xml</value>
+				<value>com/institucion/model/ObraSocial.hbm.xml</value>
+				<value>com/institucion/model/PagosPorSubscripcion.hbm.xml</value>
+				<value>com/institucion/model/Subscripcion.hbm.xml</value>
+				<value>com/institucion/model/CierreCaja.hbm.xml</value>
+				<value>com/institucion/model/Quincena.hbm.xml</value>
+				<value>com/institucion/model/Concepto.hbm.xml</value>
+				<value>com/institucion/model/SubscripcionDeClases.hbm.xml</value>
+				<value>com/institucion/model/SubscripcionDeClasesPorActividad.hbm.xml</value>
+				<value>com/institucion/model/CupoActividad.hbm.xml</value>
+				<value>com/institucion/model/Producto.hbm.xml</value>
+				<value>com/institucion/model/ClienteListaEncontradoEnPileta.hbm.xml</value>
+				<value>com/institucion/model/ClienteListaEncontradoEnPiletaHistorico.hbm.xml</value>
+				<value>com/institucion/model/ClaseConListaAlumnos.hbm.xml</value>
+				<value>com/institucion/model/ClaseConListaAlumnosHistorico.hbm.xml</value>
+				<value>com/institucion/model/CajaMovimiento.hbm.xml</value>
+				<value>com/institucion/model/VentaProducto.hbm.xml</value>
+				<value>com/institucion/model/VentaProductoPorProducto.hbm.xml</value>
+				<value>com/institucion/model/Gastos.hbm.xml</value>
+				<value>com/institucion/model/GastosMaipu.hbm.xml</value>
+				<value>com/institucion/model/GastosSueldos.hbm.xml</value>
+				<value>com/institucion/model/IngresoAClasesSinFechasAlumnos.hbm.xml</value>
+				
+				<value>com/institucion/model/Banco.hbm.xml</value>
+				<value>com/institucion/model/BancoPromocion.hbm.xml</value>
+				
+				<value>com/institucion/fm/security/model/User.hbm.xml</value>
+				<value>com/institucion/fm/security/model/UserSecurity.hbm.xml</value>
+				<value>com/institucion/fm/security/model/Group.hbm.xml</value>
+				<value>com/institucion/fm/security/model/Permission.hbm.xml</value>
+				<value>com/institucion/fm/filteradv/model/CriteriaClause.hbm.xml</value>
+				<value>com/institucion/fm/filteradv/model/Predicate.hbm.xml</value>			
+				<value>com/institucion/fm/fe/validator/Validator.hbm.xml</value>
+				<value>com/institucion/fm/fe/validator/ValidatorValidation.hbm.xml</value>
+
+				<!-- WorkFlow -->
+				<value>com/institucion/fm/wf/model/Role.hbm.xml</value>
+				<value>com/institucion/fm/wf/model/User.hbm.xml</value>
+
+				<value>com/institucion/fm/confsys/model/ConfigRegional.hbm.xml</value>
+				<value>com/institucion/fm/confsys/model/Flag.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<map>
+				<entry key="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+				<entry key="hibernate.show_sql" value="false"/>
+				<entry key="transaction.auto_close_session" value="after_statement"/>
+				<entry key="hibernate.connection.release_mode" value="after_statement"/>
+				
+			<!-- 	<entry key="hibernate.hbm2ddl.auto" value="create"/> -->
+				
+				
+	             <entry key="hibernate.c3p0.min_size" value="2"/>
+                 <entry key="hibernate.c3p0.max_size" value="200"/>
+                 <entry key="hibernate.c3p0.timeout" value="600"/>
+                 <entry key="hibernate.c3p0.max_statements" value="80"/>
+			
+
+
+			</map>
+		</property>
+
+	</bean>
+	
+	<!--
+		Hibernate template que se utiliza para encapsular las acciones contra
+		la base a traves de hibernate
+	-->
+	<bean id="fm.conf.hibernateTemplate" class="com.institucion.fm.conf.model.HibernateTemplate">
+		<constructor-arg ref="fm.conf.sessionFactory" />
+	</bean>
+
+	<!-- TemplateHolder que contiene el template de spring/hibernate -->
+	<bean id="fm.srv.templateHolder" class="com.institucion.fm.dao.TemplateHolder" abstract="true">
+		<property name="hibernateTemplate" ref="fm.conf.hibernateTemplate" />
+	</bean>
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="ClienteHistorico" table="ClienteHistorico">
+	<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">clientehistorico_id_seq</param>
+			</generator>
+		</id>
+		<property name="nombre" />
+		<property name="apellido" />
+		<property name="dni" />
+		<property name="fechaNacimiento" />
+		<property name="domicilio" />
+		<property name="telefonoFijo" />
+		<property name="celular" />
+		<property name="facebook" />
+		<property name="mail" />
+		<property name="entregoCertificado" />
+	</class>
+</hibernate-mapping>

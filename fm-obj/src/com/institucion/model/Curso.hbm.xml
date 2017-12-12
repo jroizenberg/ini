@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Curso" table="Curso">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Curso_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="nombre" />
+		<property name="descripcion" />
+		<property name="precio" />		
+		<property name="pagaSubscripcion" />
+		<property name="disponible" />
+		<property name="cantClasesPorSemana" />
+		<property name="esConCodigosDeBarras" />
+		
+		<property name="idTipoCurso" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.TipoCursoEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+		<property name="vencimiento" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.VencimientoCursoEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+
+		<set name="actividadYClaseList" table="ActividadYClase" cascade="all" lazy="false" >
+			<key column="idCurso"/>
+			<one-to-many class="com.institucion.model.ActividadYClase"/>
+		</set>
+				
+	</class>
+</hibernate-mapping>

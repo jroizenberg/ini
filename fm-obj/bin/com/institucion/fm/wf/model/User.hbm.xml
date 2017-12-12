@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false">
+	<class name="com.institucion.fm.wf.model.User" table="wf_user" dynamic-insert="true" dynamic-update="true" select-before-update="true">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">WF_User_id_seq</param>
+			</generator>
+		</id>
+		<many-to-one name="role" class="com.institucion.fm.wf.model.Role" column="roleid" lazy="proxy"/>
+		<many-to-one name="user" class="com.institucion.fm.security.model.User" column="userid" lazy="false"/>
+		<property name="pendienteDeProceso" column="pendiente_de_proceso"/>
+<!-- 		<set name="tasks" table="wf_task" lazy="true" inverse="true"> cascade="all"> -->
+<!-- 			<key column="owner" /> -->
+<!-- 			<one-to-many class="com.institucion.fm.wf.model.Task" /> -->
+<!-- 		</set> -->
+
+<!-- 		<set name="pendingTasks" table="wf_task" lazy="true" inverse="true" >cascade="all"> -->
+<!-- 			<key column="delegate" /> -->
+<!-- 			<one-to-many class="com.institucion.fm.wf.model.Task" /> -->
+<!-- 		</set> -->
+
+<!-- 		<set name="promotionLines" table="PromotionLine" lazy="true" inverse="true" cascade="all"> -->
+<!-- 			<key column="responsible_id" /> -->
+<!-- 			<one-to-many class="com.institucion.fm.promotion.model.PromotionLine" /> -->
+<!-- 		</set> -->
+
+<!-- 		<property name="type" > -->
+<!-- 			<type name="com.institucion.fm.conf.model.GenericEnumUserType"> -->
+<!-- 				<param name="enumClass">com.institucion.fm.wf.model.SalesForceStateType</param> -->
+<!-- 				<param name="identifierMethod">toInt</param> -->
+<!-- 				<param name="valueOfMethod">fromInt</param> -->
+<!-- 			</type> -->
+<!-- 		</property> -->
+				
+	</class>
+</hibernate-mapping>

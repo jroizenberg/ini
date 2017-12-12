@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="fm-web">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="jasperreports.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/external/lib/jasperreports.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DynamicJasper-2.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/external/lib/DynamicJasper-2.1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasper-jdt.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/external/lib/jasper-jdt.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-2.5.1-final-20040804.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/fm-web/WebContent/lib2/poi-2.5.1-final-20040804.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.1-FINAL-20080629.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/fm-web/WebContent/lib2/poi-3.1-FINAL-20080629.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fm-zktheme.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/external/zk-theme/build/fm-zktheme.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path"/>
+        <property name="context-root" value="fm"/>
+    </wb-module>
+</project-modules>

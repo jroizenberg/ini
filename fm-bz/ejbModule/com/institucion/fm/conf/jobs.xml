@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+							http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+
+	<bean id="instanceConf" class="com.institucion.fm.conf.InstanceConf" />
+
+	<bean id="propertyHolder"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" ref="instanceConf" />
+	</bean>
+	
+	<bean name="actualizaEstadoSubsyClientesJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.ActualizaEstadosSubsYClienteJob" />
+		<property name="jobDataAsMap">
+			<map>
+ 				<entry key="inscripcionEJB" value-ref="fmEjbInscripcion" /> 
+			</map>
+		</property>
+	</bean>
+	
+		
+	<bean id="actualizaEstadoSubsyClientesTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actualizaEstadoSubsyClientesJob" />
+		<property name="cronExpression" value="${actualizaestados.cron.config}"  />
+	</bean>
+		
+	<bean name="actualizaJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.ActualizaJob" />
+		<property name="jobDataAsMap">
+			<map>
+ 				<entry key="inscripcionEJB" value-ref="fmEjbInscripcion" /> 
+			</map>
+		</property>
+	</bean>
+	
+		
+	<bean id="actualizaClasesTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actualizaJob" />
+		<property name="cronExpression" value="${actualizaclases.cron.config}"  /> <!-- ejecuta cada hora "0 0 * * * ?" --> 
+	</bean>
+	
+	<!-- Scheduler -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="schedulerName" value="fmScheduler" />
+		<property name="overwriteExistingJobs" value="true"/>
+		<property name="triggers">
+			<list>
+				<!-- Actualiza historico de Clases de clientes -->
+ 				<ref bean="actualizaClasesTrigger" /> 
+				
+				<!-- Actualiza las clases a Vencidas -->
+  				<ref bean="actualizaEstadoSubsyClientesTrigger" /> 
+				
+			</list>
+		</property>
+	</bean>
+	
+</beans>

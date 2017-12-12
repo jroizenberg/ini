@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="CupoActividad" table="CupoActividad">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">CupoActividad_id_seq</param>
+			</generator>
+		</id>	
+
+		<property name="cupos" />	
+		<many-to-one name="curso" class="com.institucion.model.Curso" column="idCurso" lazy="false"/>
+		<many-to-one name="actividad" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>
+		<many-to-one name="subscripcion" class="com.institucion.model.Subscripcion" column="idSubscripcion" lazy="false"/>
+		
+		<property name="estado" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.CupoActividadEstadoEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+		
+		<property name="fechaComienzo" />
+		<property name="fechaFin" />
+		
+		<property name="posponeMeses" />
+		<property name="posponeAdicional" />
+		<property name="posponeComentario" />
+		<property name="posponePagaAdicional" />
+		<property name="posponeAprobadoPor" />
+		<property name="posponefechaYHora" />	
+		<property name="idUsuarioPosponeSubscripcion" />
+
+		<property name="posponePagaAdicional2" />
+		<property name="posponeMeses2" />
+		<property name="posponeAdicional2" />
+		<property name="posponeComentario2" />
+		<property name="posponeAprobadoPor2" />
+		<property name="posponefechaYHora2" />	
+		<property name="idUsuarioPosponeSubscripcion2" />
+		<property name="pagoElCopago" />	
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,3 @@
+modificar el conf de postgres
+
+datestyle = 'iso, dmy'

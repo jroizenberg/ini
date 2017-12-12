@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<bean id="fm.exception.ServiceExceptionHandler" class="com.institucion.fm.conf.exception.ServiceExceptionHandler">	
+	</bean>
+	<aop:config>
+		<aop:aspect id="fm.aspect.ServiceExceptionHandler" ref="fm.exception.ServiceExceptionHandler">
+			<aop:around pointcut="execution(* com.institucion.fm..bz.*.*(..))" method="invoke"/>
+      	</aop:aspect>		
+	</aop:config>		
+	
+	<!-- Exception DAO Handler Aspect -->
+	<bean id="fm.exception.DAOExceptionHandler" class="com.institucion.fm.conf.exception.DAOExceptionHandler">	
+	</bean>
+	<aop:config>
+		<aop:aspect id="fm.aspect.DAOExceptionHandler" ref="fm.exception.DAOExceptionHandler">
+			<aop:around pointcut="execution(* com.institucion.fm..dao.*.*(..))" method="invoke"/>
+      	</aop:aspect>		
+	</aop:config>
+	
+	<!-- Exception Cache Handler Aspect -->
+	<bean id="fm.exception.CacheExceptionHandler" class="com.institucion.fm.conf.exception.CacheExceptionHandler">	
+	</bean>
+	<aop:config>
+		<aop:aspect id="fm.aspect.CacheExceptionHandler" ref="fm.exception.CacheExceptionHandler">
+			<aop:around pointcut="execution(* com.institucion.fm.conf.cache..*.*(..))" method="invoke"/>
+      	</aop:aspect>		
+	</aop:config>	
+	
+	<bean id="fm.gmtHandler" class="com.institucion.fm.conf.cache.aspect.GMTHandler">	
+ </bean>
+	
+	<aop:config>
+		<aop:aspect id="fm.aspect.gmtHandler" ref="fm.gmtHandler">
+
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.HealthProfessionalDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.HealthProfessionalDAO.create(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.InstitutionDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.InstitutionDAO.create(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.PharmacyDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.fe.dao.PharmacyDAO.create(..))" method="fromDateToGmt" /> -->
+			
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.HealthProfessionalContactDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.HealthProfessionalContactDAO.create(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.InstitutionContactDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.InstitutionContactDAO.create(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.PharmacyContactDAO.save(..))" method="fromDateToGmt" /> -->
+<!-- 			<aop:around pointcut="execution(*  com.institucion.fm.contact.dao.PharmacyContactDAO.create(..))" method="fromDateToGmt" /> -->
+			
+			
+      	</aop:aspect>		
+	</aop:config>
+	
+
+
+</beans>
+	

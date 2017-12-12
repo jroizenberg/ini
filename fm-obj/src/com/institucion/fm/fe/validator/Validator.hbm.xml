@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//hibernate/hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping package="com.institucion.fm.fe.validator">
+
+	<class name="Validator" table="Validator">
+
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">Validator_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="name" />
+
+		<set name="validatorValidations" table="ValidatorValidation" lazy="false" cascade="all">
+			<key column="id_validator" />
+			<one-to-many class="ValidatorValidation"/>
+		</set>
+	</class>
+</hibernate-mapping>

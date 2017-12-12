@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Caja"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="cajaSelector" apply="com.institucion.controller.CajaSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.CajaSelector" tokenPrefix="cajaSelector" /> 
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="cajaSelector"/>
+		<panel id="filter"  use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.CajaFilter" />		
+		<separator spacing="20px"/>
+
+		<panel id="totalesCrud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.CajaTotalesCrud" />
+		<separator spacing="10px"/>
+		
+		<panel id="totales2Crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.CajaTotales2Crud" />
+
+		<separator spacing="25px"/>
+
+		<panel id="clientepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CajaList" 
+			title="&#36;{c:l('caja.list')}"/>
+	</window>
+</zk>

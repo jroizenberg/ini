@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="GastosMaipu" table="GastosMaipu">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">GastosMaipu_id_seq</param>
+			</generator>
+		</id>
+		<many-to-one name="quincena" class="com.institucion.model.Quincena" column="quincena" lazy="false"/>
+		
+		<many-to-one name="empleado" class="com.institucion.model.Empleado" column="idEmpleado" lazy="false"/>
+		<property name="dinero" />
+		<property name="comentario" />
+		<property name="anio" />
+		<property name="fecha" />
+		<property name="tipoGasto" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.GastosMaipuEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+		
+		<property name="nombreUsuarioGeneroMovimiento" >
+	            <formula>
+	                 (select us.firstname|| ' '|| us.lastname  from users us where us.id =IDUSUARIOGENEROMOVIMIENTO )
+	            </formula>
+		</property>
+		<property name="idUsuarioGeneroMovimiento" />	
+		
+	</class>
+</hibernate-mapping>

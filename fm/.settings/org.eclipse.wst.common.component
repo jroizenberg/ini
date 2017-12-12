@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="fm">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module deploy-path="/" handle="module:/resource/fm-bz/fm-bz">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fm-bzi.jar" deploy-path="/" handle="module:/resource/fm-bzi/fm-bzi">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/fm-web/fm-web">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fm-com.jar" deploy-path="/" handle="module:/resource/fm-com/fm-com">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fm-obj.jar" deploy-path="/" handle="module:/resource/fm-obj/fm-obj">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

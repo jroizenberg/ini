@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Anular Subscripcion"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="subsposponercrud" apply="com.institucion.controller.PosponerSubscripcionCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="subsPosponer"/>
+		
+		<panel id="crud" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.PosponerSubscripcionCrud" />
+		<separator spacing="10px"/>	
+		<panel id="cursoseleccionadoList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.CursoListSeleccionados" style="width:70%;  align:center;  margin-left: 10%;"  title="&#36;{c:l('cursos.contratados.list.posponer')}"/>
+		<separator spacing="20px"/>
+		
+		<label id="posponer" value="&#36;{c:l('posponer.tener.en.cuenta')}"  style="text-align: center;  color:red;font-size:8pt"/>
+		<separator spacing="20px"/>
+		<panel id="crud2" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.PosponerSubscripcionCrud5" />
+		<separator spacing="25px"/>	
+			
+	</window>
+</zk>

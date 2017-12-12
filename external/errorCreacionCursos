@@ -1,0 +1,69 @@
+
+select * from curso where nombre  ilike '%natacion jard%'
+
+select * from concepto  where idcurso  in (78)  -- hay 153 registros
+select * from concepto  where idcurso  in (79)  -- hay 45 registros
+
+
+select * from actividadyclase where idcurso =79
+select * from actividadyclase where idcurso not in (select id from curso)
+select * from clasehistorico where idcurso=79
+select * from concepto where  idcurso=78
+select * from cupoactividad where   idcurso=79
+select * from curso
+select * from ingresoaclasessinfechasalumnos where   idcurso=79
+select * from subscripciondeclases where   idcurso=79
+select * from subscripciondeclasesporactividad where   idcurso=79
+
+
+update concepto set idcurso=78,  concepto='NATACION JARDIN' where idcurso=79
+update cupoactividad set idcurso=78 where idcurso=79
+
+delete from actividadyclase where idcurso=79
+delete from curso where id=79
+
+
+----------------------------
+select celular from cliente  group by  celular  having count(*) >1
+
+update cajamovimiento set 				idcliente =1859 where idcliente= 1860 ;
+update cliente_clase set 				idcliente =1859 where idcliente= 1860 ;
+update clientelistaencontradoenpileta set    		idcliente =1859 where idcliente= 1860 ;
+update clientelistaencontradoenpiletahistorico set 	idcliente =1859 where idcliente= 1860 ;
+update inscripcion set 					idcliente =1859 where idcliente= 1860 ;
+update subscripcion set 				idcliente =1859 where idcliente= 1860 ;
+delete from cliente where 						             id =1860;
+
+idCliente: 
+select * from cajamovimiento;
+select * from cliente_clase
+select * from clientelistaencontradoenpileta
+select * from clientelistaencontradoenpiletahistorico
+ select * from inscripcion
+ select * from subscripcion
+
+
+select idcliente, count(*) from inscripcion   group by idcliente having count(*)> 1
+delete inscripcion..............
+select * from inscripcion where idcliente=221
+delete from inscripcion where id in (448)
+
+
+--select * from clase_cliente
+--select * from claseconlistaalumnos
+--select * from claseconlistaalumnoshistorico
+--select * from cliente
+--select * from cliente_clasehistorico
+--select * from clientehistorico
+--select * from ingresoaclasessinfechasalumnos
+
+
+Eliminar un cliente
+delete from  cajamovimiento where 				idcliente =2539;
+delete from  cliente_clase where 				idcliente =2539 ;
+delete from  clientelistaencontradoenpileta where    		idcliente =2539;
+delete from  clientelistaencontradoenpiletahistorico where 	idcliente =2539 ;
+delete from  inscripcion where 					idcliente =2539;
+delete from  subscripcion where 				idcliente =2539;
+delete from cliente where 						             id =2539;
+

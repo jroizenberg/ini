@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Productos"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="productosventaselector" apply="com.institucion.controller.ProductosVentaSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		
+		<panel id="toolbar2" use="com.institucion.desktop.view.ProductoVentasDelDiaSelector" tokenPrefix="prodSelector" />
+		<panel id="ventasDelDiaList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.ProductoVentaDelDiaList2" title="&#36;{c:l('ventas.del.dia')}"/>
+
+		<separator spacing="10px"/>	
+		
+		<panel id="toolbar" use="com.institucion.desktop.view.ProductoVentaSelector" tokenPrefix="prodSelector" style="width:80%;  align:center;  margin-left: 10%;"/>
+		
+		<separator spacing="10px"/>	
+		<panel id="panelPrecio" use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.ProductoPrecioCrud" style="width:80%;  align:center;  margin-left: 10%;"/>
+		<separator spacing="10px"/>	
+		
+		<panel id="curso2" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.ProductoVentaListPrueba" title="Listado de Productos" style="width:80%;  align:center;  margin-left: 10%;" />
+	
+	
+	</window>
+</zk>

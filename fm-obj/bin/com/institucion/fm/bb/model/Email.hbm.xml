@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false">
+	<class name="com.institucion.fm.bb.model.Email" table="Email">
+
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Email_id_seq</param>
+			</generator>
+		</id>
+
+      	<property name="from" column="from_user" />
+		<property name="to" column="to_user" />
+		<property name="cc" />
+		<property name="bcc" />
+		<property name="subject" />
+		<property name="body" />	
+
+	</class>
+</hibernate-mapping>

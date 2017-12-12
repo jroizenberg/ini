@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Inscripcion" table="Inscripcion">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Inscripcion_id_seq</param>
+			</generator>
+		</id>
+		<many-to-one name="cliente" class="com.institucion.model.Cliente" column="idCliente" lazy="false"/>
+
+		<property name="fecha" />
+		<property name="fechaVencimiento" />
+		<property name="saldoAbonado" />
+		<property name="matriculaGratis" />
+	
+	</class>
+</hibernate-mapping>

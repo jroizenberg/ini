@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//hibernate/hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping package="com.institucion.fm.security.model">
+
+	<class name="Permission" table="Permission">
+
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Permission_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="name" />
+		<property name="description" />
+		<property name="type" >
+			<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+				<param name="enumClass">com.institucion.fm.security.model.PermissionType</param>
+				<param name="identifierMethod">toInt</param>
+				<param name="valueOfMethod">fromInt</param>
+			</type>
+		</property>
+		<property name="token" />
+
+		<set name="groups" table="group_permission" lazy="true" inverse="true">
+			<key column="permission_id"/>
+			<many-to-many class="com.institucion.fm.security.model.Group" column="group_id"/>
+		</set>
+	</class>
+</hibernate-mapping>

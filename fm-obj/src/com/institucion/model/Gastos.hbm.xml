@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Gastos" table="Gastos">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Gastos_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="mes" />
+		<property name="anio" />
+		<property name="dinero" />
+		<property name="comentario" />
+	
+		<many-to-one name="empleado" class="com.institucion.model.Empleado" column="idEmpleado" lazy="false"/>
+	
+		<set name="gastosSueldoList" table="GastosSueldos" inverse="true" cascade="all-delete-orphan" lazy="true" >
+			<key column="idGasto"/>
+			<one-to-many class="com.institucion.model.GastosSueldos"/>
+		</set>
+		
+		<property name="tipoGasto" >
+				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+					<param name="enumClass">com.institucion.model.GastosEnum</param>
+					<param name="identifierMethod">toInt</param>
+					<param name="valueOfMethod">fromInt</param>
+				</type>
+		</property>
+			
+		<property name="pagaSueldosPorMes" />
+		<property name="fechaDesde" />
+		<property name="fechaHasta" />
+		<property name="nombreUsuarioGeneroMovimiento" >
+	            <formula>
+	                 (select us.firstname|| ' '|| us.lastname  from users us where us.id =IDUSUARIOGENEROMOVIMIENTO )
+	            </formula>
+		</property>
+		<property name="idUsuarioGeneroMovimiento" />
+	</class>
+</hibernate-mapping>

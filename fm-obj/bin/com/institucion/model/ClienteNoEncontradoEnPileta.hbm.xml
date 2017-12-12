@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="ClienteNoEncontradoEnPileta" table="ClienteNoEncontradoEnPileta">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ClienteNoEncontradoEnPelicula_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="fecha" />
+		<many-to-one name="clase" class="com.institucion.model.ClaseConListaAlumnos" column="idListaClase" lazy="false"/>
+		<property name="nombre" />
+		<property name="telefono" />
+		<property name="celular" />
+		<property name="comentario" />
+		
+	</class>
+</hibernate-mapping>

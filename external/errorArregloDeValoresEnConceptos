@@ -1,0 +1,27 @@
+update concepto set cantsesiones= cantclase WHERE cantclase > cantsesiones;
+
+alter table concepto drop cantclase;
+
+
+
+
+update concepto set cantsesiones=10 where id in ( select id from concepto where  cantsesiones =0 and idcurso in (74 )) ; -- 10 sessiones
+
+update concepto set cantsesiones=8 where id in ( select id from concepto where  cantsesiones =0 and idcurso in (50,68 )) ; -- 8 sessiones
+
+ update concepto set cantsesiones=5 where id in (select id from concepto where  cantsesiones =0 and idcurso in (73)) ; -- 5 sessiones
+
+ update concepto set cantsesiones=4 where id in (select id from concepto where  cantsesiones =0 and idcurso in (48, 72,54)) ; -- 4 sessiones
+
+
+	select cm.id, round(c.cantsesiones * c.precioporclaseosesionpagaobrasocial) 
+	from cajamovimiento cm 
+	inner join subscripcion s on (cm.idsubscripcion= s.id)
+	inner join concepto c on (c.idsubscripcion= s.id)
+	where c.idobrasocial is not  null
+		and cm.concepto ilike '%A abonar por Obra Social%'
+		and cm.valor=0 and cm.tipomovimiento=1
+
+
+
+update cajamovimiento set valor = 	726	   	   where id=	6903	;

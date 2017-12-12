@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.institucion.fm.security.model" auto-import="false" >
+	<class name="User" table="Users">
+
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Users_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="name"/>
+		<property name="password"/>
+		<property name="lastName"/>
+		<property name="firstName"/>
+		<property name="telephone"/>
+		<property name="cellphone"/>
+		<property name="address"/>
+		<property name="code" />
+		<property name="userWF" />
+		<property name="validatePass" />
+		<property name="state" >
+			<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+				<param name="enumClass">com.institucion.fm.security.model.UserState</param>
+				<param name="identifierMethod">toInt</param>
+				<param name="valueOfMethod">fromInt</param>
+			</type>
+		</property>
+		<property name="sucursal" />
+
+		
+		<property name="email" />
+
+		<many-to-one name="configRegional" class="com.institucion.fm.confsys.model.ConfigRegional" column="CONFIG_REGIONAL_ID"  lazy="false"/>
+<!-- 		<many-to-one name="subdivision" class="com.institucion.fm.confsys.model.Subdivision" column="SUBDIVISION_ID" lazy="false"/> -->
+
+		<set name="groups" table="User_Group" lazy="true" >
+			<key column="user_id"/>
+			<many-to-many class="com.institucion.fm.security.model.Group" column="group_id"/>
+		</set>
+		<one-to-one name="userSecurity" class="com.institucion.fm.security.model.UserSecurity" lazy="false" cascade="all"/>
+	</class>
+</hibernate-mapping>

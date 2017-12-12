@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Otras configuraciones"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="convarias" apply="com.institucion.controller.ConfVariasCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrudSinVolver" />
+		<panel  id="crud"  use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.ConfVariasCrud" />
+	</window>
+</zk>

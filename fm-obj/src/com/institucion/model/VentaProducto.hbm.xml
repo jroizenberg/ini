@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="VentaProducto" table="VentaProductos">
+		
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">VentaProductos_id_seq</param>
+			</generator>
+		</id>	
+
+		<set name="pagosPorSubscripcionList" table="PagosPorSubscripcion" cascade="all" lazy="true" >
+			<key column="idVentaProducto"/>
+			<one-to-many class="com.institucion.model.PagosPorSubscripcion"/>
+		</set>
+		
+		<set name="productosList" table="VentaProductoPorProducto" cascade="all" lazy="true" >
+			<key column="idVentaProducto"/>
+			<one-to-many class="com.institucion.model.VentaProductoPorProducto"/>
+		</set>
+		
+		<property name="fechayhoracompra" />	
+
+		<property name="idUsuarioCreoVenta" />	
+		<property name="anulaVenta" />	
+		<property name="anulaComentario" />	
+		<property name="anulaValorDevuelto" />	
+		
+		<property name="fechaYHoraAnulacion" />	
+		<property name="idUsuarioAnuloVenta" />	
+		<property name="ventaComentario" />	
+
+		<property name="nombreUsuarioCreoVenta" >
+	            <formula>
+	                 (select us.firstname|| ' '|| us.lastname  from users us where us.id =idUsuarioCreoVenta )
+	            </formula>
+		</property>
+	
+		<property name="nombreUsuarioAnuloVenta" >
+	            <formula>
+	                 (select us.firstname|| ' '|| us.lastname  from users us where us.id =idUsuarioAnuloVenta )
+	            </formula>
+		</property>
+	
+	</class>
+</hibernate-mapping>

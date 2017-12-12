@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Cliente"?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="clienteCrud" apply="com.institucion.controller.ClientCrudComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel use="com.institucion.fm.desktop.view.ToolbarCrud" tokenPrefix="clientesCrud"/>
+		<panel use="com.institucion.fm.desktop.view.PanelCrud" usecrud="com.institucion.model.ClienteCrud" />
+		
+		<panel id="matriculaspanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.MatriculaList" 
+		title="&#36;{c:l('matriculas.list')}"/>
+		
+	</window>
+</zk>

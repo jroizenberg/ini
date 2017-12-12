@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ejbModule"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="/external/lib/spring.jar" sourcepath="/external/src/spring-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/asm-2.2.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/asm-commons-2.2.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/aspectjrt.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/aspectjweaver.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/common-annotations.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/commons-logging.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/slf4j-api-1.4.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/antlr-2.7.6.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="/external/lib/acegi-security.jar" sourcepath="C:/usr/download/prs/acegisecurity-1.0.7/acegi-security-1.0.7-sources.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/commons-digester-1.8.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/external/lib/commons-beanutils.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.generic.runtimeTarget/JBoss v4.2"/>
+	<classpathentry kind="lib" path="libs/curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="libs/jbarcodebean-1.2.0.jar"/>
+	<classpathentry kind="lib" path="libs/poi-3.15.jar"/>
+	<classpathentry kind="lib" path="libs/poi-excelant-3.15.jar"/>
+	<classpathentry kind="lib" path="libs/poi-ooxml-3.15.jar"/>
+	<classpathentry kind="lib" path="libs/poi-ooxml-schemas-3.15.jar"/>
+	<classpathentry kind="lib" path="libs/poi-scratchpad-3.15.jar"/>
+	<classpathentry kind="lib" path="libs/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

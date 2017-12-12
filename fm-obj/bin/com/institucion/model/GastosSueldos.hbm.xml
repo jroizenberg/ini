@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="GastosSueldos" table="GastosSueldos">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">GastosSueldos_id_seq</param>
+			</generator>
+		</id>
+		<property name="dinero" />
+		<property name="comentario" />
+		<many-to-one name="actividad" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>
+		<many-to-one name="gasto" class="com.institucion.model.Gastos" column="idGasto" lazy="false"/>
+	</class>
+</hibernate-mapping>

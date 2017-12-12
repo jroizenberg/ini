@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="IngresoAClasesSinFechasAlumnos" table="ingresoAClasesSinFechasAlumnos">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ingresoAClasesSinFechasAlumnos_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="fecha" />
+		<many-to-one name="cliente" class="com.institucion.model.Cliente" column="idCliente" lazy="false"/>
+		<many-to-one name="clase" class="com.institucion.model.Clase" column="idclase" lazy="false"/>
+		<many-to-one name="curso" class="com.institucion.model.Curso" column="idCurso" lazy="false"/>
+		<many-to-one name="subscripcion" class="com.institucion.model.Subscripcion" column="idSubscripcion" lazy="false"/>
+
+	</class>
+</hibernate-mapping>

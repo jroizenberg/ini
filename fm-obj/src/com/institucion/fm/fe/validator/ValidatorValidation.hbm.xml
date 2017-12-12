@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//hibernate/hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping package="com.institucion.fm.fe.validator">
+
+	<class name="ValidatorValidation" table="ValidatorValidation">
+
+		<composite-id>
+			<key-many-to-one name="validator" class="Validator" column="id_validator"/>
+			<key-property name="validationName" column="name_validation"/>
+		</composite-id>
+
+	</class>
+
+</hibernate-mapping>

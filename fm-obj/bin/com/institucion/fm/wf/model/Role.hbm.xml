@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.institucion.fm.wf.model.Role" table="wf_role" dynamic-insert="true">
+
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">WF_Role_id_seq</param>
+			</generator>
+		</id>
+ 
+		<set name="children" inverse="true" lazy="false" cascade="save-update">
+			<key column="parent" />
+			<one-to-many class="com.institucion.fm.wf.model.Role" />
+		</set>
+		
+		<many-to-one name="parent" column="parent" cascade="save-update" lazy="false"
+			class="com.institucion.fm.wf.model.Role" />
+ 		
+		<set name="wfusers" table="wf_user" inverse="true" lazy="true" cascade="all,delete-orphan">
+			<key column="roleid" />
+			<one-to-many class="com.institucion.fm.wf.model.User" />
+		</set>
+		
+		<property name="name" />		
+		<property name="description" />
+		<property name="treeCode" />
+		
+		<property name="type" >
+			<type name="com.institucion.fm.conf.model.GenericEnumUserType">
+				<param name="enumClass">com.institucion.fm.wf.model.RoleType</param>
+				<param name="identifierMethod">toInt</param>
+				<param name="valueOfMethod">fromInt</param>
+			</type>
+		</property>
+
+		<set name="wfusersId" table="wf_user" lazy="false">
+		    <key column="roleid"/>
+		    <element column="id" type="long"/>
+		</set>		
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.institucion.fm.confsys.model" auto-import="false" >
+	<class name="ConfigRegional" table="ConfigRegional">
+
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ConfigRegional_id_seq</param>
+			</generator>
+		</id>
+		<property name="lang"/>
+		<!-- <property name="phonePattern"/>-->
+		<property name="hourPattern" />
+		<property name="datePattern" />
+		<property name="decimalPattern" />
+		<property name="numberPattern" />
+		<property name="currencySymbol" />		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="SubscripcionDeClasesPorActividad" table="SubscripcionDeClasesPorActividad">
+	
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SubscripcionDeClasesPorActividad_id_seq</param>
+			</generator>
+		</id>
+	
+		<many-to-one name="actividad" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>	
+		<many-to-one name="curso" class="com.institucion.model.Curso" column="idCurso" lazy="false"/>					
+		
+ 		<many-to-one name="subscripcion2" class="com.institucion.model.Subscripcion" column="idSubscripcion2" lazy="false"/>	
+		
+<!-- 		<property name="idsubscripcion" />  -->
+	
+		<many-to-one name="claseLunes" class="com.institucion.model.Clase" column="idClaseLunes"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseMartes" class="com.institucion.model.Clase" column="idClaseMartes"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseMiercoles" class="com.institucion.model.Clase" column="idClaseMiercoles"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseJueves" class="com.institucion.model.Clase" column="idClaseJueves"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseViernes" class="com.institucion.model.Clase" column="idClaseViernes"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseSabado" class="com.institucion.model.Clase" column="idClaseSabado"  not-found="ignore" lazy="false"/>
+		<many-to-one name="claseDomingo" class="com.institucion.model.Clase" column="idClaseDomingo"  not-found="ignore" lazy="false"/>
+	
+		<property name="lunes" />
+		<property name="martes" />
+		<property name="miercoles" />
+		<property name="jueves" />
+		<property name="viernes" />
+		<property name="sabado" />
+		<property name="domingo" />
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="ActividadYClase" table="ActividadYClase">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">ActividadYClase_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="cantClases" />
+		<many-to-one name="activ" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>
+		<many-to-one name="curso" class="com.institucion.model.Curso" column="idCurso" lazy="proxy"/>	
+
+	</class>
+</hibernate-mapping>

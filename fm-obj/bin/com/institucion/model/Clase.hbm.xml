@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.institucion.model">
+	<class name="Clase" table="Clase">
+		<id name="id" column="ID">
+			<generator class="sequence">
+				<param name="sequence">Clase_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="nombre" />
+		<property name="nombreAdic" />
+		<property name="descripcion" />
+		<many-to-one name="actividad" class="com.institucion.model.Actividad" column="idActividad" lazy="false"/>
+		<property name="disponible" />
+		
+		<property name="esClaseSinHora" />
+		<property name="horaDesde" />
+		<property name="horaHasta" />		
+		
+		
+		<property name="lunes" />
+		<property name="martes" />
+		<property name="miercoles" />
+		<property name="jueves" />
+		<property name="viernes" />
+		<property name="sabado" />
+		<property name="domingo" />
+		
+		<property name="cantAlumnos">
+			<formula>
+				(select count(*) from cliente_clase clase where clase.idclase=ID limit 1)
+			</formula>
+		</property>
+		
+		<property name="cantAlumnosPorFecha">
+			<formula>
+				(select clase.cantPresentes from ClaseConListaAlumnos clase where clase.idclase=ID limit 1)
+			</formula>
+		</property>
+
+		<set name="claseConListaAlumnosList" table="ClaseConListaAlumnos" inverse="true" cascade="all-delete-orphan" lazy="true"  >
+			<key column="idClase"/>
+			<one-to-many class="com.institucion.model.ClaseConListaAlumnos"/>
+		</set>
+		
+		<set name="ingresoAClaseSinFechas" table="IngresoAClasesSinFechasAlumnos" cascade="all-delete-orphan" lazy="true"  >
+			<key column="idClase"/>
+			<one-to-many class="com.institucion.model.IngresoAClasesSinFechasAlumnos"/>
+		</set>
+				
+		<set name="clienesEnClase" table="Cliente_Clase"  cascade="all" lazy="true"   >
+			<key column="idClase"/>
+			<many-to-many  class="com.institucion.model.Cliente"  column="idCliente"  />
+		</set>
+
+		<set name="claseConListaAlumnosHistoryList" table="ClaseConListaAlumnosHistorico" inverse="true" cascade="all-delete-orphan" lazy="true"  >
+			<key column="idClase"/>
+			<one-to-many class="com.institucion.model.ClaseConListaAlumnosHistorico"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

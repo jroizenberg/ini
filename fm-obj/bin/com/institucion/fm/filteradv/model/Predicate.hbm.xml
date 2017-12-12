@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//hibernate/hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping package="com.institucion.fm.filteradv.model">
+
+	<class name="Predicate" table="Predicate">
+
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">Predicate_id_seq</param>
+			</generator>
+		</id>
+
+		<property name="order" column="order_predicate"/>
+		<property name="fieldName" />
+		<property name="fieldTypeEnumStr" column="fieldType"/>
+		<property name="operatorXML" column="operator"/>
+		<property name="expression1" />
+		<property name="expression2" />
+		<property name="bitwise" />
+		<property name="soft" />
+
+		<many-to-one name="criteriaClause" class="CriteriaClause" column="idClause" lazy="false" cascade="all"/>
+	</class>
+</hibernate-mapping>

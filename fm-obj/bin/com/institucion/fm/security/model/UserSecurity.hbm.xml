@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.institucion.fm.security.model" auto-import="false" >
+	<class name="UserSecurity" table="UserSecurity">
+
+		<id name="id" column="ID">
+			<generator class="foreign">
+				<param name="property">user</param>
+			</generator>
+		</id>
+
+		<property name="denyAccessCount" column="deny_access_count"/>
+		<property name="oldPassword1" column="old_password_1"/>
+		<property name="oldPassword2" column="old_password_2"/>
+		<property name="oldPassword3" column="old_password_3"/>
+		<property name="firstLogin" column="first_login"/>
+		<one-to-one name="user" class="com.institucion.fm.security.model.User" constrained="true" lazy="false"/>
+	</class>
+</hibernate-mapping>

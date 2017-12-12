@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?page id="selector" title="Gastos "?>
+
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk>
+	<style src="/style/institucion.css"/>
+	<window entity="gastosSelector" apply="com.institucion.controller.GastosSelectorComposer" use="com.institucion.fm.desktop.view.WindowSelector">
+		<panel id="toolbar" use="com.institucion.desktop.view.GastosSelector" tokenPrefix="clientesSelector" />
+		<panel use="com.institucion.desktop.view.ToolbarFilters" tokenPrefix="clientesSelector"/>
+		<panel id="filter"  use="com.institucion.fm.desktop.view.PanelFilter" usefilter="com.institucion.model.GastosFilter" />		
+
+		<panel id="clientepanelList" use="com.institucion.fm.desktop.view.PanelList" usegrid="com.institucion.model.GastosList" title="&#36;{c:l('gastos.del.mes')}"/>
+	</window>
+</zk>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+
+	<bean id="fm.srv.sqlExecutor" class="com.institucion.fm.conf.dao.SqlExecutor" parent="fm.srv.templateHolder">
+	</bean>
+	
+		<!-- DAO para la entidad HealthProfessional -->
+	<bean id="fm.srv.Cliente" class="com.institucion.dao.spi.ClienteDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+
+	<bean id="fm.srv.IngresoAClasesSinFechasAlumnos" class="com.institucion.dao.spi.IngresoAClasesSinFechasAlumnosDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Producto" class="com.institucion.dao.spi.ProductoDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+
+	
+	<bean id="fm.srv.Curso" class="com.institucion.dao.spi.CursoDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Gastos" class="com.institucion.dao.spi.GastosDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+
+	<bean id="fm.srv.GastosMaipu" class="com.institucion.dao.spi.GastosMaipuDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Clase" class="com.institucion.dao.spi.ClaseDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+
+	<bean id="fm.srv.PagosPorSubscripcion" class="com.institucion.dao.spi.PagosPorSubscripcionDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	
+	<bean id="fm.srv.Caja" class="com.institucion.dao.spi.CajaDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Actividad" class="com.institucion.dao.spi.ActividadDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.BancoPromocion" class="com.institucion.dao.spi.BancoPromocionDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.ObraSocial" class="com.institucion.dao.spi.ObraSocialDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Empleado" class="com.institucion.dao.spi.EmpleadoDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.VentaProducto" class="com.institucion.dao.spi.VentaProductoDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.VentaProductoPorProducto" class="com.institucion.dao.spi.VentaProductoPorProductoDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.ObraSocialesPrecio" class="com.institucion.dao.spi.ObraSocialesPrecioDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Subscripcion" class="com.institucion.dao.spi.SubscripcionDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Matricula" class="com.institucion.dao.spi.MatriculaDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	<bean id="fm.srv.Inscripcion" class="com.institucion.dao.spi.InscripcionDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	
+	<bean id="fm.srv.CierreCaja" class="com.institucion.dao.spi.CierreCajaDAOImpl"
+		parent="fm.srv.templateHolder" >
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	
+	
+	
+	
+	<bean id="fm.srv.userDAO" class="com.institucion.fm.security.dao.spi.UserDAOImpl"
+		parent="fm.srv.templateHolder">
+		<property name="executor" ref="fm.srv.sqlExecutor" />
+	</bean>
+	<bean id="fm.srv.groupDAO" class="com.institucion.fm.security.dao.spi.GroupDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	<bean id="fm.srv.permissionDAO" class="com.institucion.fm.security.dao.spi.PermissionDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	<bean id="fm.srv.criteriaClauseDAO" class="com.institucion.fm.filteradv.dao.spi.CriteriaClauseDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	<bean id="fm.srv.predicateDAO" class="com.institucion.fm.filteradv.dao.spi.PredicateDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	
+	<bean id="fm.srv.institucionServerUtil" class="com.institucion.fm.util.InstitucionServerUtil"
+		parent="fm.srv.templateHolder">
+	</bean>
+
+	<!-- DAO para la entidad WFRole -->
+	<bean id="fm.srv.WFRoleDAO" class="com.institucion.fm.wf.dao.spi.RoleDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	
+	<!-- DAO para la entidad WFUser -->
+	<bean id="fm.srv.WFUserDAO" class="com.institucion.fm.wf.dao.spi.UserDAOImpl" parent="fm.srv.templateHolder">
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+	<bean id="fm.srv.EmailDAO" class="com.institucion.fm.bb.dao.EmailDAOImpl" parent="fm.srv.templateHolder">
+		<property name="sql" ref="fm.srv.sqlExecutor" />
+	</bean>
+
+	<bean id="fm.srv.emailManager" class="com.institucion.fm.bb.bz.spi.EmailManager" />
+
+	<bean id="fm.srv.ConfigRegionalDAO" class="com.institucion.fm.confsys.dao.spi.ConfigRegionalDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+	<bean id="fm.srv.FlagDAO" class="com.institucion.fm.confsys.dao.spi.FlagDAOImpl"
+		parent="fm.srv.templateHolder">
+	</bean>
+
+
+	<!--Validador de Password -->
+	<bean id="fm.helper.password.validation" class="com.institucion.fm.security.bz.spi.PasswordValidation" >
+		<property name="minLength" value="8"/>
+	</bean>	
+	<bean id="fm.srv.validatorDAO" class="com.institucion.fm.fe.validator.dao.spi.ValidatorDAOImpl" parent="fm.srv.templateHolder">
+	</bean>
+	
+	<jee:jndi-lookup id="fmEjbInscripcion" jndi-name="fm/InscripcionEJBImpl/remote"  
+				lookup-on-startup="false" proxy-interface="com.institucion.bz.InscripcionEJBRemote"/>	 
+					
+	<jee:jndi-lookup id="fm.ejb.securityService" jndi-name="fm/SecurityEJBImpl/remote"
+					lookup-on-startup="false" proxy-interface="com.institucion.fm.security.bz.SecurityEJBRemote" />
+
+	<!-- fm.ejb.configSystem -->
+	<jee:jndi-lookup id="fm.ejb.configSystem" jndi-name="fm/ConfigSystemEJBImpl/remote" 
+					lookup-on-startup="false" proxy-interface="com.institucion.fm.confsys.bz.ConfigSystemEJBRemote" />		
+</beans>

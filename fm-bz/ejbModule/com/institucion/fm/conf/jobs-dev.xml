@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+							http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+
+	<bean id="instanceConf" class="com.institucion.fm.conf.InstanceConf" />
+
+	<bean id="propertyHolder"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" ref="instanceConf" />
+	</bean>
+
+	<bean name="bulletinBoardJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.BulletinBoardJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bulletinBoardEJB" value-ref="fmEjbBulletinBoard" />
+			</map>
+		</property>	
+	</bean>
+	<bean name="cycleBulletinBoardJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.CycleBulletinBoardJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bulletinBoardEJB" value-ref="fmEjbBulletinBoard" />
+			</map>
+		</property>	
+	</bean>
+
+	<bean name="emailJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.EmailJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bulletinBoardEJB" value-ref="fmEjbBulletinBoard" />
+			</map>
+		</property>
+	</bean>
+
+	<bean name="importJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.imports.ImportJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<!-- EJBs -->
+				<entry key="brandEjb" value-ref="fmEjbBrand" />
+				<entry key="productEjb" value-ref="fmEjbProduct" />
+				<entry key="structuresEjb" value-ref="fmEjbStructure" />
+				<entry key="managersEjb" value-ref="fmEjbManagers" />
+				<entry key="countryEjb" value-ref="fmEjbCountry" />
+				<entry key="peaEjb" value-ref="fmEjbPea" />
+				<entry key="filialEjb" value-ref="fmEjbFilial" />
+				<entry key="linprodEjb" value-ref="fmEjbLinprod" />
+				<entry key="configEjb" value-ref="fm.ejb.configSystem" />
+				<entry key="emailManager" value-ref="fm.srv.emailManager" />
+				
+				<!-- ftp vars -->
+				<entry key="usr" value="${sig.ftp.config.user}" />
+				<entry key="pass" value="${sig.ftp.config.password}" />
+				<entry key="ip" value="${sig.ftp.config.ip}" />
+				
+				<entry key="brand_srv_path" value="${sig.brand_srv_path}" />
+				<entry key="brand_zip_filename" value="${sig.brand_zip_filename}" />
+				<entry key="brand_unzip_filename" value="${sig.brand_unzip_filename}" />
+				<!-- Especialidades -->
+				<entry key="speciality_srv_path" value="${sig.speciality_srv_path}" />
+				<entry key="speciality_zip_filename" value="${sig.speciality_zip_filename}" />
+				<entry key="speciality_unzip_filename" value="${sig.speciality_unzip_filename}" />
+				<!-- Productos -->
+				<entry key="product_srv_path" value="${sig.product_srv_path}" />
+				<entry key="product_zip_filename" value="${sig.product_zip_filename}" />
+				<entry key="product_unzip_filename" value="${sig.product_unzip_filename}" />
+				<!-- Country -->
+				<entry key="country_srv_path" value="${sig.country_srv_path}" />
+				<entry key="country_zip_filename" value="${sig.country_zip_filename}" />
+				<entry key="country_unzip_filename" value="${sig.country_unzip_filename}" />
+				<!--Managers -->
+				<entry key="managers_srv_path" value="${sig.managers_srv_path}" />
+				<entry key="managers_zip_filename" value="${sig.managers_zip_filename}" />
+				<entry key="managers_unzip_filename" value="${sig.managers_unzip_filename}"/>
+				<!--Filiales -->
+				<entry key="filiales_srv_path" value="${sig.filiales_srv_path}" />
+				<entry key="filiales_zip_filename" value="${sig.filiales_zip_filename}" />
+				<entry key="filiales_unzip_filename" value="${sig.filiales_unzip_filename}"/>
+				<!--LinProd -->
+				<entry key="linprod_srv_path" value="${sig.linprod_srv_path}" />
+				<entry key="linprod_zip_filename" value="${sig.linprod_zip_filename}" />
+				<entry key="linprod_unzip_filename" value="${sig.linprod_unzip_filename}"/>
+				<!--Pea Mmedicas-->
+				<entry key="peammedicas_srv_path" value="${sig.peammedicas_srv_path}" />
+				<entry key="peammedicas_filename" value="${sig.peammedicas_filename}" />
+				<!--Pea Literaturas-->
+				<entry key="pealit_srv_path" value="${sig.pealit_srv_path}" />
+				<entry key="pealit_filename" value="${sig.pealit_filename}" />
+				
+				<!--  Paths -->
+				<entry key="download_path" value="${sig.server.download_path}" />
+				<entry key="to_proc_path" value="${sig.server.to_proc_path}" />
+				<entry key="proc_path" value="${sig.server.proc_path}" />
+				<entry key="not_proc_path" value="${sig.server.not_proc_path}" />
+
+				<!-- IMPORTANTE:  id de especialidades en las codigueras, debe ser 
+				verificado con la BD del ambiente donde se hace deploy -->
+				<entry key="specialityDomainTableId" value="${sig.specialityDomainTableId}" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean name="maintenanceTablesJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.MaintenanceTablesJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="systemHistoryEJB" value-ref="fmEjbSystemHistory" />
+				<entry key="emailManager" value-ref="fm.srv.emailManager" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean name="salesForceJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.job.SalesForceJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="promotionEjb" value-ref="fmEjbPromotionStructure" />
+				<entry key="fmEjbSystemHistory" value-ref="fmEjbSystemHistory" />
+				<entry key="emailManager" value-ref="fm.srv.emailManager" />
+			</map>
+		</property>
+	</bean>
+		
+	<bean name="importQadJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.imports.ImportQadJob" />
+		<property name="group" value="fmScheduler" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="qadEjb" value-ref="fmEjbQad" />
+				<entry key="configEjb" value-ref="fm.ejb.configSystem" />
+				<entry key="emailManager" value-ref="fm.srv.emailManager" />
+				
+				<!-- ftp vars -->
+				<entry key="usr" value="${ftp.qad.usr}" />
+				<entry key="pass" value="${ftp.qad.psw}" />
+				<entry key="ip" value="${ftp.qad.ip}" />
+				
+				<!--  Marcas -->
+				<entry key="qad_srv_path" value="${ftp.qad.filename}" />
+				<entry key="qad_filename" value="${ftp.qad.filename}" />
+				
+				<!-- Paths --> 
+				<entry key="download_path" value="${qad.server.download_path}" />
+				<entry key="to_proc_path" value="${qad.server.to_proc_path}" />
+				<entry key="proc_path" value="${qad.server.proc_path}" />
+				<entry key="not_proc_path" value="${qad.server.not_proc_path}" />
+				
+				<entry key="use_prod_cod_local" value="${qad.use.prod.cod.local}"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean name="importStockJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.institucion.fm.imports.ImportStockJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="productEjb" value-ref="fmEjbProduct" />
+				<entry key="configEjb" value-ref="fm.ejb.configSystem" />
+				
+				<!-- ftp vars -->
+				<entry key="usr" value="${ftp.qad.usr}" />
+				<entry key="pass" value="${ftp.qad.psw}" />
+				<entry key="ip" value="${ftp.qad.ip}" />
+				
+				<!--  Marcas -->
+				<entry key="stock_srv_path" value="${ftp.stock.filename}" />
+				<entry key="stock_filename" value="${ftp.stock.filename}" />
+				
+				<!-- Paths --> 
+				<entry key="download_path" value="${stock.server.download_path}" />
+				<entry key="to_proc_path" value="${stock.server.to_proc_path}" />
+				<entry key="proc_path" value="${stock.server.proc_path}" />
+				<entry key="not_proc_path" value="${stock.server.not_proc_path}" />
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Triggers 
+	For more detail for Cron expression see: 
+		http://www.opensymphony.com/quartz/api/org/quartz/CronExpression.html
+		http://www.opensymphony.com/quartz/wikidocs/TutorialLesson6.html
+	-->
+	
+	<bean id="importTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="importJob" />
+<!-- 		<property name="cronExpression" value="${sig.cron.config}" /> -->
+		<property name="cronExpression" value="0 0 10 * * ?" />
+	</bean>
+	
+	<bean id="importQadTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="importQadJob" />
+<!--		<property name="cronExpression" value="1/45 * * * * ?" />-->
+		<property name="cronExpression" value="${qad.cron.config}" />
+	</bean>
+	<bean id="bulletinBoardTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="bulletinBoardJob" />
+<!--		<property name="cronExpression" value="0 0 * * * ?" />-->
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+	</bean>
+	<bean id="cycleBulletinBoardTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="cycleBulletinBoardJob" />
+<!--		<property name="cronExpression" value="0 0 * * * ?" />-->
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+	</bean>
+
+	<bean id="emailTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="emailJob" />
+<!--		<property name="cronExpression" value="0 0 * * * ?" />-->
+		<property name="cronExpression" value="0 0/3 * * * ?" />
+	</bean>
+
+	<bean id="importStockTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="importStockJob" />
+		<property name="cronExpression" value="0 28 16 * * ?" />
+<!-- 		<property name="cronExpression" value="${stock.cron.config}" /> -->
+	</bean>
+
+	<bean id="maintenanceTablesTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="maintenanceTablesJob" />
+		<property name="cronExpression" value="0 0/2 1 1 * ?" />
+	</bean>
+
+	<bean id="changeStructureTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="salesForceJob" />
+		<property name="cronExpression" value="0 0/2 1 1 * ?" />
+	</bean>
+		
+	<!-- Scheduler -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="schedulerName" value="fmScheduler" />
+		<property name="triggers">
+			<list>
+				<!--<ref bean="cronTrigger" />-->
+				<ref bean="importTrigger" />
+				<ref bean="bulletinBoardTrigger" />
+				<ref bean="cycleBulletinBoardTrigger" />
+				<ref bean="emailTrigger" />
+				<ref bean="importQadTrigger" />
+				<ref bean="maintenanceTablesTrigger" />
+				<ref bean="changeStructureTrigger" />
+				<ref bean="importStockTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

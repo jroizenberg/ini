@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<validations>
+	<validation className="com.institucion.fm.fe.validator.CUITValidation">
+		<name>cuit</name>
+	</validation>
+	<validation className="com.institucion.fm.fe.validator.DateValidation">
+		<name>date</name>
+	</validation>
+	<validation className="com.institucion.fm.fe.validator.NullValidation">
+		<name>mandatory</name>
+	</validation>
+	<validation className="com.institucion.fm.fe.validator.EmailValidator">
+		<name>email</name>
+	</validation>
+	<validation className="com.institucion.fm.fe.validator.BirthdayValidator">
+		<name>birthday</name>
+	</validation>
+	
+</validations>
