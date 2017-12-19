@@ -69,6 +69,26 @@ public class SucursalViewHelper {
 		return cb;
 	}
 	
+	public static Combobox getComboBoxImprimir(Combobox cb) {
+
+		cb.setConstraint("strict");
+		cb.setWidth("60%");
+		Comboitem item;
+		item = new Comboitem("SI");
+		item.setValue("SI");
+		item.setWidth("60%");
+		cb.appendChild(item);
+		cb.setSelectedItem(item);
+		
+		item = new Comboitem("NO");
+		item.setValue("NO");
+		item.setWidth("60%");
+		cb.appendChild(item);
+
+		return cb;
+	}
+
+	
 	public static Combobox getComboBoxConOpcionMenuTree(Combobox cb, SucursalEnum sucDeUsuario ) {
 		cb.setConstraint("strict");
 		Comboitem item;
