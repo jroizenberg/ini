@@ -111,10 +111,26 @@ public class ClientCrudComposer extends CrudComposer {
 				validateCrud();
 				this.fromViewToModel(cliente);
 
-				// verifica que el cliente exista.
-				List<Cliente> lista =clienteEJB.findAllConJdbc("select id from cliente where Upper(apellido)= Upper('"+cliente.getApellido()+"') " +
-																	"  AND Upper(nombre)= Upper('"+cliente.getNombre()+"') ");
+				String query= "select id from cliente" +
+						"  where (Upper(apellido) ilike ('"+cliente.getApellido()+"%') " +
+						"  AND Upper(nombre) ilike  Upper('"+cliente.getNombre()+"%') )" +
+						"  OR fechanacimiento ='"+cliente.getFechaNacimiento()+ "' " ;
 				
+				if(cliente.getDni() != null && !cliente.getDni().trim().equalsIgnoreCase("")){
+					query= query+ "  OR dni ='"+cliente.getDni()+ "' " ;
+				}
+				if(cliente.getCelular() != null && !cliente.getCelular().trim().equalsIgnoreCase("")){
+					query= query+ "  OR celular ='"+cliente.getCelular()+ "' " ;
+				}		
+				if(cliente.getTelefonoFijo() != null && !cliente.getTelefonoFijo().trim().equalsIgnoreCase("")){
+					query= query+ "  OR telefonofijo ='"+cliente.getTelefonoFijo()+ "' " ;
+				}		
+				if(cliente.getDomicilio() != null && !cliente.getDomicilio().trim().equalsIgnoreCase("")){
+					query= query+ "  OR domicilio  ilike '%"+cliente.getDomicilio()+ "%' " ;
+				}		
+
+				// verifica que el cliente exista.
+				List<Cliente> lista =clienteEJB.findAllConJdbc(query);
 				
 				if(lista != null && lista.size() > 0){
 					String clientes=null;
@@ -133,14 +149,14 @@ public class ClientCrudComposer extends CrudComposer {
 							int mes=ahoraCal.get(Calendar.MONTH) + 1;
 
 							String fechaNac=ahoraCal.get(Calendar.DATE)+"/"+mes+"/"+ahoraCal.get(Calendar.YEAR);
-							clientes= clientes +" "+fechaNac;
+							clientes= clientes +" Fecha Nac:"+fechaNac;
 						}						
 						
 						if(cliente.getDni() != null)
-							clientes=clientes + " "+cliente.getDni();
+							clientes=clientes + " DNI:"+cliente.getDni();
 						
 						if(cliente.getDomicilio() != null)
-							clientes=clientes + " "+cliente.getDomicilio();
+							clientes=clientes + " Domic:"+cliente.getDomicilio();
 								
 					}
 					
