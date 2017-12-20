@@ -3,10 +3,13 @@ package com.institucion.desktop.helper;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Comboitem;
 
+import com.institucion.bz.CursoEJB;
 import com.institucion.fm.conf.Session;
+import com.institucion.fm.conf.spring.BeanFactory;
 import com.institucion.model.SucursalEnum;
 
 public class SucursalViewHelper {
+	private static CursoEJB cursoEJB;
 
 	public static Combobox getComboBox() {
 		Combobox cb = new Combobox();
@@ -70,6 +73,8 @@ public class SucursalViewHelper {
 	}
 	
 	public static Combobox getComboBoxImprimir(Combobox cb) {
+		cursoEJB = BeanFactory.<CursoEJB>getObject("fmEjbCurso");
+		Boolean bool=cursoEJB.findImprimible();
 
 		cb.setConstraint("strict");
 		cb.setWidth("60%");
@@ -78,12 +83,15 @@ public class SucursalViewHelper {
 		item.setValue("SI");
 		item.setWidth("60%");
 		cb.appendChild(item);
-		cb.setSelectedItem(item);
+		if(bool)
+			cb.setSelectedItem(item);
 		
 		item = new Comboitem("NO");
 		item.setValue("NO");
 		item.setWidth("60%");
 		cb.appendChild(item);
+		if(!bool)
+			cb.setSelectedItem(item);
 
 		return cb;
 	}

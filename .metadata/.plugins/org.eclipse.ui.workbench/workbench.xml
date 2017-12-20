@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="58" version="2.0">
 <workbenchAdvisor/>
-<window height="647" width="1186" x="136" y="48">
+<window height="647" maximized="true" width="1186" x="136" y="48">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.jdt.ui.PackageExplorer"/>
 <orientation position="512" view="org.eclipse.ui.views.ProblemView"/>
@@ -25,7 +25,7 @@
 <coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="84" y="22"/>
 <coolItem id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -33,7 +33,7 @@
 <coolItem id="org.eclipse.mylyn.java.actionSet.browsing" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
 <coolItem id="org.eclipse.team.ui.actionSet" itemType="typeToolBarContribution" x="53" y="22"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="22"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.jsdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="61" y="22"/>
@@ -43,9 +43,9 @@
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.web.ui.wizardsActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="org.jboss.tools.jst.web.ui.server.actionSet" itemType="typeToolBarContribution" x="153" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
@@ -68,29 +68,78 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PanelEntityCrudList.java" partName="PanelEntityCrudList.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/fm/desktop/view/PanelEntityCrudList.java" title="PanelEntityCrudList.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/PanelEntityCrudList.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/fm/desktop/view/PanelEntityCrudList.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5555" selectionTopPixel="2465"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientSelectorComposer.java" partName="ClientSelectorComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ClientSelectorComposer.java" title="ClientSelectorComposer.java" tooltip="fm-web/src/com/institucion/controller/ClientSelectorComposer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ClientSelectorComposer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="5852" selectionTopPixel="2329"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionCrudComposer.java" partName="SubscripcionCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" title="SubscripcionCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.ui.DefaultTextEditor" name="clientes-crud.zul" partName="clientes-crud.zul" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/WebContent/institucion/clientes-crud.zul" title="clientes-crud.zul" tooltip="fm-web/WebContent/institucion/clientes-crud.zul" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/WebContent/institucion/clientes-crud.zul"/>
+<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="256" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientCrudComposer.java" partName="ClientCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ClientCrudComposer.java" title="ClientCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ClientCrudComposer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ClientCrudComposer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5655" selectionTopPixel="2142"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionCrudComposer.java" partName="SubscripcionCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" title="SubscripcionCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="25921" selectionTopPixel="10438"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6835" selectionTopPixel="1615"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Imprimir.java" partName="Imprimir.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/Imprimir.java" title="Imprimir.java" tooltip="fm-web/src/com/institucion/controller/Imprimir.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Actividad.java" partName="Actividad.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-obj/src/com/institucion/model/Actividad.java" title="Actividad.java" tooltip="fm-obj/src/com/institucion/model/Actividad.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-obj/src/com/institucion/model/Actividad.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="1694" selectionTopPixel="1088"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="Actividad.hbm.xml" partName="Actividad.hbm.xml" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-obj/src/com/institucion/model/Actividad.hbm.xml" title="Actividad.hbm.xml" tooltip="fm-obj/src/com/institucion/model/Actividad.hbm.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-obj/src/com/institucion/model/Actividad.hbm.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Imprimir.java" partName="Imprimir.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/Imprimir.java" title="Imprimir.java" tooltip="fm-web/src/com/institucion/controller/Imprimir.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/Imprimir.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="549" selectionTopPixel="102"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="492" selectionTopPixel="60"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionAsignarBotonesFilter.java" partName="SubscripcionAsignarBotonesFilter.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/model/SubscripcionAsignarBotonesFilter.java" title="SubscripcionAsignarBotonesFilter.java" tooltip="fm-web/src/com/institucion/model/SubscripcionAsignarBotonesFilter.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/model/SubscripcionAsignarBotonesFilter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1928" selectionTopPixel="527"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MessageBox.java" partName="MessageBox.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java" title="MessageBox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/MessageBox.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="483" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IngresoInscripcionSelectorComposer.java" partName="IngresoInscripcionSelectorComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java" title="IngresoInscripcionSelectorComposer.java" tooltip="fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="41458" selectionTopPixel="15402"/>
+<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="Messagebox.class" partName="Messagebox.class" title="Messagebox.class" tooltip="org.zkoss.zul.Messagebox" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zul.jar&lt;org.zkoss.zul(Messagebox.class"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConfVariasCrudComposer.java" partName="ConfVariasCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java" title="ConfVariasCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="61" selectionOffset="763" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CursoEJBImpl.java" partName="CursoEJBImpl.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java" title="CursoEJBImpl.java" tooltip="fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4657" selectionTopPixel="2142"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MatriculaDAOImpl.java" partName="MatriculaDAOImpl.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java" title="MatriculaDAOImpl.java" tooltip="fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="67" selectionOffset="2841" selectionTopPixel="1428"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="title.zul" partName="title.zul" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/WebContent/title.zul" title="title.zul" tooltip="fm-web/WebContent/title.zul" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/WebContent/title.zul"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="1103" selectionTopPixel="60"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImprimirCombobox.java" partName="ImprimirCombobox.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java" title="ImprimirCombobox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="1763" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SucursalViewHelper.java" partName="SucursalViewHelper.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java" title="SucursalViewHelper.java" tooltip="fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="1859" selectionTopPixel="1044"/>
 </editor>
 </editors>
 <views>
@@ -100,7 +149,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
-<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" link_editors="0" mv_vertical_scroll="111" orientation="3" qualified_names="0" ratio="350" selection="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName=""/>
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" showinherited="false" sortbydefiningtype="false" vertical_scroll="5" view="2" workingSetName=""/>
 </view>
 <view id="org.eclipse.mylyn.tasks.ui.views.repositories" partName="Task Repositories">
 <viewState/>
@@ -142,6 +191,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="515"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -162,8 +214,8 @@
 </view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="5" org.eclipse.search.resultpage.layout="2"/>
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="6" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -233,7 +285,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.debug.ui.DebugPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.debug.ui.DebugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -516,7 +568,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView" ratio="0.2501845" ratioLeft="339" ratioRight="1016" relationship="2" relative="org.eclipse.ui.internal.ViewStack@4ba00b06">
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView" ratio="0.21549815" ratioLeft="292" ratioRight="1063" relationship="2" relative="org.eclipse.ui.internal.ViewStack@4ba00b06">
 <folder activePageID="org.eclipse.jdt.ui.TypeHierarchy" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
@@ -553,7 +605,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7648ced9" ratio="0.51097804" ratioLeft="256" ratioRight="245" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7648ced9" ratio="0.64271456" ratioLeft="322" ratioRight="179" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
@@ -844,162 +896,164 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/CajaSelectorComposer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-bz/ejbModule/com/institucion/bz/spi/CajaEJBImpl.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-bz/ejbModule/com/institucion/dao/spi/CajaDAOImpl.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/ClientCrudComposer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zul.jar&lt;org.zkoss.zul(Messagebox.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/fm-web/WebContent/title.zul"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/Imprimir.java"/>
 </editors>
-<item historyLabel="CajaDAOImpl.java" index="2">
-<position info="not_deleted" x="27869" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="4960" y="0"/>
 </item>
-<item historyLabel="CajaSelectorComposer.java" index="0">
-<position info="not_deleted" x="6637" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="4988" y="0"/>
 </item>
-<item historyLabel="CajaSelectorComposer.java" index="0">
-<position info="not_deleted" x="13851" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5003" y="0"/>
 </item>
-<item historyLabel="CajaEJBImpl.java" index="1">
-<position info="not_deleted" x="6116" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5041" y="0"/>
 </item>
-<item historyLabel="CajaDAOImpl.java" index="2">
-<position info="not_deleted" x="27943" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5070" y="0"/>
 </item>
-<item historyLabel="SubscripcionCrudComposer.java" index="3">
-<position info="not_deleted" x="25921" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5163" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5275" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5324" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5375" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5431" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5483" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5576" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5652" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5688" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5751" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5793" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5003" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5885" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5994" y="0"/>
+</item>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5909" y="0"/>
+</item>
+<item historyLabel="MessageBox.java" index="1">
+<position info="not_deleted" x="483" y="0"/>
+</item>
+<item historyLabel="Messagebox.class" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44252" y="16"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="6186" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44871" y="0"/>
+<item historyLabel="ConfVariasCrudComposer.java" index="3">
+<position info="not_deleted" x="1207" y="43"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="41114" y="28"/>
+<item historyLabel="title.zul" index="4">
+<position info="not_deleted" x="1103" y="16"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="41458" y="0"/>
+<item historyLabel="ImprimirCombobox.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44356" y="0"/>
+<item historyLabel="ImprimirCombobox.java" index="5">
+<position info="not_deleted" x="1228" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="45063" y="0"/>
+<item historyLabel="ImprimirCombobox.java" index="5">
+<position info="not_deleted" x="1773" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44406" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="1971" y="8"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44482" y="0"/>
+<item historyLabel="ConfVariasCrudComposer.java" index="3">
+<position info="not_deleted" x="1207" y="43"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44504" y="0"/>
+<item historyLabel="ConfVariasCrudComposer.java" index="3">
+<position info="not_deleted" x="669" y="29"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44563" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="357" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44894" y="0"/>
+<item historyLabel="ConfVariasCrudComposer.java" index="3">
+<position info="not_deleted" x="763" y="61"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44675" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="357" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44735" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="1954" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="36997" y="19"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="1897" y="8"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38950" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2347" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44702" y="0"/>
+<item historyLabel="ClientCrudComposer.java" index="0">
+<position info="not_deleted" x="5655" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="44964" y="0"/>
+<item historyLabel="ImprimirCombobox.java" index="5">
+<position info="not_deleted" x="1773" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38958" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2347" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39512" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2303" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38988" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2330" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38997" y="31"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2358" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38988" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2343" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39355" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2330" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="38997" y="31"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="1895" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39039" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="2330" y="0"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39104" y="0"/>
+<item historyLabel="SucursalViewHelper.java" index="6">
+<position info="not_deleted" x="1859" y="19"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39039" y="0"/>
+<item historyLabel="ImprimirCombobox.java" index="5">
+<position info="not_deleted" x="1763" y="26"/>
 </item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39104" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39039" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39241" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39212" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39292" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39357" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39394" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39527" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39880" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39069" y="30"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39880" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="40036" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="39069" y="30"/>
-</item>
-<item historyLabel="Imprimir.java" index="5">
-<position info="not_deleted" x="753" y="0"/>
-</item>
-<item historyLabel="IngresoInscripcionSelectorComposer.java" index="4">
-<position info="not_deleted" x="41458" y="0"/>
-</item>
-<item active="true" historyLabel="Imprimir.java" index="5">
-<position info="not_deleted" x="753" y="0"/>
+<item active="true" historyLabel="SubscripcionCrudComposer.java" index="7">
+<position info="not_deleted" x="6894" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -1007,6 +1061,13 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@4ba00b06"/>
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ToolsFolderView"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -1015,54 +1076,52 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7648ced9"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SucursalViewHelper.java" tooltip="fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java">
+<persistable path="/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImprimirCombobox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java">
+<persistable path="/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="title.zul" tooltip="fm-web/WebContent/title.zul">
+<persistable path="/fm-web/WebContent/title.zul"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MatriculaDAOImpl.java" tooltip="fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java">
+<persistable path="/fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CursoEJBImpl.java" tooltip="fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java">
+<persistable path="/fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConfVariasCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java">
+<persistable path="/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Messagebox.class" tooltip="org.zkoss.zul.Messagebox">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zul.jar&lt;org.zkoss.zul(Messagebox.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MessageBox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/MessageBox.java">
+<persistable path="/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Imprimir.java" tooltip="fm-web/src/com/institucion/controller/Imprimir.java">
+<persistable path="/fm-web/src/com/institucion/controller/Imprimir.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="Actividad.hbm.xml" tooltip="fm-obj/src/com/institucion/model/Actividad.hbm.xml">
+<persistable path="/fm-obj/src/com/institucion/model/Actividad.hbm.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Actividad.java" tooltip="fm-obj/src/com/institucion/model/Actividad.java">
+<persistable path="/fm-obj/src/com/institucion/model/Actividad.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IngresoInscripcionSelectorComposer.java" tooltip="fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java">
 <persistable path="/fm-web/src/com/institucion/controller/IngresoInscripcionSelectorComposer.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Long.class" tooltip="java.lang.Long">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/C:\/Program Files\/Java\/jre7\/lib\/rt.jar&lt;java.lang(Long.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ClientCrudComposer.java">
+<persistable path="/fm-web/src/com/institucion/controller/ClientCrudComposer.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="subscripcion-crud.zul" tooltip="fm-web/WebContent/institucion/subscripcion-crud.zul">
-<persistable path="/fm-web/WebContent/institucion/subscripcion-crud.zul"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionAsignarBotonesFilter.java" tooltip="fm-web/src/com/institucion/model/SubscripcionAsignarBotonesFilter.java">
-<persistable path="/fm-web/src/com/institucion/model/SubscripcionAsignarBotonesFilter.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="i3-label_es.properties" tooltip="fm-web/WebContent/WEB-INF/i3-label_es.properties">
-<persistable path="/fm-web/WebContent/WEB-INF/i3-label_es.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscripcionEJBImpl.java" tooltip="fm-bz/ejbModule/com/institucion/bz/spi/InscripcionEJBImpl.java">
-<persistable path="/fm-bz/ejbModule/com/institucion/bz/spi/InscripcionEJBImpl.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormasDePagoVentaProdCrud.java" tooltip="fm-web/src/com/institucion/model/FormasDePagoVentaProdCrud.java">
-<persistable path="/fm-web/src/com/institucion/model/FormasDePagoVentaProdCrud.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActividadesDelCursoCrud.java" tooltip="fm-web/src/com/institucion/model/ActividadesDelCursoCrud.java">
-<persistable path="/fm-web/src/com/institucion/model/ActividadesDelCursoCrud.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientesNoEncontradosEnListaPresenteCrud.java" tooltip="fm-web/src/com/institucion/model/ClientesNoEncontradosEnListaPresenteCrud.java">
-<persistable path="/fm-web/src/com/institucion/model/ClientesNoEncontradosEnListaPresenteCrud.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="EventProcessor.class" tooltip="org.zkoss.zk.ui.impl.EventProcessor">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zk.jar&lt;org.zkoss.zk.ui.impl(EventProcessor.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PanelEntityCrudList.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/PanelEntityCrudList.java">
-<persistable path="/fm-web/src/com/institucion/fm/desktop/view/PanelEntityCrudList.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormasDePagoViewHelper.java" tooltip="fm-web/src/com/institucion/desktop/helper/FormasDePagoViewHelper.java">
-<persistable path="/fm-web/src/com/institucion/desktop/helper/FormasDePagoViewHelper.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FormasDePagoCrud.java" tooltip="fm-web/src/com/institucion/model/FormasDePagoCrud.java">
-<persistable path="/fm-web/src/com/institucion/model/FormasDePagoCrud.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java">
-<persistable path="/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlumnosEnClaseSelectorComposer.java" tooltip="fm-web/src/com/institucion/controller/AlumnosEnClaseSelectorComposer.java">
-<persistable path="/fm-web/src/com/institucion/controller/AlumnosEnClaseSelectorComposer.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="clientes-crud.zul" tooltip="fm-web/WebContent/institucion/clientes-crud.zul">
+<persistable path="/fm-web/WebContent/institucion/clientes-crud.zul"/>
 </file>
 </mruList>
 </workbench>

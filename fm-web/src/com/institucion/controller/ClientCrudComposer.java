@@ -149,25 +149,21 @@ public class ClientCrudComposer extends CrudComposer {
 							int mes=ahoraCal.get(Calendar.MONTH) + 1;
 
 							String fechaNac=ahoraCal.get(Calendar.DATE)+"/"+mes+"/"+ahoraCal.get(Calendar.YEAR);
-							clientes= clientes +" Fecha Nac:"+fechaNac;
+							clientes= clientes +" FECHA NAC: "+fechaNac;
 						}						
 						
 						if(cliente.getDni() != null)
-							clientes=clientes + " DNI:"+cliente.getDni();
+							clientes=clientes + " DNI: "+cliente.getDni();
 						
 						if(cliente.getDomicilio() != null)
-							clientes=clientes + " Domic:"+cliente.getDomicilio();
+							clientes=clientes + " DOMICILIO: "+cliente.getDomicilio();
 								
 					}
 					
-					if (MessageBox.question("Se encontraron "+lista.size() +" clientes con el mismo Nombre y Apellido:  " +clientes+
-							"  ¿ Verifique según DOMICILIO y DNI antes de agregar un nuevo cliente. " +
-							" Esta seguro que el cliente que esta agregando es distinto al existente ? Si NO esta seguro cancele y busque el cliente."
+					if (MessageBox.question("Se encontraron "+lista.size() +" clientes posiblemente iguales:  " +clientes+
+							"     ¿Esta seguro que el cliente que esta agregando es distinto al existente ? Si NO esta seguro cancele y busque el cliente."
 							,"Cliente posiblemente ya existente.")){
 					
-//						if(cliente.getEstado() == null){
-//							cliente.setEstado(ClienteEstadoEnum.S_CLASES_DISP); 
-//						}
 						Long idCliente=(Long)clienteEJB.createSubs(cliente);
 						Cliente cli=clienteEJB.findById(idCliente);
 						Sessions.getCurrent().setAttribute( "idCliente", cli);

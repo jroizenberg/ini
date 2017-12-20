@@ -21,7 +21,7 @@
 		<section name="HISTORY6">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="tx.toolbar2.create.occasionalaction" key="textPattern"/>
+			<item value="impresion.habilitada=" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -32,7 +32,7 @@
 		<section name="HISTORY7">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="create.occasionalaction" key="textPattern"/>
+			<item value="private Combobox" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -43,7 +43,7 @@
 		<section name="HISTORY10">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="private Image" key="textPattern"/>
+			<item value="ToolbarFilters2" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -54,7 +54,7 @@
 		<section name="HISTORY4">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="impresion.habilitada=" key="textPattern"/>
+			<item value="precioMatricula" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -65,7 +65,7 @@
 		<section name="HISTORY5">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="private Combobox" key="textPattern"/>
+			<item value="impresion.habilitada" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -89,7 +89,7 @@
 		<section name="HISTORY11">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="&lt;image" key="textPattern"/>
+			<item value="SALDAR x E" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -100,7 +100,7 @@
 		<section name="HISTORY8">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="ToolbarFilters2" key="textPattern"/>
+			<item value="tx.toolbar2.create.occasionalaction" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -111,7 +111,7 @@
 		<section name="HISTORY9">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="SALDAR x E" key="textPattern"/>
+			<item value="create.occasionalaction" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -122,7 +122,7 @@
 		<section name="HISTORY2">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="precioMatricula" key="textPattern"/>
+			<item value="curso.guardar.clases" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -133,7 +133,7 @@
 		<section name="HISTORY3">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="impresion.habilitada" key="textPattern"/>
+			<item value="&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -144,7 +144,7 @@
 		<section name="HISTORY0">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="curso.guardar.clases" key="textPattern"/>
+			<item value="style=" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>
@@ -155,7 +155,7 @@
 		<section name="HISTORY1">
 			<item value="true" key="ignoreCase"/>
 			<item value="0" key="scope"/>
-			<item value="&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;" key="textPattern"/>
+			<item value="&lt;combobox" key="textPattern"/>
 			<item value="false" key="isRegExSearch"/>
 			<list key="fileNamePatterns">
 				<item value="*"/>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.zkoss.zul.Checkbox"/>
 <fullyQualifiedTypeName name="com.institucion.model.FormasDePagoSubscripcionEnum"/>
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="com.institucion.fm.desktop.view.ToolbarCrud"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="org.jfree.util.Log"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.institucion.fm.conf.Session"/>
 </qualifiedTypeNameHistroy>

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="cajaEJB.find" key="selection"/>
+		<item value="ImprimeComprobante" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="true" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="imprimeComprobante"/>
+			<item value="wi"/>
+			<item value="witd"/>
+			<item value="wid"/>
+			<item value="getComboboxForLoginAdmin"/>
 			<item value="cajaEJB.find"/>
 			<item value="subsDeClasecrud"/>
 			<item value="SubscripcionDeClasesCrud"/>
-			<item value="guardar se"/>
-			<item value="getSubsClaseCrud4"/>
-			<item value="tabpanel"/>
-			<item value="mapaSubsPorClase"/>
-			<item value="validateCrud"/>
 		</list>
 		<list key="replacehistory">
 			<item value="isSubsFromDeudasClientes"/>
