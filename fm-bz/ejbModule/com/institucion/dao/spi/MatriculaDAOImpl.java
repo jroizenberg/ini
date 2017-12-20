@@ -110,7 +110,7 @@ public class MatriculaDAOImpl extends ClientDao<Matricula> implements MatriculaD
 		try {
 			cnx	= session.getDataSource().getConnection();
 			stat = cnx.createStatement();
-			stat.executeQuery(" update imprimible set habilitado= "+bool);
+			stat.execute(" update imprimible set habilitado= "+bool);
 			} catch (SQLException e) {
 				e.printStackTrace();
 				log.error("Mensaje: " + e.getMessage() + "StackTrace: " + e.getStackTrace());

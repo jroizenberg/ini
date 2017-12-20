@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="58" version="2.0">
 <workbenchAdvisor/>
-<window height="647" maximized="true" width="1186" x="136" y="48">
+<window height="647" width="1186" x="136" y="48">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.jdt.ui.PackageExplorer"/>
 <orientation position="512" view="org.eclipse.ui.views.ProblemView"/>
@@ -26,7 +26,7 @@
 <coolItem id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="91" y="22"/>
@@ -45,7 +45,7 @@
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.jboss.tools.jst.web.ui.server.actionSet" itemType="typeToolBarContribution" x="153" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
@@ -62,85 +62,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
-<part id="9"/>
-<part id="10"/>
-<part id="11"/>
-<part id="12"/>
-<part id="13"/>
-<part id="14"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientSelectorComposer.java" partName="ClientSelectorComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ClientSelectorComposer.java" title="ClientSelectorComposer.java" tooltip="fm-web/src/com/institucion/controller/ClientSelectorComposer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ClientSelectorComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="5852" selectionTopPixel="2329"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="clientes-crud.zul" partName="clientes-crud.zul" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/WebContent/institucion/clientes-crud.zul" title="clientes-crud.zul" tooltip="fm-web/WebContent/institucion/clientes-crud.zul" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/WebContent/institucion/clientes-crud.zul"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="256" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientCrudComposer.java" partName="ClientCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ClientCrudComposer.java" title="ClientCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ClientCrudComposer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ClientCrudComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5655" selectionTopPixel="2142"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubscripcionCrudComposer.java" partName="SubscripcionCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" title="SubscripcionCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6835" selectionTopPixel="1615"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Actividad.java" partName="Actividad.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-obj/src/com/institucion/model/Actividad.java" title="Actividad.java" tooltip="fm-obj/src/com/institucion/model/Actividad.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-obj/src/com/institucion/model/Actividad.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="1694" selectionTopPixel="1088"/>
-</editor>
-<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="Actividad.hbm.xml" partName="Actividad.hbm.xml" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-obj/src/com/institucion/model/Actividad.hbm.xml" title="Actividad.hbm.xml" tooltip="fm-obj/src/com/institucion/model/Actividad.hbm.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-obj/src/com/institucion/model/Actividad.hbm.xml"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Imprimir.java" partName="Imprimir.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/Imprimir.java" title="Imprimir.java" tooltip="fm-web/src/com/institucion/controller/Imprimir.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/Imprimir.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="492" selectionTopPixel="60"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MessageBox.java" partName="MessageBox.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java" title="MessageBox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/MessageBox.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="483" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="Messagebox.class" partName="Messagebox.class" title="Messagebox.class" tooltip="org.zkoss.zul.Messagebox" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zul.jar&lt;org.zkoss.zul(Messagebox.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConfVariasCrudComposer.java" partName="ConfVariasCrudComposer.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java" title="ConfVariasCrudComposer.java" tooltip="fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="61" selectionOffset="763" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CursoEJBImpl.java" partName="CursoEJBImpl.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java" title="CursoEJBImpl.java" tooltip="fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-bz/ejbModule/com/institucion/bz/spi/CursoEJBImpl.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4657" selectionTopPixel="2142"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MatriculaDAOImpl.java" partName="MatriculaDAOImpl.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java" title="MatriculaDAOImpl.java" tooltip="fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-bz/ejbModule/com/institucion/dao/spi/MatriculaDAOImpl.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="67" selectionOffset="2841" selectionTopPixel="1428"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="title.zul" partName="title.zul" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/WebContent/title.zul" title="title.zul" tooltip="fm-web/WebContent/title.zul" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/WebContent/title.zul"/>
-<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="1103" selectionTopPixel="60"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImprimirCombobox.java" partName="ImprimirCombobox.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java" title="ImprimirCombobox.java" tooltip="fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="1763" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SucursalViewHelper.java" partName="SucursalViewHelper.java" path="C:/Java/Workpaces/InstitutoSwiszcz/workspace/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java" title="SucursalViewHelper.java" tooltip="fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="1859" selectionTopPixel="1044"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
@@ -149,7 +74,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 <view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
-<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" showinherited="false" sortbydefiningtype="false" vertical_scroll="5" view="2" workingSetName=""/>
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=fm-web/src&lt;com.institucion.controller{SubscripcionCrudComposer.java[SubscripcionCrudComposer" showinherited="false" sortbydefiningtype="false" vertical_scroll="4" view="2" workingSetName=""/>
 </view>
 <view id="org.eclipse.mylyn.tasks.ui.views.repositories" partName="Task Repositories">
 <viewState/>
@@ -191,9 +116,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="515"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -605,8 +527,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7648ced9" ratio="0.64271456" ratioLeft="322" ratioRight="179" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7648ced9" ratio="0.48303393" ratioLeft="242" ratioRight="259" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.wst.server.ui.ServersView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -894,180 +816,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/ClientCrudComposer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/fm/desktop/view/MessageBox.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=fm-web/\/external\/lib\/zul.jar&lt;org.zkoss.zul(Messagebox.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/ConfVariasCrudComposer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/fm-web/WebContent/title.zul"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/fm/desktop/view/ImprimirCombobox.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/desktop/helper/SucursalViewHelper.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/fm-web/src/com/institucion/controller/SubscripcionCrudComposer.java"/>
-</editors>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="4960" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="4988" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5003" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5041" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5070" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5163" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5275" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5324" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5375" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5431" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5483" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5576" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5652" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5688" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5751" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5793" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5003" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5885" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5994" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5909" y="0"/>
-</item>
-<item historyLabel="MessageBox.java" index="1">
-<position info="not_deleted" x="483" y="0"/>
-</item>
-<item historyLabel="Messagebox.class" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="6186" y="0"/>
-</item>
-<item historyLabel="ConfVariasCrudComposer.java" index="3">
-<position info="not_deleted" x="1207" y="43"/>
-</item>
-<item historyLabel="title.zul" index="4">
-<position info="not_deleted" x="1103" y="16"/>
-</item>
-<item historyLabel="ImprimirCombobox.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ImprimirCombobox.java" index="5">
-<position info="not_deleted" x="1228" y="0"/>
-</item>
-<item historyLabel="ImprimirCombobox.java" index="5">
-<position info="not_deleted" x="1773" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="1971" y="8"/>
-</item>
-<item historyLabel="ConfVariasCrudComposer.java" index="3">
-<position info="not_deleted" x="1207" y="43"/>
-</item>
-<item historyLabel="ConfVariasCrudComposer.java" index="3">
-<position info="not_deleted" x="669" y="29"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="ConfVariasCrudComposer.java" index="3">
-<position info="not_deleted" x="763" y="61"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="357" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="1954" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="1897" y="8"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2347" y="0"/>
-</item>
-<item historyLabel="ClientCrudComposer.java" index="0">
-<position info="not_deleted" x="5655" y="0"/>
-</item>
-<item historyLabel="ImprimirCombobox.java" index="5">
-<position info="not_deleted" x="1773" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2347" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2303" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2330" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2358" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2343" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2330" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="1895" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="2330" y="0"/>
-</item>
-<item historyLabel="SucursalViewHelper.java" index="6">
-<position info="not_deleted" x="1859" y="19"/>
-</item>
-<item historyLabel="ImprimirCombobox.java" index="5">
-<position info="not_deleted" x="1763" y="26"/>
-</item>
-<item active="true" historyLabel="SubscripcionCrudComposer.java" index="7">
-<position info="not_deleted" x="6894" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@4ba00b06"/>
-<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ToolsFolderView"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -1076,7 +830,6 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7648ced9"/>
 </trimArea>
 </trimLayout>
 </window>
