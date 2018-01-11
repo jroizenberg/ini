@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 2 elements to &apos;fm-obj/src/com.institucion.model&apos;&#x0D;&#x0A;- Original project: &apos;fm-obj&apos;&#x0D;&#x0A;- Destination element: &apos;fm-obj/src/com.institucion.model&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.institucion.model.CajaMovimiento.java&#x0D;&#x0A;     CajaMovimiento.hbm.xml" description="Copy elements" destination="/src&lt;com.institucion.model" element1="src/com/institucion/model/CajaMovimiento.hbm.xml" element2="/src&lt;com.institucion.model{CajaMovimiento.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462916040633" units="1" version="1.0"/>
-</session>

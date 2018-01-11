@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?page id="desktop" title="LOGIN - INSTITUTO"?>
-
-<zk>
-	<style src="/style/institucion.css"/>
-	<tabbox use="com.institucion.fm.desktop.view.DesktopMenu" width="auto" mold="accordion">
-	</tabbox>
-</zk>

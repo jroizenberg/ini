@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;external/lib/jboss/postgresql-8.3-603.jdbc4.jar&apos; to &apos;postgresql-8.3-603.jdbc4OLD.jarOLD&apos;" description="Rename resource &apos;postgresql-8.3-603.jdbc4.jar&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lib/jboss/postgresql-8.3-603.jdbc4.jar" name="postgresql-8.3-603.jdbc4OLD.jarOLD" stamp="1396893789186" updateReferences="true"/>
-</session>

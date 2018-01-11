@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?page id="selector" title="Instituto"?>
-
-<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
-
-<zk>
-	<style src="/style/institucion.css"/>
-	<image src="/img/logo_institucion_marca_agua_fondo.jpg"  height="500px" width="800px" style="margin: 50px 50px"  />
-</zk>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<zk>
-	<window id="win" width="80%" height="80%" title="Reporte" border="normal" 
-		closable="true" maximizable="true"  >
-		<iframe id="reporte" height="100%" width="100%" scrolling="yes" />
-	</window>
-</zk>

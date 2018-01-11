@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: acegi-security.jar spring.jar commons-digester-1.8.jar com
- mons-beanutils.jar
-
