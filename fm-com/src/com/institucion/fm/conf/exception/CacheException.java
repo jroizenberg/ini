@@ -1,11 +1,13 @@
 package com.institucion.fm.conf.exception;
 
-public class CacheException extends ExceptionBase {
+import java.io.Serializable;
+
+public class CacheException extends ExceptionBase implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -9069945054509420563L;
 	
 	public CacheException(Throwable e){
 		super(e);

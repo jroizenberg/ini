@@ -1,5 +1,7 @@
 package com.institucion.fm.conf.model;
 
+import java.io.Serializable;
+
 import javax.ejb.EJBException;
 
 import com.institucion.fm.conf.exception.DAOException;
@@ -10,7 +12,8 @@ import com.institucion.fm.conf.exception.dao.ForeignKeyException;
 import com.institucion.fm.conf.exception.dao.UniqueConstraintException;
 import com.institucion.fm.fe.validator.ValidationException;
 
-public abstract class BaseResponse {
+public abstract class BaseResponse implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private StatusType status = StatusType.OK;
 

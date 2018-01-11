@@ -1,7 +1,9 @@
 package com.institucion.fm.conf.exception;
 
-public class ParseException extends ExceptionBase
-{
+import java.io.Serializable;
+
+public class ParseException extends ExceptionBase implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	public ParseException()

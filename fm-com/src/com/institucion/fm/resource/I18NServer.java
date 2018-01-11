@@ -1,8 +1,10 @@
 package com.institucion.fm.resource;
 
+import java.io.Serializable;
 import java.util.Locale;
 
-public class I18NServer {
+public class I18NServer implements Serializable {
+	private static final long serialVersionUID = 1L;
 	public static MessageResources mr = new MessageResources();
 
 	static {

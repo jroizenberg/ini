@@ -1,5 +1,6 @@
 package com.institucion.fm.lang;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,12 +14,11 @@ import org.apache.commons.logging.LogFactory;
 /**
  * Esta clase extiende las funcionalidades de la clase Date de Java.
  */
-public class ExtDate extends Date
-{
+public class ExtDate extends Date implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private static Log log = LogFactory.getLog(ExtDate.class);
 	
-	private static final long serialVersionUID = 1L;
-
+	
 	private static String sqlpattern = "yyyyMMddHHmmss";
 	private static String datePatter="EEE MMM d HH:mm:ss yyyy";
 //	private static String sqlpattern = "yyyy-MM-dd HH:mm:ss";

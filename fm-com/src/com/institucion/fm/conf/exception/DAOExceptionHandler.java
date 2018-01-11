@@ -1,5 +1,6 @@
 package com.institucion.fm.conf.exception;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 
 import com.institucion.fm.conf.exception.dao.CheckConstraintException;
@@ -16,7 +17,8 @@ Class 23  Integrity Constraint Violation
 23505	UNIQUE VIOLATION	unique_violation
 23514	CHECK VIOLATION	check_violation
 */
-public class DAOExceptionHandler extends ExceptionHandlerSpringAware {
+public class DAOExceptionHandler extends ExceptionHandlerSpringAware implements Serializable {
+	private static final long serialVersionUID = 1L;
 	// Unique no diferente entre una PK y un constraint...
     private static final String UNIQUE_CONSTRAINT_VIOLATION_CODE = "23505";
     private static final String FOREIGN_KEY_VIOLATION_CODE = "23503";

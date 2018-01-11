@@ -1,9 +1,11 @@
 package com.institucion.fm.conf.exception;
 
+import java.io.Serializable;
 
 
 
-public class LocalizeValidationException extends ExceptionBase{
+
+public class LocalizeValidationException extends ExceptionBase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	

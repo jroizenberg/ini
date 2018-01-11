@@ -1,8 +1,10 @@
 package com.institucion.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PulsoMaipuDetalle  {
+public class PulsoMaipuDetalle  implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	/* Primer columna, esto esta supuestamente en el HEADER_AUX*/
 	private String quincena;

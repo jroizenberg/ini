@@ -1,11 +1,14 @@
 package com.institucion.fm.conf.exception;
 
+import java.io.Serializable;
+
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
 
 import org.apache.commons.logging.LogFactory;
 
-public abstract class ExceptionHandlerEJBAware extends ExceptionHandlerBase {
+public abstract class ExceptionHandlerEJBAware extends ExceptionHandlerBase implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@AroundInvoke
 	public Object invoke(InvocationContext ctx) throws Exception {
 		  log = LogFactory.getLog(ctx.getMethod().getName());

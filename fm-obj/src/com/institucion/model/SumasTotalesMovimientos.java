@@ -1,8 +1,10 @@
 package com.institucion.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SumasTotalesMovimientos {
+public class SumasTotalesMovimientos implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private Double total;
 	private Double efectivo;

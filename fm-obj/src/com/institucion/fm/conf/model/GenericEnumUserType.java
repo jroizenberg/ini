@@ -15,7 +15,8 @@ import org.hibernate.type.TypeFactory;
 import org.hibernate.usertype.ParameterizedType;
 import org.hibernate.usertype.UserType;
 
-public class GenericEnumUserType implements UserType, ParameterizedType {
+public class GenericEnumUserType implements UserType, ParameterizedType , Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private static Log log = LogFactory.getLog(GenericEnumUserType.class);
 	

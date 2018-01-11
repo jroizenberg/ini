@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
 
 import org.apache.commons.logging.Log;
@@ -17,7 +18,8 @@ import org.springframework.beans.factory.FactoryBean;
  * @author mdenipotti
  *
  */
-public class InstanceConf implements FactoryBean {
+public class InstanceConf implements FactoryBean , Serializable {
+	private static final long serialVersionUID = 1L;
 
 	public static final String INSTANCE_PROVIDER_URL = "instance.provider.url";
 	public static final String FMCAL_HTTP_URL = "fmcal.http.url";

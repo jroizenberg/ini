@@ -1,7 +1,9 @@
 package com.institucion.fm.lang;
 
+import java.io.Serializable;
 
-public class ExtDateTimeZone{
+
+public class ExtDateTimeZone implements Serializable {
 	private static final long serialVersionUID = 1L;
     private String gmtID;
 	private Integer dayLightStartMonth;

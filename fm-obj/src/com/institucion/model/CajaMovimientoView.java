@@ -1,7 +1,10 @@
 package com.institucion.model;
 
+import java.io.Serializable;
 
-public class CajaMovimientoView{
+
+public class CajaMovimientoView implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private String tipo;
 	private String fecha;

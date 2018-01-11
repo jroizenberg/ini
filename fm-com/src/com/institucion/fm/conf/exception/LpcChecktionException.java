@@ -1,8 +1,10 @@
 package com.institucion.fm.conf.exception;
 
+import java.io.Serializable;
 
 
-public class LpcChecktionException extends ExceptionBase {
+
+public class LpcChecktionException extends ExceptionBase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private LocalizeValidationException [] params;

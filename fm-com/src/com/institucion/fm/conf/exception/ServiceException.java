@@ -1,6 +1,8 @@
 package com.institucion.fm.conf.exception;
 
-public class ServiceException extends ExceptionBase {
+import java.io.Serializable;
+
+public class ServiceException extends ExceptionBase implements Serializable {
 
 	/**
 	 * 

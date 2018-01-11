@@ -1,5 +1,6 @@
 package com.institucion.fm.ds;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -8,8 +9,8 @@ import java.math.BigDecimal;
  * @version 1.0, 27/03/2009
  * @since   1.0, 27/03/2009
  */
-public class Row
-{
+public class Row implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Object[] fields;
 
 	public Row() { }

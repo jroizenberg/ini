@@ -1,6 +1,9 @@
 package com.institucion.fm.conf.exception;
 
-public class ExceptionBase extends RuntimeException {
+import java.io.Serializable;
+
+public class ExceptionBase extends RuntimeException implements Serializable {
+	
 	private static final long serialVersionUID = 1334037753597789170L;
     protected Throwable cause;
 

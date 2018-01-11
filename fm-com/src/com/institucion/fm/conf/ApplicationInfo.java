@@ -1,12 +1,14 @@
 package com.institucion.fm.conf;
 
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Properties;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class ApplicationInfo {
+public class ApplicationInfo  implements Serializable {
+	private static final long serialVersionUID = 1L;
 	static private final String UNKNOWN_VERSION_INFO = "unknown version info";
 	static Log log = LogFactory.getLog(ApplicationInfo.class);
 

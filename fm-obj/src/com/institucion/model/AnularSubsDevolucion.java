@@ -1,7 +1,10 @@
 package com.institucion.model;
 
+import java.io.Serializable;
 
-public class AnularSubsDevolucion {
+
+public class AnularSubsDevolucion implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private AnularSubscripcionTipoDevolucionEnum tipo;
 	private float dinero;

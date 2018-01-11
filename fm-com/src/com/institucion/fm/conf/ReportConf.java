@@ -4,12 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class ReportConf {
+public class ReportConf implements Serializable {
+	private static final long serialVersionUID = 1L;
 	public static final String DB_PROVIDER_URL = "db.provider.url";
 	public static final String DB_USERS = "db.user";
 	public static final String DB_password = "db.password";

@@ -1,6 +1,9 @@
 package com.institucion.model;
 
-public class PulsoMaipuDetalleParte2  {
+import java.io.Serializable;
+
+public class PulsoMaipuDetalleParte2  implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private int idCurso;
 	private GastosMaipuEnum tipoGasto;

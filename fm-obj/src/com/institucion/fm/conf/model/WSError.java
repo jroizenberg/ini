@@ -1,6 +1,9 @@
 package com.institucion.fm.conf.model;
 
-public class WSError {
+import java.io.Serializable;
+
+public class WSError implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private String errorKey;
 	

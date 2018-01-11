@@ -1,5 +1,6 @@
 package com.institucion.fm.fe.validator;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -7,8 +8,7 @@ import java.util.Map;
 
 import com.institucion.fm.conf.exception.ExceptionBase;
 
-public class ValidationException extends ExceptionBase
-{
+public class ValidationException extends ExceptionBase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// <campo[String|I18N.String|FEField],lista de errores>

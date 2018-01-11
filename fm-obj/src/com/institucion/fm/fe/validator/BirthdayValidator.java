@@ -6,7 +6,7 @@ import java.util.Date;
 
 import com.institucion.fm.fe.validator.ValidationException;
 
-public class BirthdayValidator extends Validation{
+public class BirthdayValidator extends Validation {
 
 	/**
 	 * 

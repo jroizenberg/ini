@@ -1,5 +1,6 @@
 package com.institucion.fm.desktop.service;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -16,7 +17,8 @@ import com.institucion.fm.confsys.model.ConfigRegional;
  * Realiza la internacionalizacion de los textos de la aplicacion. Los recursos
  * los toma de WEB-INF/i3-label_<language>.properties
  */
-public class I18N {
+public class I18N implements Serializable {
+	private static final long serialVersionUID = 1L;
 	public static String getLabel(String key) {
 		return org.zkoss.util.resource.Labels.getLabel(key);
 	}

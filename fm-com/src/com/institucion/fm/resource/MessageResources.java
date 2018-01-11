@@ -2,6 +2,7 @@ package com.institucion.fm.resource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,7 +20,8 @@ import org.apache.commons.logging.LogFactory;
  * @author
  * @version 1.0, May 4, 2005
  */
-public class MessageResources {
+public class MessageResources implements Serializable {
+	private static final long serialVersionUID = 1L;
    	private HashMap<String, String> messages = new HashMap<String, String>();
    	private HashMap<String, MessageFormat> formats = new HashMap<String, MessageFormat>();
    	private String resourceFile = null;

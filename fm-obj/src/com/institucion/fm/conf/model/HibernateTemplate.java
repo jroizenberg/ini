@@ -1,5 +1,7 @@
 package com.institucion.fm.conf.model;
 
+import java.io.Serializable;
+
 import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
 import org.hibernate.Session;
@@ -8,7 +10,8 @@ import org.hibernate.collection.PersistentCollection;
 import org.hibernate.proxy.HibernateProxy;
 import org.springframework.orm.hibernate3.HibernateCallback;
 
-public class HibernateTemplate extends org.springframework.orm.hibernate3.HibernateTemplate {
+public class HibernateTemplate extends org.springframework.orm.hibernate3.HibernateTemplate implements Serializable {
+	private static final long serialVersionUID = 1L;
 	public HibernateTemplate(SessionFactory sessionFactory) {
 		super(sessionFactory);
 	}

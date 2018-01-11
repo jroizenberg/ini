@@ -2,6 +2,7 @@ package com.institucion.fm.conf;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +19,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 
-public class DataBaseParameters {
+public class DataBaseParameters implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private static Log log = LogFactory.getLog(DataBaseParameters.class);
 	

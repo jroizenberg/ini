@@ -1,7 +1,8 @@
 package com.institucion.fm.conf.exception;
 
-public class DAOException extends ExceptionBase
-{
+import java.io.Serializable;
+
+public class DAOException extends ExceptionBase implements Serializable {
 
 	private static final long serialVersionUID = 8033574479348707844L;
 

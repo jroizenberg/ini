@@ -1,6 +1,9 @@
 package com.institucion.fm.report.model;
 
-public class DayCount {
+import java.io.Serializable;
+
+public class DayCount implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private int date;
 	

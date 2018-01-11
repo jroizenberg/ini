@@ -1,10 +1,12 @@
 package com.institucion.fm.lang;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Day  implements Comparable<Day>{
+public class Day  implements Comparable<Day> , Serializable {
+	private static final long serialVersionUID = 1L;
   private Calendar calendar_ = Calendar.getInstance();
 
   public Day(int year, int month, int dayOfMonth){
