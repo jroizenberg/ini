@@ -1470,9 +1470,11 @@ public class IngresoInscripcionSelectorComposer extends SelectorFEComposer imple
 							
 							
 							subsSeleccionada=clienteEJB.actualizarSubscripcion(subsSeleccionada, actYClase);
-							
-							if(subsSeleccionada.getCliente().getSubscripcionesList() != null){
-								for (Subscripcion subs : subsSeleccionada.getCliente().getSubscripcionesList()) {
+							Cliente cll=subsSeleccionada.getCliente();
+							cll=clienteEJB.loadLazy(cll, true, true, true,true);
+
+							if(cll.getSubscripcionesList() != null){
+								for (Subscripcion subs : cll.getSubscripcionesList()) {
 									if(subs.getId().intValue() == subsSeleccionada.getId().intValue()){
 										
 										if(subs.getCupoActividadList() != null ){
@@ -1490,7 +1492,7 @@ public class IngresoInscripcionSelectorComposer extends SelectorFEComposer imple
 									}
 								}
 							}
-							subsSeleccionada.setCliente(subsSeleccionada.getCliente());
+							subsSeleccionada.setCliente(cll);
 							cli= subsSeleccionada.getCliente();
 							
 							// se guarda en la BD
