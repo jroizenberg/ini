@@ -10,8 +10,8 @@ public class UserToolbarSelector extends TextToolbar {
 		addUpdateButton();
 //		addDeleteButton();
 //		addSeparator();
-//		addActivateButton();
-//		addDesactivateButton();
+		addActivateButton();
+		addDesactivateButton();
 		//addSeparator();
 		//addFindButton();
 		//addClearFilterButton();

@@ -638,23 +638,23 @@ public abstract class TextToolbar extends Panel implements AfterCompose {
 //		addToolbarButton(findAdvButton);
 //	}
 
-//	protected void addActivateButton()
-//	{
-//		activateButton = new TextToolbarButton(PermissionTxManager.TX_POSTFIX_ACTIVATE);
-//		activateButton.setLabelAndTooltip(I18N.getLabel("toolbarselector.activate"));
-////		activateButton.setStyle("color: yellow !important;");
-//		activateButton.setOnClickMethod("onActivate");
-//		addToolbarButton(activateButton);
-//	}
+	protected void addActivateButton()
+	{
+		activateButton = new TextToolbarButton(PermissionTxManager.TX_POSTFIX_ACTIVATE);
+		activateButton.setLabelAndTooltip(I18N.getLabel("toolbarselector.activate"));
+//		activateButton.setStyle("color: yellow !important;");
+		activateButton.setOnClickMethod("onActivate");
+		addToolbarButton(activateButton);
+	}
 
-//	protected void addDesactivateButton()
-//	{
-//		deactivateButton = new TextToolbarButton(PermissionTxManager.TX_POSTFIX_DEACTIVATE);
-//		deactivateButton.setLabelAndTooltip(I18N.getLabel("toolbarselector.deactivate"));
-////		deactivateButton.setStyle("color: yellow !important;");
-//		deactivateButton.setOnClickMethod("onDeactivate");
-//		addToolbarButton(deactivateButton);
-//	}
+	protected void addDesactivateButton()
+	{
+		deactivateButton = new TextToolbarButton(PermissionTxManager.TX_POSTFIX_DEACTIVATE);
+		deactivateButton.setLabelAndTooltip(I18N.getLabel("toolbarselector.deactivate"));
+//		deactivateButton.setStyle("color: yellow !important;");
+		deactivateButton.setOnClickMethod("onDeactivate");
+		addToolbarButton(deactivateButton);
+	}
 
 //	protected void addCloneButton()
 //	{
