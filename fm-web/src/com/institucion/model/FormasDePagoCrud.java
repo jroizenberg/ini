@@ -158,6 +158,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 			superaValor=true;
 			int aDescontarDeloqueseseteo=sumaTotal -valorFinalDeTodosLosCursos;
 			faltante=valorQueSeEstaAgregando-aDescontarDeloqueseseteo;
+			item.setEsCopago(false);
 			item.setCantidadDinero(faltante);
 			if(item.getAdicional() > 0){
 				item.setCantidadDinero(faltante);	
@@ -303,6 +304,8 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 			int aDescontarDeloqueseseteo=sumaTotal -valorFinalDeTodosLosCursos;
 			faltante=valorQueSeEstaAgregando-aDescontarDeloqueseseteo;
 			item.setCantidadDinero(faltante);
+			item.setEsCopago(false);
+
 			if(item.getAdicional() > 0){
 				item.setCantidadDinero(faltante);	
 				if(item.getPorcInteres() != null){
@@ -438,7 +441,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 
 		Integer valor = (Integer) this.dinero.getValue();
 		dpp.setCantidadDinero(valor);
-
+		dpp.setEsCopago(false);
 		if(formaDePago.toInt() == FormasDePagoSubscripcionEnum.TARJETA_15.toInt()){
 			int adicional2=0;
 			if(dpp.getPorcInteres() != null){
@@ -596,7 +599,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 				   				PagosPorSubscripcion dpp = new PagosPorSubscripcion();
 				   				
 				   				dpp.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
-				   				
+				   				dpp.setEsCopago(false);
 				   				if(subsdelegate != null){
 				   					dpp.setCantidadDinero(subsdelegate.getValorCurso());
 				   				}else{
@@ -624,7 +627,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 								PagosPorSubscripcion dpp = new PagosPorSubscripcion();
 				   				
 				   				dpp.setIdTipoDePago(FormasDePagoSubscripcionEnum.DEBITO);
-				   			
+				   				dpp.setEsCopago(false);
 				   				if(subsdelegate != null){
 				   					dpp.setCantidadDinero(subsdelegate.getValorCurso());
 				   				}else{
@@ -651,7 +654,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 								getGridList().removeAll();
 								// FALTA ELIMINAR ACA LOS ANTERIORES
 								PagosPorSubscripcion dpp = new PagosPorSubscripcion();
-				   				
+								dpp.setEsCopago(false);
 				   				dpp.setIdTipoDePago(FormasDePagoSubscripcionEnum.TARJETA_15);
 				   				if(subsdelegate != null){
 				   					dpp.setCantidadDinero(subsdelegate.getValorCurso());
@@ -722,7 +725,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 								getGridList().removeAll();
 								// FALTA ELIMINAR ACA LOS ANTERIORES
 								PagosPorSubscripcion dpp = new PagosPorSubscripcion();
-				   				
+								dpp.setEsCopago(false);
 				   				dpp.setIdTipoDePago(FormasDePagoSubscripcionEnum.TARJETA_20);
 				   				if(subsdelegate != null){
 				   					dpp.setCantidadDinero(subsdelegate.getValorCurso());
@@ -775,7 +778,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 							getGridList().removeAll();
 							// FALTA ELIMINAR ACA LOS ANTERIORES
 							PagosPorSubscripcion dpp = new PagosPorSubscripcion();
-			   				
+							dpp.setEsCopago(false);
 			   				dpp.setIdTipoDePago(FormasDePagoSubscripcionEnum.TARJETA_15);
 			   				if(subsdelegate != null){
 			   					dpp.setCantidadDinero(subsdelegate.getValorCurso());
@@ -1071,7 +1074,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 				
 		newActionProduct.setIdTipoDePago((FormasDePagoSubscripcionEnum)formaDePago.getSelectedItem().getValue());
 		newActionProduct.setCantidadDinero(dinero.getValue());
-		
+		newActionProduct.setEsCopago(false);
 		if(formaDePago.getSelectedItem() != null  && 
 				((FormasDePagoSubscripcionEnum)formaDePago.getSelectedItem().getValue()).toInt() == FormasDePagoSubscripcionEnum.TARJETA_15.toInt())  
 			newActionProduct.setCantCuotas((Integer)cuotas.getSelectedItem().getValue());
@@ -1102,6 +1105,7 @@ public class FormasDePagoCrud extends PanelEntityCrudList<PagosPorSubscripcion>{
 			superaValor= true;
 			int aDescontarDeloqueseseteo=sumaTotal -valorFinalDeTodosLosCursos;
 			faltante=valorQueSeEstaAgregando-aDescontarDeloqueseseteo;
+			newActionProduct.setEsCopago(false);
 			newActionProduct.setCantidadDinero(faltante);
 			if(newActionProduct.getAdicional() > 0){
 				newActionProduct.setCantidadDinero(faltante);	

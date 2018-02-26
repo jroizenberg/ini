@@ -2228,7 +2228,8 @@ public class IngresoInscripcionSelectorComposer extends SelectorFEComposer imple
 			subs.setPagosPorSubscripcionList(new HashSet());
 
 		// Se genera el Pago Adicional
-		PagosPorSubscripcion nuevo = new PagosPorSubscripcion();
+		PagosPorSubscripcion nuevo= new PagosPorSubscripcion();
+		nuevo.setEsCopago(true);
 		nuevo.setCantidadDinero(cantidadDinero);
 		nuevo.setSubscripcion(subs);
 		nuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);

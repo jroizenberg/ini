@@ -2878,7 +2878,8 @@ public class SubscripcionCrudComposer extends CrudComposer implements Subscripci
 											
 											if(pagoPorSubscripcion.getCantidadDinero() > diferenciaAIrDescontando){
 												pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero() - diferenciaAIrDescontando);
-												
+												pagoPorSubscripcion.setEsCopago(false);
+
 												if(pagoPorSubscripcion.getIdTipoDePago().toInt() == FormasDePagoSubscripcionEnum.TARJETA_15.toInt()){
 													
 													int adicionalparte=0;
@@ -2900,6 +2901,7 @@ public class SubscripcionCrudComposer extends CrudComposer implements Subscripci
 												}
 												break;
 											}else if(pagoPorSubscripcion.getCantidadDinero() == diferenciaAIrDescontando){
+												pagoPorSubscripcion.setEsCopago(false);
 												pagoPorSubscripcion.setCantidadDinero(0);
 												if(pagoPorSubscripcion.getAdicional() >0){
 													pagoPorSubscripcion.setAdicional(0);
@@ -2907,6 +2909,7 @@ public class SubscripcionCrudComposer extends CrudComposer implements Subscripci
 												break;
 											}else{
 												// quiere decir que saco el dinero de el pago anterior + un nuevo pago.
+												pagoPorSubscripcion.setEsCopago(false);
 												pagoPorSubscripcion.setCantidadDinero(0);
 												diferenciaAIrDescontando = diferenciaAIrDescontando-pagoPorSubscripcion.getCantidadDinero(); // - pagoPorSubscripcion.getAdicional();
 											
@@ -3338,7 +3341,8 @@ public class SubscripcionCrudComposer extends CrudComposer implements Subscripci
 									
 									if(pagoPorSubscripcion.getCantidadDinero() > diferenciaAIrDescontando){
 										pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero() - diferenciaAIrDescontando);
-										
+										pagoPorSubscripcion.setEsCopago(false);
+
 										if(pagoPorSubscripcion.getIdTipoDePago().toInt() == FormasDePagoSubscripcionEnum.TARJETA_15.toInt()){
 											
 											int adicionalparte=0;
@@ -3364,10 +3368,14 @@ public class SubscripcionCrudComposer extends CrudComposer implements Subscripci
 										if(pagoPorSubscripcion.getAdicional() >0){
 											pagoPorSubscripcion.setAdicional(0);
 										}
+										pagoPorSubscripcion.setEsCopago(false);
+
 										break;
 									}else{
 										// quiere decir que saco el dinero de el pago anterior + un nuevo pago.
 										pagoPorSubscripcion.setCantidadDinero(0);
+										pagoPorSubscripcion.setEsCopago(false);
+
 										diferenciaAIrDescontando = diferenciaAIrDescontando-pagoPorSubscripcion.getCantidadDinero(); // - pagoPorSubscripcion.getAdicional();
 									
 										

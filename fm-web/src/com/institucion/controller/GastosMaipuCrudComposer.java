@@ -122,6 +122,7 @@ public class GastosMaipuCrudComposer extends CrudComposer  implements GastosDele
 							cajaEJB.save(caja2);
 							
 							PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+							pagoNuevo.setEsCopago(false);
 							pagoNuevo.setCantidadDinero(dinero);
 							pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 
@@ -160,6 +161,7 @@ public class GastosMaipuCrudComposer extends CrudComposer  implements GastosDele
 							cajaEJB.save(caja2);
 							
 							PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+							pagoNuevo.setEsCopago(false);
 							pagoNuevo.setCantidadDinero(dinero);
 							pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 							pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -216,6 +218,7 @@ public class GastosMaipuCrudComposer extends CrudComposer  implements GastosDele
 				conceptoGastos= "Gasto Maipu: "+ gasto.getTipoGasto().toString(gasto.getTipoGasto().toInt()) ;
 				
 				PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+				pagoNuevo.setEsCopago(false);
 				pagoNuevo.setCantidadDinero(gasto.getDinero());
 				pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 				pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);

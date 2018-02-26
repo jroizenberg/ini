@@ -383,6 +383,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 
@@ -427,6 +428,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -491,6 +493,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 					cajaEJB.save(caja2);
 					
 					PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+					pagoNuevo.setEsCopago(false);
 					pagoNuevo.setCantidadDinero(gastoMaipu.getDinero());
 					pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 					pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -567,6 +570,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -606,6 +610,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
@@ -648,6 +653,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
@@ -687,6 +693,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 								cajaEJB.save(caja2);
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setCantidadDinero(dinero);
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
@@ -787,6 +794,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 
 									
 									PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+									pagoNuevo.setEsCopago(false);
 									pagoNuevo.setCantidadDinero(gastosSueldo.getDinero());
 									pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
@@ -825,6 +833,7 @@ public class GastosCrudComposer extends CrudComposer  implements GastosDelegate,
 						}
 
 						PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+						pagoNuevo.setEsCopago(false);
 						pagoNuevo.setCantidadDinero(gasto.getDinero());
 						pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 

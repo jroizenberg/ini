@@ -646,6 +646,7 @@ public class ProductosVentaSelectorComposer extends SelectorFEComposer implement
 		List lista= new ArrayList();
 		
 		PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+		pagoNuevo.setEsCopago(false);
 		pagoNuevo.setCantidadDinero(obtenerCantidadDinero(formaPago));
 		pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 

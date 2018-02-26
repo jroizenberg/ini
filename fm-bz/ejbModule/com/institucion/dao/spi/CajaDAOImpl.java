@@ -797,6 +797,9 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				/* VENTA DE NUEVA SUBSCRIPCION */
 				actionConditions.append(getQueryNuevaSubscripcion(false, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
 				
+				/* VENTA DE NUEVA SUBSCRIPCION: COPAGOS */
+				actionConditions.append(getQueryNuevaSubscripcionCopagos(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
+
 				/* VENTA DE POSPONE SUBSCRIPCION */
 				actionConditions.append(getQueryPosponerSubscripcion(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
 				
@@ -817,7 +820,9 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 
 				/* ANULACION DE SUBSCRIPCION */
 				actionConditions.append(getQueryAnulaSubscripcion(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
-
+				
+				actionConditions.append(getQueryGastos(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde));
+				
 				if(curso == null){
 					
 					if(suc != null && suc.toInt() != SucursalEnum.MAIPU.toInt()){
@@ -839,6 +844,8 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				/* VENTA DE NUEVA SUBSCRIPCION */
 				actionConditions.append(getQueryNuevaSubscripcion(false, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
 				
+				actionConditions.append(getQueryNuevaSubscripcionCopagos(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
+
 				/* VENTA DE POSPONE SUBSCRIPCION */
 				actionConditions.append(getQueryPosponerSubscripcion(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
 				
@@ -868,7 +875,9 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				
 				/* ANULACION DE SUBSCRIPCION */
 				actionConditions.append(getQueryAnulaSubscripcion(false, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde, suc));
-								
+				
+				actionConditions.append(getQueryGastos(true, curso, fechaDesde, fechaHasta, usuarioSelected, promocionBancoID, fechaYHoraDesde));
+
 				if(suc != null && suc.toInt() != SucursalEnum.MAIPU.toInt()){
 	
 					/*ANULACION DE SUBSCRIPCION CON OBRAS SOCIALES*/
@@ -940,7 +949,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				Double cantidadPago =rs.getDouble(3);
 				
 				if(tipo.equalsIgnoreCase("nueva") || tipo.equalsIgnoreCase("SaldarDeuda") 
-							|| tipo.equalsIgnoreCase("Pospone") || tipo.equalsIgnoreCase("VentaProducto") 
+							|| tipo.equalsIgnoreCase("Pospone") || tipo.equalsIgnoreCase("VentaProducto") || tipo.equalsIgnoreCase("copagos")  
 							|| tipo.equalsIgnoreCase("IngresosMovimientoCaja") || tipo.equalsIgnoreCase("nuevoingresoOS") ){
 					if(tipoPago.intValue() == FormasDePagoSubscripcionEnum.DEBITO.toInt()){
 						pagosPorTipoDebito= pagosPorTipoDebito+ cantidadPago;
@@ -954,6 +963,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				}
 				
 				if(tipo.equalsIgnoreCase("anulo") || tipo.equalsIgnoreCase("AnulaVentaProducto") 
+						|| tipo.equalsIgnoreCase("Gasto")
 						|| tipo.equalsIgnoreCase("EgresosMovimientoCaja") || tipo.equalsIgnoreCase("nuevoegresoOS")){
 					if(tipoPago.intValue() == FormasDePagoSubscripcionEnum.DEBITO.toInt()){
 						pagosPorTipoDebito= pagosPorTipoDebito- cantidadPago;
@@ -1059,6 +1069,59 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				return actionConditions.toString();
 		}
 
+		
+		private String aaaagetQueryNuevaSubscripcionCopagos(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta, User usuarioSelected, 
+				Long promocionBancoID, Date fechaYHoraDesde, SucursalEnum suc){
+			String fechaHastaPorCierreCaja=null;
+			if(fechaYHoraDesde != null){
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	
+				fechaHastaPorCierreCaja=format.format(fechaYHoraDesde);
+			}
+					
+			/* COPAGOS */
+			StringBuilder actionConditions = new StringBuilder();
+			
+			if(withUnion)
+				actionConditions.append( " union all ");
+
+			actionConditions.append( " select 'copagos' a,ps.idtipodepago b, sum(ps.cantidaddinero + ps.adicional) c from subscripcion subs " ); 
+			actionConditions.append( "		inner join  PagosPorSubscripcion ps on (subs.id = ps.idSubscripcion ) "); 
+				if (curso!= null ){
+					actionConditions.append( " inner join CupoActividad  cupoPorAct on (cupoPorAct.idSubscripcion= subs.id and idActividad= '"+curso.getId()+"' )  ");
+				}
+				actionConditions.append(" where 1=1  ");
+
+				if (fechaDesde != null && fechaHasta != null) {
+					SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+					String fechaD = format1.format(fechaDesde);    
+					String fechaH = format1.format(fechaHasta); 
+
+					actionConditions.append( " and  subs.idusuariocreosubscripcion != "+usuarioSelected.getId());
+
+					actionConditions.append( " AND ( to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'  ");
+					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' )");
+					
+					
+					actionConditions.append( " and ps.escopago is true    ");
+				}
+				
+				if(promocionBancoID != null){
+					actionConditions.append( " AND  ps.idbancopromocion='"+promocionBancoID + "'");
+				}
+				
+				if(fechaHastaPorCierreCaja != null){
+					actionConditions.append( "  and  (ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' OR " +
+							"   ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )");
+				}
+				
+				if(suc != null){
+					actionConditions.append( "  and ps.sucursal="+suc.toInt() );
+				}
+				
+				actionConditions.append( " group by ps.idtipodepago  ");
+			
+				return actionConditions.toString();
+		}
 		private String getQueryNuevaSubscripcionDetalleMaipu(boolean withUnion, Long anio){
 			/* NUEVA SUBSCRIPCION */
 			StringBuilder actionConditions = new StringBuilder();
@@ -1250,7 +1313,58 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			return actionConditions.toString();
 	}
 	
-	
+	private String getQueryNuevaSubscripcionCopagos(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta, User usuarioSelected, 
+			Long promocionBancoID, Date fechaYHoraDesde, SucursalEnum suc){
+		String fechaHastaPorCierreCaja=null;
+		if(fechaYHoraDesde != null){
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	
+			fechaHastaPorCierreCaja=format.format(fechaYHoraDesde);
+		}
+				
+		/* COPAGOS */
+		StringBuilder actionConditions = new StringBuilder();
+		
+		if(withUnion)
+			actionConditions.append( " union all ");
+
+		actionConditions.append( " select 'copagos' a,ps.idtipodepago b, sum(ps.cantidaddinero + ps.adicional) c from subscripcion subs " ); 
+		actionConditions.append( "		inner join  PagosPorSubscripcion ps on (subs.id = ps.idSubscripcion ) "); 
+			if (curso!= null ){
+				actionConditions.append( " inner join CupoActividad  cupoPorAct on (cupoPorAct.idSubscripcion= subs.id and idActividad= '"+curso.getId()+"' )  ");
+			}
+			actionConditions.append(" where 1=1  ");
+
+			if (fechaDesde != null && fechaHasta != null) {
+				SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+				String fechaD = format1.format(fechaDesde);    
+				String fechaH = format1.format(fechaHasta); 
+
+				actionConditions.append( " and  subs.idusuariocreosubscripcion != "+usuarioSelected.getId());
+
+				actionConditions.append( " AND ( to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'  ");
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' )");
+				
+				
+				actionConditions.append( " and ps.escopago is true    ");
+			}
+			
+			if(promocionBancoID != null){
+				actionConditions.append( " AND  ps.idbancopromocion='"+promocionBancoID + "'");
+			}
+			
+			if(fechaHastaPorCierreCaja != null){
+				actionConditions.append( "  and  (ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' OR " +
+						"   ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )");
+			}
+			
+			if(suc != null){
+				actionConditions.append( "  and ps.sucursal="+suc.toInt() );
+			}
+			
+			actionConditions.append( " group by ps.idtipodepago  ");
+		
+			return actionConditions.toString();
+	}
 	
 	private String getQueryPosponerSubscripcionDetalle(boolean withUnion, Long anio){
 		
@@ -1464,6 +1578,37 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		return actionConditions.toString();
 	}
 
+	
+	private String getQueryGastos(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta, User usuarioSelected, 
+			Long promocionBancoID, Date fechaYHoraDesde){
+		StringBuilder actionConditions = new StringBuilder();
+		String fechaHastaPorCierreCaja=null;
+		if(fechaYHoraDesde != null){
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");	
+			fechaHastaPorCierreCaja=format.format(fechaYHoraDesde);
+		}
+		if(withUnion)
+			actionConditions.append( " union all ");
+		
+		
+		actionConditions.append("select 'Gasto' a, 0 b, sum(valor) c   from cajamovimiento caja  ");
+		actionConditions.append(" where 1=1  ");
+		if (fechaDesde != null && fechaHasta != null) {
+			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+			String fechaD = format1.format(fechaDesde);    
+			String fechaH = format1.format(fechaHasta); 
+
+			actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+			actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+					
+		}
+		actionConditions.append( "  and  to_char(caja.fecha,'YYYY-MM-DD') >='"+fechaHastaPorCierreCaja + "'");
+		actionConditions.append( " and Upper(caja.concepto) like Upper('%Gasto%') " +
+				" and caja.idusuariogeneromovimiento= "+usuarioSelected.getId()+ " ");
+		
+		return actionConditions.toString();
+	}
+	
 	private String getQueryAnulacionObraSocial(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta, User usuarioSelected, 
 			Long promocionBancoID, Date fechaYHoraDesde){
 		StringBuilder actionConditions = new StringBuilder();
@@ -1508,6 +1653,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			if(fechaHastaPorCierreCaja != null){
 				actionConditions.append( "  and subs.fechayhoraanulacion >='"+fechaHastaPorCierreCaja + "'");
 			}
+			
 			
 			actionConditions.append( " and con.tipodescuento=1  group by os.nombre,con.idobrasocial	");
 			
@@ -1593,7 +1739,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		if(withUnion)
 			actionConditions.append( " union all ");
 		
-		actionConditions.append( " select 'anulo' a, ps.idtipodepago b, sum(subs.anulavalordevuelvo) c  from subscripcion subs " ); 
+		actionConditions.append( " select 'anulo' a, ps.idtipodepago b, sum(ps.cantidaddinero) c  from subscripcion subs " ); 
 		actionConditions.append( "		inner join  PagosPorSubscripcion ps on (subs.id = ps.idSubscripcion ) "); 
 			if (curso!= null ){
 				actionConditions.append( " inner join CupoActividad  cupoPorAct on (cupoPorAct.idSubscripcion= subs.id and idActividad= '"+curso.getId()+"' )  ");
@@ -1854,6 +2000,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		actionConditions.append( " from PagosPorSubscripcion ps  "); 
 		actionConditions.append( " where 1=1  and ps.tipoMovimiento="+ TipoMovimientoCajaEnum.EGRESO.toInt());
 		actionConditions.append( " and  ps.idsubscripcion is null and ps.idventaproducto is null and ps.idGasto is null ");
+		actionConditions.append( "and ps.idgasto is null   and ps.idgastomaipu is null ");  
 		actionConditions.append( " and  ps.sucursal="+SucursalEnum.MAIPU.toInt() );
 		actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ nuevoAnio+"-04-01'   ");
 		actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ anio+"-04-01'  ");
@@ -1875,6 +2022,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		actionConditions.append( " from PagosPorSubscripcion ps  "); 
 		actionConditions.append( " where 1=1  and ps.tipoMovimiento="+ TipoMovimientoCajaEnum.EGRESO.toInt());
 		actionConditions.append( " and  ps.idsubscripcion is null and ps.idventaproducto is null and ps.idGasto is null ");
+		actionConditions.append( "and ps.idgasto is null   and ps.idgastomaipu is null ");
 		actionConditions.append( " and  ps.sucursal!="+SucursalEnum.MAIPU.toInt() );
 		actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ nuevoAnio+"-01-01'   ");
 		actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ anio+"-01-01'  ");
@@ -1940,7 +2088,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		actionConditions.append( " PagosPorSubscripcion ps  "); 
 		actionConditions.append( " where 1=1  and ps.tipoMovimiento="+ TipoMovimientoCajaEnum.EGRESO.toInt());
 		actionConditions.append( " and  ps.idsubscripcion is null and ps.idventaproducto is null ");
-		
+		actionConditions.append( "and ps.idgasto is null   and ps.idgastomaipu is null ");
 		if (fechaDesde != null && fechaHasta != null) {
 			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 			String fechaD = format1.format(fechaDesde);    

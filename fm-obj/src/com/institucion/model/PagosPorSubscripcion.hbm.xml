@@ -28,6 +28,8 @@
 		<property name="saldadaDeuda" />
 		<property name="porcInteres" />
 		
+		<property name="esCopago" />
+		
 		<property name="tipoMovimiento" >
 				<type name="com.institucion.fm.conf.model.GenericEnumUserType">
 					<param name="enumClass">com.institucion.model.TipoMovimientoCajaEnum</param>

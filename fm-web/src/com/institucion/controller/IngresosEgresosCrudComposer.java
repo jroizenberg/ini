@@ -390,6 +390,7 @@ public class IngresosEgresosCrudComposer extends CrudComposer implements AnularS
 				if(pagoPorSubscripcion.getCantidadDinero() > deuda){
 					// quiere decir que saco ya todo el dinero de este pago.
 					PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+					pagoNuevo.setEsCopago(false);
 					pagoNuevo.setCantidadDinero(deuda);
 					pagoNuevo.setIdTipoDePago(pagoPorSubscripcion.getIdTipoDePago());
 					pagoNuevo.setPorcInteres(pagoPorSubscripcion.getPorcInteres());
@@ -460,6 +461,7 @@ public class IngresosEgresosCrudComposer extends CrudComposer implements AnularS
 				}else if(pagoPorSubscripcion.getCantidadDinero() == deuda){
 					pagoPorSubscripcion.setTipoMovimiento(tipoMov);
 					pagoPorSubscripcion.setIdUsuarioGeneroMovimientoCaja(Session.getUsernameID().intValue());
+					pagoPorSubscripcion.setEsCopago(false);
 
 					pagosNuevos.add(pagoPorSubscripcion);
 
@@ -467,6 +469,7 @@ public class IngresosEgresosCrudComposer extends CrudComposer implements AnularS
 					break;
 				}else{
 					// quiere decir que saco el dinero de el pago anterior + un nuevo pago.
+					pagoPorSubscripcion.setEsCopago(false);
 					pagoPorSubscripcion.setTipoMovimiento(tipoMov);
 					pagoPorSubscripcion.setIdUsuarioGeneroMovimientoCaja(Session.getUsernameID().intValue());
 

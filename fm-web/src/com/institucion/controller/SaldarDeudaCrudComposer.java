@@ -600,6 +600,7 @@ public class SaldarDeudaCrudComposer extends CrudComposer implements AnularSubsc
 				if(pagoPorSubscripcion.getCantidadDinero() > deuda){
 					// quiere decir que saco ya todo el dinero de este pago.
 					PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+					pagoNuevo.setEsCopago(false);
 					pagoNuevo.setCantidadDinero(deuda);
 					pagoNuevo.setIdTipoDePago(pagoPorSubscripcion.getIdTipoDePago());
 					pagoNuevo.setSubscripcion(pagoPorSubscripcion.getSubscripcion());
@@ -618,7 +619,7 @@ public class SaldarDeudaCrudComposer extends CrudComposer implements AnularSubsc
 						pagoNuevo.setAdicional(adicionalparte);
 						pagoNuevo.setCantCuotas(pagoPorSubscripcion.getCantCuotas());
 						pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero()- deuda);
-						
+						pagoPorSubscripcion.setEsCopago(false);
 						int adicional=0;
 		   				if(pagoPorSubscripcion.getPorcInteres() != null){
 		   					adicional=(int)(pagoPorSubscripcion.getCantidadDinero() * pagoPorSubscripcion.getPorcInteres() )/100;
@@ -638,7 +639,8 @@ public class SaldarDeudaCrudComposer extends CrudComposer implements AnularSubsc
 						pagoNuevo.setAdicional(adicionalparte);
 						pagoNuevo.setCantCuotas(pagoPorSubscripcion.getCantCuotas());
 						pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero()- deuda);
-						
+						pagoPorSubscripcion.setEsCopago(false);
+
 						int adicional=0;
 		   				if(pagoPorSubscripcion.getPorcInteres() != null){
 		   					adicional=(int)(pagoPorSubscripcion.getCantidadDinero() * pagoPorSubscripcion.getPorcInteres() )/100;

@@ -21,7 +21,8 @@ public class PagosPorSubscripcion implements Serializable {
 	private GastosMaipu gastoMaipu;
 	private SucursalEnum sucursal;
 	private Quincena quincena;
-
+	private Boolean esCopago;
+	
 	public Long getId() {
 		return id;
 	}
@@ -112,6 +113,12 @@ public class PagosPorSubscripcion implements Serializable {
 	}
 	public Quincena getQuincena() {
 		return quincena;
+	}
+	public Boolean getEsCopago() {
+		return esCopago;
+	}
+	public void setEsCopago(Boolean esCopago) {
+		this.esCopago = esCopago;
 	}
 	public void setQuincena(Quincena quincena) {
 		this.quincena = quincena;

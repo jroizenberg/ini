@@ -1,3 +1,6 @@
+alter table pagosporsubscripcion ADD    esCopago boolean default false;
+
+
 - buenas, revisando los gastos que venian haciendo las chicas, encontre un tema con el pago de sueldos, 
 ya que se lo registraba como un gasto, y despues no se le podia dar seguimiento a por ejemplo los sueldos pagados de tal empleado, 
 y tal empleado, y podia desaparecer plata asi por que no hay control.

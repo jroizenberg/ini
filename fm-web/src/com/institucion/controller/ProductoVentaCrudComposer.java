@@ -311,6 +311,7 @@ public class ProductoVentaCrudComposer extends CrudComposer implements AnularSub
 				if(pagoPorSubscripcion.getCantidadDinero() > deuda){
 					// quiere decir que saco ya todo el dinero de este pago.
 					PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
+					pagoNuevo.setEsCopago(false);
 					pagoNuevo.setCantidadDinero(deuda);
 					pagoNuevo.setIdTipoDePago(pagoPorSubscripcion.getIdTipoDePago());
 					pagoNuevo.setVentaProducto(prod);
@@ -330,6 +331,7 @@ public class ProductoVentaCrudComposer extends CrudComposer implements AnularSub
 
 						pagoNuevo.setAdicional(adicionalparte);
 						pagoNuevo.setCantCuotas(pagoPorSubscripcion.getCantCuotas());
+						pagoPorSubscripcion.setEsCopago(false);
 						pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero()- deuda);
 						
 						int adicional=0;
@@ -352,6 +354,7 @@ public class ProductoVentaCrudComposer extends CrudComposer implements AnularSub
 
 						pagoNuevo.setAdicional(adicionalparte);
 						pagoNuevo.setCantCuotas(pagoPorSubscripcion.getCantCuotas());
+						pagoPorSubscripcion.setEsCopago(false);
 						pagoPorSubscripcion.setCantidadDinero(pagoPorSubscripcion.getCantidadDinero()- deuda);
 						
 						int adicional=0;

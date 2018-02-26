@@ -375,6 +375,7 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
 								pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -419,6 +420,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
+
 								pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
 //								pagoNuevo.setPorcInteres(pagoPorSubscripcion.getPorcInteres());
@@ -483,6 +486,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 					
 					PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 					pagoNuevo.setCantidadDinero(gastoMaipu.getDinero());
+					pagoNuevo.setEsCopago(false);
+
 					pagoNuevo.setSucursal(SucursalEnum.MAIPU);
 					pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
 					pagoNuevo.setIdUsuarioGeneroMovimientoCaja(Session.getUsernameID().intValue());
@@ -559,6 +564,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
+
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
 //								pagoNuevo.setPorcInteres(pagoPorSubscripcion.getPorcInteres());
@@ -598,6 +605,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
+
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -640,6 +649,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
+
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -679,6 +690,8 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 								
 								PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 								pagoNuevo.setCantidadDinero(dinero);
+								pagoNuevo.setEsCopago(false);
+
 								pagoNuevo.setSucursal(SucursalEnum.CENTRO);
 
 								pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
@@ -780,6 +793,7 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 									PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 									pagoNuevo.setCantidadDinero(gastosSueldo.getDinero());
 									pagoNuevo.setSucursal(SucursalEnum.CENTRO);
+									pagoNuevo.setEsCopago(false);
 
 									pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
 //									pagoNuevo.setPorcInteres(pagoPorSubscripcion.getPorcInteres());
@@ -818,6 +832,7 @@ public class SueldosCrudComposer extends CrudComposer  implements GastosDelegate
 						PagosPorSubscripcion pagoNuevo= new PagosPorSubscripcion();
 						pagoNuevo.setCantidadDinero(gasto.getDinero());
 						pagoNuevo.setSucursal(SucursalEnum.CENTRO);
+						pagoNuevo.setEsCopago(false);
 
 						pagoNuevo.setIdTipoDePago(FormasDePagoSubscripcionEnum.EFECTIVO);
 //						pagoNuevo.setPorcInteres(pagoPorSubscripcion.getPorcInteres());
