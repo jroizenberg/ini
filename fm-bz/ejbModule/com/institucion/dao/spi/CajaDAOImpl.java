@@ -778,7 +778,6 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		
 		if(!esActividadSeteada){
 			// Si no se selecciono en la Actividad: Venta de Productos
-
 			
 			if(tieneFiltroSoloObraSocial){
 				// se selecciono filtro de obtener por obra Social solamente , se considera que figuran TODOS 
@@ -1070,58 +1069,6 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		}
 
 		
-		private String aaaagetQueryNuevaSubscripcionCopagos(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta, User usuarioSelected, 
-				Long promocionBancoID, Date fechaYHoraDesde, SucursalEnum suc){
-			String fechaHastaPorCierreCaja=null;
-			if(fechaYHoraDesde != null){
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	
-				fechaHastaPorCierreCaja=format.format(fechaYHoraDesde);
-			}
-					
-			/* COPAGOS */
-			StringBuilder actionConditions = new StringBuilder();
-			
-			if(withUnion)
-				actionConditions.append( " union all ");
-
-			actionConditions.append( " select 'copagos' a,ps.idtipodepago b, sum(ps.cantidaddinero + ps.adicional) c from subscripcion subs " ); 
-			actionConditions.append( "		inner join  PagosPorSubscripcion ps on (subs.id = ps.idSubscripcion ) "); 
-				if (curso!= null ){
-					actionConditions.append( " inner join CupoActividad  cupoPorAct on (cupoPorAct.idSubscripcion= subs.id and idActividad= '"+curso.getId()+"' )  ");
-				}
-				actionConditions.append(" where 1=1  ");
-
-				if (fechaDesde != null && fechaHasta != null) {
-					SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-					String fechaD = format1.format(fechaDesde);    
-					String fechaH = format1.format(fechaHasta); 
-
-					actionConditions.append( " and  subs.idusuariocreosubscripcion != "+usuarioSelected.getId());
-
-					actionConditions.append( " AND ( to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'  ");
-					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' )");
-					
-					
-					actionConditions.append( " and ps.escopago is true    ");
-				}
-				
-				if(promocionBancoID != null){
-					actionConditions.append( " AND  ps.idbancopromocion='"+promocionBancoID + "'");
-				}
-				
-				if(fechaHastaPorCierreCaja != null){
-					actionConditions.append( "  and  (ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' OR " +
-							"   ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )");
-				}
-				
-				if(suc != null){
-					actionConditions.append( "  and ps.sucursal="+suc.toInt() );
-				}
-				
-				actionConditions.append( " group by ps.idtipodepago  ");
-			
-				return actionConditions.toString();
-		}
 		private String getQueryNuevaSubscripcionDetalleMaipu(boolean withUnion, Long anio){
 			/* NUEVA SUBSCRIPCION */
 			StringBuilder actionConditions = new StringBuilder();
@@ -1178,8 +1125,13 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				String fechaD = format1.format(fechaDesde);    
 				String fechaH = format1.format(fechaHasta); 
 
-				actionConditions.append( " and (( to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'  ");
-				actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"' ))");
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}else{
+					actionConditions.append( " and (( to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'  ");
+					actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"' ))");
+				}
+
 			}
 			
 			if (curso!= null ){
@@ -1228,8 +1180,12 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				String fechaD = format1.format(fechaDesde);    
 				String fechaH = format1.format(fechaHasta); 
 
-				actionConditions.append( " and (( to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'  ");
-				actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"' ))");
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}else{
+					actionConditions.append( " and (( to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'  ");
+					actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"' ))");
+				}
 			}
 			
 			if (curso!= null ){
@@ -1278,32 +1234,91 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 
 				
 				actionConditions.append( " and (( " );
-				if(usuarioSelected != null){
-					actionConditions.append( " subs.idusuariocreosubscripcion= "+usuarioSelected.getId()+ " and  " );
-				}
-				actionConditions.append( "ps.saldadadeuda is not true  AND to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'  ");
-				actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaD+"' )");
 				
+				if(fechaHastaPorCierreCaja != null){
+					actionConditions.append( " ( subs.fechayhoracreacion >='"+fechaHastaPorCierreCaja + "' OR " +
+							"   (subs.fechayhorasaldasubscripcion >='"+fechaHastaPorCierreCaja + "' and  ps.saldadadeuda is true  ) )  ");
+				}
+								
+				if(usuarioSelected != null){
+					if(fechaHastaPorCierreCaja != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( "  subs.idusuariocreosubscripcion= "+usuarioSelected.getId());
+				}
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					
+					if(usuarioSelected != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( " ps.saldadadeuda is not true  AND to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaH+"'  ");
+				}else{
+					if(usuarioSelected != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( " ps.saldadadeuda is not true  AND to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'  ");
+					actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaD+"' )");
+				}
+				
+				
+				actionConditions.append( " ) OR (  ");
+				if(usuarioSelected != null){
+					actionConditions.append( " subs.idusuariocreosubscripcion= "+usuarioSelected.getId() );
+				}
+
+				if(fechaHastaPorCierreCaja != null){
+					if(usuarioSelected != null)
+						actionConditions.append( " AND ");
+					actionConditions.append( " ( ps.saldadadeuda is not true and  ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )  ");
+				}
+
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					if(fechaHastaPorCierreCaja != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( "  to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' ) ");
+				}else{
+					if(fechaHastaPorCierreCaja != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( " to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' ) ");
+				}
+
 				
 				actionConditions.append( " OR (  ");
-				
-				if(usuarioSelected != null){
-					actionConditions.append( " subs.idusuariosaldasubscripcion= "+usuarioSelected.getId()+ " and  " );
+				if(fechaHastaPorCierreCaja != null){
+					
+					actionConditions.append( " ( subs.fechayhoracreacion >='"+fechaHastaPorCierreCaja + "' OR " +
+							"  ( subs.fechayhorasaldasubscripcion >='"+fechaHastaPorCierreCaja + "' and  ps.saldadadeuda is true ) )  ");
 				}
-				actionConditions.append( " ps.saldadadeuda is true and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-				actionConditions.append( " and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') >='"+ fechaD+"' ) )");
+
+				if(usuarioSelected != null){
+					if(fechaHastaPorCierreCaja != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( " subs.idusuariosaldasubscripcion= "+usuarioSelected.getId() );
+				}
 				
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					if(usuarioSelected != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( "  to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') >='"+ fechaD+"' and  ps.saldadadeuda is true ) ");
+				}else{
+					if(usuarioSelected != null)
+						actionConditions.append( " AND ");
+
+					actionConditions.append( "  ps.saldadadeuda is true and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+					actionConditions.append( " and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') >='"+ fechaD+"'  )");
+				}
 			}
 			
+			actionConditions.append( " ) ");
 			if(promocionBancoID != null){
 				actionConditions.append( " AND  ps.idbancopromocion='"+promocionBancoID + "'");
 			}
-			
-			if(fechaHastaPorCierreCaja != null){
-				actionConditions.append( "  and  (subs.fechayhoracreacion >='"+fechaHastaPorCierreCaja + "' OR " +
-						"   subs.fechayhorasaldasubscripcion >='"+fechaHastaPorCierreCaja + "' )");
-			}
-			
+						
 			if(suc != null){
 				actionConditions.append( "  and ps.sucursal="+suc.toInt() );
 			}
@@ -1341,9 +1356,12 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 
 				actionConditions.append( " and  subs.idusuariocreosubscripcion != "+usuarioSelected.getId());
 
-				actionConditions.append( " AND ( to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'  ");
-				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"' )");
-				
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}else{
+					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+					actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}
 				
 				actionConditions.append( " and ps.escopago is true    ");
 			}
@@ -1353,8 +1371,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			}
 			
 			if(fechaHastaPorCierreCaja != null){
-				actionConditions.append( "  and  (ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' OR " +
-						"   ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )");
+				actionConditions.append( "  and  (ps.fechaingresodefault >='"+fechaHastaPorCierreCaja + "' )");
 			}
 			
 			if(suc != null){
@@ -1422,11 +1439,18 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and ((to_char(cupoPorAct.posponefechayhora,'YYYY-MM-DD') <= '"+ fechaH+"'   ");  
+			
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and ((to_char(cupoPorAct.posponefechayhora,'YYYY-MM-DD') >='"+ fechaD+"'  ) ");
+				actionConditions.append( " or  ");
+				actionConditions.append( " (to_char(cupoPorAct.posponefechayhora2,'YYYY-MM-DD') >='"+ fechaD+"'  )) ");
+			}else{
+				actionConditions.append( " and ((to_char(cupoPorAct.posponefechayhora,'YYYY-MM-DD') <= '"+ fechaH+"'   ");  
 				actionConditions.append( " and to_char(cupoPorAct.posponefechayhora,'YYYY-MM-DD') >='"+ fechaD+"'  ) ");
 				actionConditions.append( " or  ");
 				actionConditions.append( " (to_char(cupoPorAct.posponefechayhora2,'YYYY-MM-DD') <='"+ fechaH+"'  ");  
-				actionConditions.append( " and to_char(cupoPorAct.posponefechayhora2,'YYYY-MM-DD') >='"+ fechaD+"'  )) ");	
+				actionConditions.append( " and to_char(cupoPorAct.posponefechayhora2,'YYYY-MM-DD') >='"+ fechaD+"'  )) ");
+			}
 		}
 			
 		if(usuarioSelected != null){
@@ -1475,34 +1499,6 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 
 	}
 
-	private String getQuerySaldaSubscripcion(boolean withUnion, Actividad curso, Date fechaDesde , Date fechaHasta){
-		StringBuilder actionConditions = new StringBuilder();
-
-		if(withUnion)
-			actionConditions.append( " union all ");
-		
-		actionConditions.append( " select 'SaldarDeuda' a, ps.idtipodepago b, sum(ps.cantidaddinero + ps.adicional) c  from subscripcion subs " ); 
-		actionConditions.append( "		inner join  PagosPorSubscripcion ps on (subs.id = ps.idSubscripcion ) "); 
-			if (curso!= null ){
-				actionConditions.append( " inner join CupoActividad  cupoPorAct on (cupoPorAct.idSubscripcion= subs.id and idActividad= '"+curso.getId()+"' )  ");
-			}
-			actionConditions.append(" where 1=1  ");
-
-			if (fechaDesde != null && fechaHasta != null) {
-				SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-				String fechaD = format1.format(fechaDesde);    
-				String fechaH = format1.format(fechaHasta); 
-
-				actionConditions.append( " and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-				actionConditions.append( " and to_char(subs.fechayhorasaldasubscripcion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
-						
-			}
-			actionConditions.append( " and ps.saldadadeuda is true ");
-			actionConditions.append( " group by ps.idtipodepago  ");
-			
-			return actionConditions.toString();
-
-	}
 
 	private String getQueryVentaObraSocialesDetalle(boolean withUnion, Long anio){
 		StringBuilder actionConditions = new StringBuilder();
@@ -1552,8 +1548,13 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(subs.fechaingresosubscripcion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
+
 					
 		}
 		
@@ -1570,7 +1571,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 	
 		if(fechaHastaPorCierreCaja != null){
 			actionConditions.append( "  and  (subs.fechayhoracreacion >='"+fechaHastaPorCierreCaja + "' OR " +
-					"   subs.fechayhorasaldasubscripcion >='"+fechaHastaPorCierreCaja + "' )");
+					"   (subs.fechayhorasaldasubscripcion >='"+fechaHastaPorCierreCaja + "'  ) )");
 		}
 		
 		actionConditions.append( " and con.tipodescuento=1  group by os.nombre,con.idobrasocial	");
@@ -1584,7 +1585,7 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		StringBuilder actionConditions = new StringBuilder();
 		String fechaHastaPorCierreCaja=null;
 		if(fechaYHoraDesde != null){
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");	
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");	
 			fechaHastaPorCierreCaja=format.format(fechaYHoraDesde);
 		}
 		if(withUnion)
@@ -1598,11 +1599,16 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(caja.fecha,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
+			
 					
 		}
-		actionConditions.append( "  and  to_char(caja.fecha,'YYYY-MM-DD') >='"+fechaHastaPorCierreCaja + "'");
+		actionConditions.append( "  and  caja.fecha >='"+fechaHastaPorCierreCaja + "'");
 		actionConditions.append( " and Upper(caja.concepto) like Upper('%Gasto%') " +
 				" and caja.idusuariogeneromovimiento= "+usuarioSelected.getId()+ " ");
 		
@@ -1624,40 +1630,44 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 		
 		actionConditions.append( " select 'AnuloObraSocial-'||os.nombre a, 1 b, sum(con.precioPorClaseOSesionPagaObraSocial * con.cantSesiones) c   from subscripcion subs " ); 
 		actionConditions.append( "		inner join concepto con on (con.idSubscripcion= subs.id " ); 
-			if (curso!= null ){
-				actionConditions.append( " and con.idactividad= '"+curso.getId()+"' ) ");
+		if (curso!= null ){
+			actionConditions.append( " and con.idactividad= '"+curso.getId()+"' ) ");
+		}else{
+			actionConditions.append( " ) ");
+		}
+		actionConditions.append(" 	inner join obrasocial os on (con.idobrasocial=os.id )  where 1=1  ");
+
+		if (fechaDesde != null && fechaHasta != null) {
+			SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+			String fechaD = format1.format(fechaDesde);    
+			String fechaH = format1.format(fechaHasta); 
+
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
 			}else{
-				actionConditions.append( " ) ");
-			}
-			actionConditions.append(" 	inner join obrasocial os on (con.idobrasocial=os.id )  where 1=1  ");
-
-			if (fechaDesde != null && fechaHasta != null) {
-				SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-				String fechaD = format1.format(fechaDesde);    
-				String fechaH = format1.format(fechaHasta); 
-
 				actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
 				actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
 			}
+		}
 			
-			if(usuarioSelected != null){
-				actionConditions.append( " AND  (  subs.idusuarioanulosubscripcion= "+usuarioSelected.getId()+")" );
-			}
-			
-			if(promocionBancoID != null){
-				actionConditions.append( " AND subs.id in (select s.id from subscripcion s " +
-															"	 inner join pagosporsubscripcion p on (s.id= p.idsubscripcion)	" +
-															"	 where 1=1 and s.id=subs.id AND p.idbancopromocion='"+promocionBancoID + "' )");
-			}
-			
-			if(fechaHastaPorCierreCaja != null){
-				actionConditions.append( "  and subs.fechayhoraanulacion >='"+fechaHastaPorCierreCaja + "'");
-			}
-			
-			
-			actionConditions.append( " and con.tipodescuento=1  group by os.nombre,con.idobrasocial	");
-			
-			return actionConditions.toString();
+		if(usuarioSelected != null){
+			actionConditions.append( " AND  (  subs.idusuarioanulosubscripcion= "+usuarioSelected.getId()+")" );
+		}
+		
+		if(promocionBancoID != null){
+			actionConditions.append( " AND subs.id in (select s.id from subscripcion s " +
+														"	 inner join pagosporsubscripcion p on (s.id= p.idsubscripcion)	" +
+														"	 where 1=1 and s.id=subs.id AND p.idbancopromocion='"+promocionBancoID + "' )");
+		}
+		
+		if(fechaHastaPorCierreCaja != null){
+			actionConditions.append( "  and subs.fechayhoraanulacion >='"+fechaHastaPorCierreCaja + "'");
+		}
+		
+		
+		actionConditions.append( " and con.tipodescuento=1  group by os.nombre,con.idobrasocial	");
+		
+		return actionConditions.toString();
 	}
 
 	private String getQueryAnulacionObraSocialesDetalle(boolean withUnion, Long anio){
@@ -1751,8 +1761,15 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 				String fechaD = format1.format(fechaDesde);    
 				String fechaH = format1.format(fechaHasta); 
 
-				actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-				actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				if(fechaH.equalsIgnoreCase(fechaD)){
+					actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}else{
+					actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+					actionConditions.append( " and to_char(subs.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+				}
+
+				
+				
 			}
 			
 			if(fechaHastaPorCierreCaja != null){
@@ -1795,8 +1812,14 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(vp.fechayhoracompra,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(vp.fechayhoracompra,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(vp.fechayhoracompra,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(vp.fechayhoracompra,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(vp.fechayhoracompra,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
+
+			
 					
 		}
 		
@@ -1877,9 +1900,12 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(vp.fechayhoraanulacion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(vp.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
-					
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(vp.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(vp.fechayhoraanulacion,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(vp.fechayhoraanulacion,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
 		}
 		
 		if(usuarioSelected != null){
@@ -1962,9 +1988,13 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
-					
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
+
 		}
 		
 		if(usuarioSelected != null){
@@ -2094,9 +2124,12 @@ public class CajaDAOImpl extends ClientDao<CajaMovimiento> implements CajaDAO {
 			String fechaD = format1.format(fechaDesde);    
 			String fechaH = format1.format(fechaHasta); 
 
-			actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
-			actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
-					
+			if(fechaH.equalsIgnoreCase(fechaD)){
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}else{
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') <='"+ fechaH+"'   ");
+				actionConditions.append( " and to_char(ps.fechaingresodefault,'YYYY-MM-DD') >='"+ fechaD+"'  ");
+			}
 		}
 		
 		if(usuarioSelected != null){
